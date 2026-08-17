@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco Network Engineer Certificate Program — JobSkillShare</title>
+<meta name="description" content="Gain comprehensive skills in Cisco network engineering, from routing and switching fundamentals to advanced enterprise networking and security protocols.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/buttons-override.css">
+
+<style>
+  :root{
+    --itsp-teal: var(--teal, #0EA5A0);
+    --itsp-coral: var(--coral, #FF6B5B);
+    --itsp-ink: var(--ink, #12202E);
+    --itsp-muted: var(--text-muted, #64748B);
+    --itsp-bg-alt: var(--bg-alt, #F5F7FA);
+    --itsp-border: var(--border, #E6E9EE);
+    --itsp-radius: var(--radius-lg, 16px);
+    --itsp-navy: #0F2C4C;
+    --itsp-navy-dark: #0B2035;
+    --itsp-green: #1FA971;
+  }
+
+  /* ---------- shared section shells ---------- */
+  .itsp-section{ padding: 56px 0; }
+  .itsp-section-alt{ background: var(--itsp-bg-alt); }
+  .itsp-container{ max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .itsp-eyebrow{
+    display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color: var(--itsp-teal); margin-bottom:10px;
+  }
+  .itsp-h2{ font-family:'Sora',sans-serif; font-size:2rem; line-height:1.2; color:var(--itsp-ink); margin:0 0 6px; }
+  .itsp-lead{ color:var(--itsp-muted); font-size:1rem; line-height:1.6; max-width:70ch; }
+
+  /* ---------- HERO ---------- */
+  /* ---------- HERO ---------- */
+   .main-navbar, header {
+  position: relative;
+  z-index: 100;
+}
+.itsp-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(120deg, #0B2035 0%, #123655 55%, #0E2A44 100%);
+  padding: 52px 0 40px;
+  z-index: 1; /* Keep hero below header */
+}
+   itsp-hero{
+    position:relative; overflow:hidden; color:#fff;
+    background: linear-gradient(120deg, #0B2035 0%, #123655 55%, #0E2A44 100%);
+    padding: 52px 0 40px;
+  }
+  .itsp-hero-bg-photo{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.35;
+  }
+  .itsp-hero-overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(120deg, rgba(11,32,53,.78) 0%, rgba(18,54,85,.68) 55%, rgba(14,42,68,.88) 100%);
+  }
+  .itsp-hero-inner{ position:relative; z-index:1; }
+  .itsp-hero-eyebrow{
+    display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:.08em;
+    text-transform:uppercase; color:#8FD9D4; margin-bottom:14px;
+  }
+  .itsp-hero h1{
+    font-family:'Sora',sans-serif; font-size:2.6rem; line-height:1.12; margin:0 0 8px; color:#fff;
+  }
+  .itsp-hero-tagline{ font-size:1.15rem; font-weight:600; color:#EAF6F5; margin:0 0 14px; }
+  .itsp-hero-lead{ color:#C6D6E4; max-width:62ch; line-height:1.65; margin:0 0 26px; }
+
+  .itsp-hero-stats{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:26px; }
+  .itsp-stat-chip{
+    display:flex; flex-direction:column; gap:2px; min-width:132px;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+    border-radius:12px; padding:12px 18px;
+  }
+  .itsp-stat-chip strong{ font-size:1.15rem; font-family:'Sora',sans-serif; color:#fff; }
+  .itsp-stat-chip span{ font-size:.78rem; color:#AFC3D6; }
+
+  .itsp-hero-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-bottom:18px; }
+  .itsp-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:13px 26px; border-radius:10px; font-weight:700; font-size:.95rem;
+    text-decoration:none; cursor:pointer; border:2px solid transparent; transition:.15s ease;
+  }
+  .itsp-btn-primary{ background:var(--itsp-teal); color:#fff; }
+  .itsp-btn-primary:hover{ background:#0c8b86; }
+  .itsp-btn-white{ background:#fff; color:var(--itsp-navy); border-color:#fff; }
+  .itsp-btn-white:hover{ background:transparent; color:#fff; }
+  .itsp-preview-link{ color:#fff; font-weight:700; text-decoration:underline; font-size:.92rem; }
+  .itsp-preview-link:hover{ color:#8FD9D4; }
+
+  .itsp-assurance{
+    display:flex; flex-wrap:wrap; gap:22px; font-size:.85rem; color:#B9CCDD;
+  }
+  .itsp-assurance span::before{ content:"✓ "; color:#5FE0C7; font-weight:700; }
+
+  /* ---------- JUMP NAV ---------- */
+  .itsp-jumpnav{
+    position:relative; z-index:30; background:#fff;
+    border-bottom:1px solid var(--itsp-border); box-shadow:0 2px 10px rgba(15,44,76,.05);
+    transition:box-shadow .2s ease;
+  }
+  .itsp-jumpnav.is-pinned{
+    position:fixed; left:0; right:0; box-shadow:0 6px 18px rgba(15,44,76,.12);
+  }
+  .itsp-jumpnav-spacer{ display:none; }
+  .itsp-jumpnav-inner{ display:flex; align-items:center; gap:26px; overflow-x:auto; padding:16px 24px; max-width:1180px; margin:0 auto; }
+  .itsp-jump-label{ font-size:.72rem; font-weight:700; letter-spacing:.06em; color:#9AA7B5; text-transform:uppercase; flex:0 0 auto; }
+  .itsp-jumpnav a{
+    flex:0 0 auto; font-size:.92rem; font-weight:700; color:var(--itsp-ink); text-decoration:none;
+    padding-bottom:4px; border-bottom:2px solid transparent; white-space:nowrap;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .itsp-jumpnav a.is-active,
+  .itsp-jumpnav a:hover{ color:var(--itsp-teal); border-bottom-color:var(--itsp-teal); }
+
+  /* ---------- SCROLL-REVEAL + HOVER MOTION ---------- */
+  .itsp-reveal{ opacity:0; transform:translateY(22px); transition:opacity .55s ease, transform .55s ease; }
+  .itsp-reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .itsp-reveal-stagger > *{ opacity:0; transform:translateY(22px); transition:opacity .5s ease, transform .5s ease; }
+  .itsp-reveal-stagger.is-visible > *{ opacity:1; transform:translateY(0); }
+  .itsp-reveal-stagger.is-visible > *:nth-child(1){ transition-delay:.03s; }
+  .itsp-reveal-stagger.is-visible > *:nth-child(2){ transition-delay:.09s; }
+  .itsp-reveal-stagger.is-visible > *:nth-child(3){ transition-delay:.15s; }
+  .itsp-reveal-stagger.is-visible > *:nth-child(4){ transition-delay:.21s; }
+  .itsp-reveal-stagger.is-visible > *:nth-child(5){ transition-delay:.27s; }
+
+  .itsp-check-item, .itsp-tech-chip, .itsp-practiced-chip, .itsp-direction-chip, .itsp-course-tag{
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  }
+  .itsp-check-item:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(15,44,76,.08); border-color:var(--itsp-teal); }
+  .itsp-tech-chip:hover, .itsp-practiced-chip:hover{ transform:translateY(-2px) scale(1.03); }
+  .itsp-direction-chip:hover{ transform:translateY(-2px); box-shadow:0 8px 18px rgba(15,44,76,.1); border-color:var(--itsp-teal); }
+
+  .itsp-course-card, .itsp-skill-card, .itsp-overview-card, .itsp-outcomes-panel, .itsp-career-panel,
+  .itsp-related-card, .itsp-faq-item{
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .itsp-course-card:hover, .itsp-skill-card:hover, .itsp-related-card:hover{
+    transform:translateY(-4px); box-shadow:0 14px 30px rgba(15,44,76,.1);
+  }
+  .itsp-career-list li a{ transition: transform .15s ease, background-color .15s ease; }
+  .itsp-career-list li a:hover{ transform:translateX(4px); }
+  .itsp-road-step{ transition: transform .2s ease; }
+  .itsp-road-num{ transition: transform .2s ease, box-shadow .2s ease; }
+  .itsp-road-step:hover .itsp-road-num{ transform:scale(1.12); box-shadow:0 0 0 4px rgba(14,165,160,.18); }
+  .itsp-faq-item:hover{ border-color:var(--itsp-teal); }
+
+  /* ---------- OVERVIEW ---------- */
+  .itsp-overview-card{
+    background:#fff; border:1px solid var(--itsp-border); border-radius:var(--itsp-radius);
+    padding:34px 36px;
+  }
+  .itsp-overview-card h2{ font-family:'Sora',sans-serif; font-size:1.7rem; margin:26px 0 12px; color:var(--itsp-ink); }
+  .itsp-overview-card p{ color:var(--itsp-ink); line-height:1.7; }
+  .itsp-overview-card > p:first-of-type{ color:var(--itsp-muted); }
+
+  /* ---------- OUTCOMES ---------- */
+  .itsp-outcomes-grid{ display:grid; grid-template-columns: 1.5fr 1fr; gap:24px; align-items:start; margin-top:18px; }
+  .itsp-outcomes-panel{
+    background:#fff; border:1px solid var(--itsp-border); border-radius:var(--itsp-radius); padding:30px;
+  }
+  .itsp-panel-head{ display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .itsp-panel-icon{
+    width:44px; height:44px; border-radius:12px; background:#E7F7F5; color:var(--itsp-teal);
+    display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex:0 0 auto;
+  }
+  .itsp-panel-head h3{ margin:0; font-family:'Sora',sans-serif; font-size:1.3rem; color:var(--itsp-ink); }
+  .itsp-checklist-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .itsp-check-item{
+    display:flex; align-items:center; gap:10px; border:1px solid var(--itsp-border); border-radius:10px;
+    padding:12px 14px; font-size:.92rem; color:var(--itsp-ink);
+  }
+  .itsp-check-item .tick{
+    width:20px; height:20px; border-radius:50%; background:#DDF6EC; color:#159467;
+    font-size:.72rem; display:flex; align-items:center; justify-content:center; flex:0 0 auto; font-weight:700;
+  }
+
+  .itsp-career-panel{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--itsp-radius); padding:30px; color:#fff;
+  }
+  .itsp-career-panel .itsp-panel-head .itsp-panel-icon{ background:rgba(255,255,255,.12); color:#8FD9D4; }
+  .itsp-career-eyebrow{ font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#8FD9D4; }
+  .itsp-career-panel h3{ margin:2px 0 0; font-family:'Sora',sans-serif; font-size:1.3rem;color: var(--itsp-career-heading, #F5F7FA); }
+  .itsp-career-list{ list-style:none; margin:20px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .itsp-career-list li a{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);
+    border-radius:10px; padding:12px 16px; color:#fff; text-decoration:none; font-weight:600; font-size:.92rem;
+    transition:.15s ease;
+  }
+  .itsp-career-list li a:hover{ background:rgba(255,255,255,.16); }
+
+  /* ---------- SKILLS ---------- */
+  .itsp-skills-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .itsp-skills-badge{
+    background:#fff; border:1px solid var(--itsp-border); border-radius:12px; padding:10px 18px; text-align:center;
+  }
+  .itsp-skills-badge strong{ display:block; font-size:1.3rem; color:var(--itsp-teal); font-family:'Sora',sans-serif; }
+  .itsp-skills-badge span{ font-size:.68rem; letter-spacing:.05em; color:var(--itsp-muted); text-transform:uppercase; }
+  .itsp-skills-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:22px; }
+  .itsp-skill-card{
+    background:#fff; border-radius:var(--itsp-radius); padding:26px; border-top:4px solid var(--itsp-teal);
+    box-shadow:0 6px 20px rgba(15,44,76,.06);
+  }
+  .itsp-skill-card.is-professional{ border-top-color:#8B7CFF; }
+  .itsp-skill-card-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+  .itsp-skill-card-head-left{ display:flex; align-items:center; gap:12px; }
+  .itsp-skill-card-icon{
+    width:40px; height:40px; border-radius:10px; background:#E7F7F5; color:var(--itsp-teal);
+    display:flex; align-items:center; justify-content:center; font-size:1.05rem;
+  }
+  .itsp-skill-card.is-professional .itsp-skill-card-icon{ background:#EFEBFF; color:#8B7CFF; }
+  .itsp-skill-card-head h4{ margin:0; font-size:1.1rem; color:var(--itsp-ink); }
+  .itsp-skill-count{ font-size:.72rem; font-weight:700; color:var(--itsp-muted); border:1px solid var(--itsp-border); border-radius:20px; padding:3px 10px; }
+  .itsp-skill-card ul{ list-style:none; margin:0; padding:0; }
+  .itsp-skill-card li{
+    display:flex; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--itsp-border); font-size:.92rem; color:var(--itsp-ink);
+  }
+  .itsp-skill-card li:first-child{ border-top:none; }
+  .itsp-skill-card li::before{ content:"✓"; color:#159467; font-weight:700; font-size:.8rem; }
+
+  /* ---------- TECH STACK ---------- */
+  .itsp-stack-band{
+    background:#fff; border:1px solid var(--itsp-border); border-radius:var(--itsp-radius);
+    padding:30px; display:flex; align-items:center; gap:30px; flex-wrap:wrap; margin-top:26px;
+  }
+  .itsp-stack-copy{ flex:0 0 auto; min-width:180px; }
+  .itsp-chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .itsp-tech-chip{
+    display:inline-flex; align-items:center; gap:7px; background:var(--itsp-bg-alt);
+    border:1px solid var(--itsp-border); border-radius:20px; padding:8px 16px; font-size:.85rem; font-weight:600; color:var(--itsp-ink);
+  }
+  .itsp-tech-chip .dot{ width:7px; height:7px; border-radius:50%; background:var(--itsp-teal); }
+
+  /* ---------- ROADMAP ---------- */
+  .itsp-roadmap{ position:relative; margin-top:26px; padding-left:8px; }
+  .itsp-road-step{ position:relative; padding-left:52px; padding-bottom:34px; }
+  .itsp-road-step:last-child{ padding-bottom:0; }
+  .itsp-road-step::before{
+    content:""; position:absolute; left:19px; top:40px; bottom:-2px; width:2px; background:var(--itsp-border);
+  }
+  .itsp-road-step:last-child::before{ display:none; }
+  .itsp-road-num{
+    position:absolute; left:0; top:0; width:40px; height:40px; border-radius:50%;
+    background:#E7F7F5; color:var(--itsp-teal); font-weight:800; font-family:'Sora',sans-serif;
+    display:flex; align-items:center; justify-content:center; font-size:1rem; border:2px solid #fff; box-shadow:0 0 0 2px var(--itsp-border);
+  }
+  .itsp-road-step.is-complete .itsp-road-num{ background:#DDF6EC; color:#159467; }
+  .itsp-road-step h4{ margin:0 0 6px; font-size:1.2rem; color:var(--itsp-ink); }
+  .itsp-road-step p{ margin:0 0 12px; color:var(--itsp-muted); font-size:.94rem; }
+  .itsp-road-tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .itsp-road-tag{
+    display:inline-block; background:var(--itsp-bg-alt); border:1px solid var(--itsp-border); color:var(--itsp-ink);
+    border-radius:8px; padding:7px 12px; font-size:.82rem; font-weight:600; text-decoration:none;
+  }
+  .itsp-road-tag:hover{ border-color:var(--itsp-teal); color:var(--itsp-teal); }
+
+  /* ---------- COURSES ---------- */
+  .itsp-courses-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .itsp-courses-count{ color:var(--itsp-muted); font-size:.9rem; font-weight:600; }
+  .itsp-course-list{ display:flex; flex-direction:column; gap:18px; margin-top:22px; }
+  .itsp-course-card{
+    background:#fff; border:1px solid var(--itsp-border); border-radius:var(--itsp-radius);
+    padding:26px 28px; display:flex; gap:20px; align-items:flex-start;
+  }
+  .itsp-course-num{
+    flex:0 0 auto; width:38px; height:38px; border-radius:10px; background:#E7F7F5; color:var(--itsp-teal);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Sora',sans-serif;
+  }
+  .itsp-course-body{ flex:1; min-width:0; }
+  .itsp-course-cat{ font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--itsp-muted); }
+  .itsp-course-body h3{ margin:4px 0 8px; font-size:1.25rem; color:var(--itsp-ink); }
+  .itsp-course-body > p.itsp-course-desc{ color:var(--itsp-muted); margin:0 0 14px; line-height:1.6; }
+  .itsp-course-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+  .itsp-course-tag{
+    font-size:.78rem; font-weight:600; color:var(--itsp-ink); background:var(--itsp-bg-alt);
+    border:1px solid var(--itsp-border); border-radius:8px; padding:5px 11px;
+  }
+  .itsp-course-skills{ font-size:.85rem; color:var(--itsp-muted); }
+  .itsp-course-skills strong{ color:var(--itsp-ink); }
+  .itsp-course-cta{ flex:0 0 auto; align-self:center; }
+  .itsp-course-cta a{
+    display:inline-flex; align-items:center; gap:6px; font-weight:700; color:var(--itsp-teal);
+    text-decoration:none; font-size:.88rem; white-space:nowrap;
+    border:2px solid var(--itsp-teal); border-radius:9px; padding:10px 18px;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .itsp-course-cta a:hover{
+    background:var(--itsp-teal); color:#fff; transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(14,165,160,.28);
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .itsp-projects-band{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--itsp-radius); padding:38px; color:#fff;
+  }
+  .itsp-projects-band .itsp-eyebrow{ color:#8FD9D4; }
+  .itsp-projects-band h2{ color:#fff; }
+  .itsp-skills-practiced-card{
+    background:#fff; border-radius:14px; padding:26px 28px; margin-top:24px; color:var(--itsp-ink);
+  }
+  .itsp-skills-practiced-head{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .itsp-skills-practiced-head .icon{
+    width:38px; height:38px; border-radius:10px; background:#E7F7F5; color:var(--itsp-teal);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem;
+  }
+  .itsp-skills-practiced-head h4{ margin:0; font-size:1.05rem; }
+  .itsp-skills-practiced-head span{ display:block; font-size:.8rem; color:var(--itsp-muted); }
+  .itsp-practiced-chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .itsp-practiced-chip{
+    display:inline-flex; align-items:center; gap:7px; border-radius:20px; padding:7px 15px; font-size:.83rem; font-weight:600;
+  }
+  .itsp-practiced-chip.c-tech{ background:#EAF3FF; color:#1B5FA8; }
+  .itsp-practiced-chip.c-tool{ background:#F4EEFF; color:#7A4FD6; }
+  .itsp-practiced-chip.c-skill{ background:#E7F7F0; color:#159467; }
+  .itsp-practiced-chip .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+  .itsp-cloud-note{
+    display:flex; gap:14px; background:rgba(255,255,255,.94); color:var(--itsp-ink); border-radius:12px;
+    padding:18px 20px; margin-top:18px; align-items:flex-start;
+  }
+  .itsp-cloud-note .icon{ font-size:1.3rem; flex:0 0 auto; }
+  .itsp-cloud-note strong{ display:block; margin-bottom:4px; }
+  .itsp-cloud-note p{ margin:0; font-size:.88rem; color:var(--itsp-muted); line-height:1.55; }
+
+  /* ---------- CAREER DIRECTION ---------- */
+  .itsp-direction-chips{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+  .itsp-direction-chip{
+    display:inline-flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--itsp-border);
+    border-radius:12px; padding:14px 18px; font-weight:600; color:var(--itsp-ink); font-size:.92rem;
+  }
+  .itsp-direction-chip .arrow{ color:var(--itsp-teal); font-weight:800; }
+
+  /* ---------- REVIEWS ---------- */
+  .itsp-reviews-band{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--itsp-radius); padding:36px; color:#fff;
+  }
+  .itsp-reviews-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .itsp-reviews-head .itsp-eyebrow{ color:#8FD9D4; }
+  .itsp-reviews-head h2{ color:#fff; margin:0; }
+  .itsp-rating-badge{
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:12px;
+    padding:10px 18px; text-align:right;
+  }
+  .itsp-rating-badge strong{ font-size:1.2rem; }
+  .itsp-rating-badge span{ display:block; font-size:.72rem; color:#B9CCDD; }
+  .itsp-review-card{
+    background:#fff; color:var(--itsp-ink); border-radius:14px; padding:30px; margin-top:22px; min-height:150px;
+  }
+  .itsp-review-stars{ color:#F5B400; letter-spacing:2px; margin-bottom:10px; }
+  .itsp-review-title{ font-weight:700; font-size:1.05rem; margin-bottom:6px; }
+  .itsp-review-body{ color:var(--itsp-muted); font-size:.92rem; line-height:1.6; margin-bottom:16px; }
+  .itsp-review-tag{
+    display:inline-block; background:var(--itsp-bg-alt); border:1px solid var(--itsp-border); border-radius:8px;
+    padding:5px 12px; font-size:.78rem; font-weight:600; margin-bottom:16px;
+  }
+  .itsp-review-person{ display:flex; align-items:center; gap:12px; }
+  .itsp-review-avatar{
+    width:38px; height:38px; border-radius:50%; background:var(--itsp-teal); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.85rem;
+  }
+  .itsp-review-person strong{ display:block; font-size:.9rem; }
+  .itsp-review-person span{ display:block; font-size:.78rem; color:var(--itsp-muted); }
+  .itsp-review-nav{ display:flex; align-items:center; justify-content:center; gap:16px; margin-top:20px; }
+  .itsp-review-arrow{
+    width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem;
+  }
+  .itsp-review-arrow:hover{ background:rgba(255,255,255,.2); }
+  .itsp-review-count{ font-size:.85rem; color:#B9CCDD; min-width:64px; text-align:center; }
+  .itsp-review-hint{ text-align:center; font-size:.78rem; color:#8DA3B8; margin-top:8px; }
+
+  /* ---------- FAQ ---------- */
+  .itsp-faq-list{ margin-top:22px; display:flex; flex-direction:column; gap:12px; }
+  .itsp-faq-item{ background:#fff; border:1px solid var(--itsp-border); border-radius:12px; overflow:hidden; }
+  .itsp-faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:18px 22px; font-weight:700; color:var(--itsp-ink); font-size:.96rem;
+  }
+  .itsp-faq-q .chev{ transition:transform .15s ease; color:var(--itsp-teal); flex:0 0 auto; }
+  .itsp-faq-item.is-open .itsp-faq-q .chev{ transform:rotate(90deg); }
+  .itsp-faq-a{ max-height:0; overflow:hidden; transition:max-height .2s ease; }
+  .itsp-faq-item.is-open .itsp-faq-a{ max-height:300px; }
+  .itsp-faq-a p{ margin:0; padding:0 22px 20px; color:var(--itsp-muted); font-size:.92rem; line-height:1.6; }
+
+  /* ---------- RELATED ---------- */
+  .itsp-related-card{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    background:#fff; border:1px solid var(--itsp-border); border-radius:var(--itsp-radius); padding:24px 28px; margin-top:20px;
+  }
+  .itsp-related-card h4{ margin:0 0 6px; font-size:1.05rem; color:var(--itsp-ink); }
+  .itsp-related-card a.itsp-explore{
+    display:inline-flex; align-items:center; gap:6px; font-weight:700; color:var(--itsp-teal);
+    text-decoration:none; font-size:.88rem; white-space:nowrap; flex:0 0 auto;
+    border:2px solid var(--itsp-teal); border-radius:9px; padding:10px 18px;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .itsp-related-card a.itsp-explore:hover{
+    background:var(--itsp-teal); color:#fff; transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(14,165,160,.28);
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .itsp-final-cta{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--itsp-radius); padding:56px 30px; text-align:center; color:#fff;
+  }
+  .itsp-final-cta .itsp-eyebrow{ color:#8FD9D4; }
+  .itsp-final-cta h2{ font-family:'Sora',sans-serif; font-size:2.1rem; margin:6px 0 14px; color:#fff; }
+  .itsp-final-cta p{ max-width:62ch; margin:0 auto 26px; color:#C6D6E4; line-height:1.6; }
+  .itsp-final-actions{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .itsp-hero h1{ font-size:2rem; }
+    .itsp-outcomes-grid{ grid-template-columns:1fr; }
+    .itsp-skills-grid{ grid-template-columns:1fr; }
+    .itsp-checklist-grid{ grid-template-columns:1fr; }
+    .itsp-course-card{ flex-direction:column; }
+    .itsp-course-cta{ align-self:flex-start; }
+    .itsp-stack-band{ flex-direction:column; align-items:flex-start; }
+  }
+  @media (max-width: 640px){
+    .itsp-hero{ padding:40px 0 30px; }
+    .itsp-hero h1{ font-size:1.6rem; }
+    .itsp-h2{ font-size:1.5rem; }
+    .itsp-overview-card{ padding:24px 20px; }
+    .itsp-jumpnav-inner{ gap:18px; padding:14px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html">Home</a>
+      <a href="programs.html" class="active">Programs</a>
+      <a href="courses.html">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- BREADCRUMB -->
+  <div class="container breadcrumb">
+    <a href="index.html">Home</a><span>/</span><a href="programs.html">Programs</a><span>/</span><span class="current">Cisco Network Engineer</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="itsp-hero">
+    <img class="itsp-hero-bg-photo" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1800&q=60" alt="" loading="eager">
+    <div class="itsp-hero-overlay"></div>
+    <div class="itsp-container itsp-hero-inner">
+      <span class="itsp-hero-eyebrow">JobSkillShare Certificate Program</span>
+      <h1>Cisco Network Engineer Certificate Program</h1>
+      <p class="itsp-hero-tagline">Master Enterprise Networking &amp; CCNA Level Skills</p>
+      <p class="itsp-hero-lead">Gain comprehensive skills in Cisco networking, from switch routing configurations to network security protocols and enterprise architecture.</p>
+
+      <div class="itsp-hero-stats">
+        <div class="itsp-stat-chip"><strong>5</strong><span>Courses</span></div>
+        <div class="itsp-stat-chip"><strong>380</strong><span>Lessons</span></div>
+        <div class="itsp-stat-chip"><strong>62 hours 30 min</strong><span>Estimated time</span></div>
+        <div class="itsp-stat-chip"><strong>Intermediate to Advanced</strong><span>Difficulty</span></div>
+      </div>
+
+      <div class="itsp-hero-actions">
+        <a href="#" class="itsp-btn itsp-btn-primary" data-auth-trigger="signup">Create Free Account</a>
+        <a href="#" class="itsp-btn itsp-btn-white" data-auth-trigger="login">Log In</a>
+        <a href="#curriculum" class="itsp-preview-link">Preview the full curriculum ↓</a>
+      </div>
+
+      <div class="itsp-assurance">
+        <span>Preview before joining</span>
+        <span>Recommended learning order</span>
+        <span>Progress saved after login</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JUMP NAV -->
+  <div id="jumpNavSentinel"></div>
+  <nav class="itsp-jumpnav" id="jumpNav" aria-label="Jump to section">
+    <div class="itsp-jumpnav-inner">
+      <span class="itsp-jump-label">Jump to</span>
+      <a href="#overview">Overview</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#curriculum">Courses</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+  <div class="itsp-jumpnav-spacer" id="jumpNavSpacer"></div>
+
+  <!-- PROGRAM OVERVIEW -->
+  <section class="itsp-section" id="overview">
+    <div class="itsp-container">
+      <div class="itsp-overview-card itsp-reveal">
+        <span class="itsp-eyebrow">Program Overview</span>
+        <p>The Cisco Network Engineer Certificate Program is designed for aspiring network administrators, infrastructure engineers, and systems specialists seeking hands-on mastery of Cisco systems. Across five structured courses, this program delivers practical expertise aligned with CCNA and enterprise networking standards.</p>
+        <h2>Program Highlights</h2>
+        <p>Start with fundamental IP networking and subnetting concepts, progress through Cisco IOS CLI administration, VLAN setup, Spanning Tree, OSPF routing, Access Control Lists (ACLs), and wireless networking. Finish with advanced network security mechanisms, troubleshooting frameworks, and career strategies tailored to enterprise infrastructure roles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="itsp-section itsp-section-alt" id="outcomes">
+    <div class="itsp-container">
+      <span class="itsp-eyebrow">Program Outcomes</span>
+      <h2 class="itsp-h2">What You'll Be Able to Do</h2>
+
+      <div class="itsp-outcomes-grid itsp-reveal">
+        <div class="itsp-outcomes-panel">
+          <div class="itsp-checklist-grid itsp-reveal-stagger">
+            <div class="itsp-check-item"><span class="tick">✓</span> Configure Cisco routers &amp; switches via IOS CLI</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Design IPv4 &amp; IPv6 subnetting schemes</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Implement VLANs and Trunking (802.1Q)</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Configure Spanning Tree &amp; EtherChannel</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Implement OSPF and Static Routing</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Apply Cisco Access Control Lists (ACLs)</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Configure NAT, PAT, and DHCP services</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Secure network devices with Port Security</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Mitigate ARP spoofing and DHCP snooping</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Troubleshoot enterprise network topology</div>
+          </div>
+        </div>
+
+        <div class="itsp-career-panel">
+          <span class="itsp-career-eyebrow">Your Career Path</span>
+          <h3>Career Opportunities</h3>
+          <ul class="itsp-career-list">
+            <li><a href="#">Cisco Network Engineer <span>→</span></a></li>
+            <li><a href="#">Network Administrator <span>→</span></a></li>
+            <li><a href="#">NOC Technician <span>→</span></a></li>
+            <li><a href="#">Network Security Specialist <span>→</span></a></li>
+            <li><a href="#">Infrastructure Operations Engineer <span>→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS YOU'LL BUILD -->
+  <section class="itsp-section">
+    <div class="itsp-container">
+      <div class="itsp-skills-head">
+        <div>
+          <span class="itsp-eyebrow">Core Skill Areas</span>
+          <h2 class="itsp-h2">Skills You'll Build</h2>
+        </div>
+        <div class="itsp-skills-badge"><strong>12</strong><span>Core skills</span></div>
+      </div>
+
+      <div class="itsp-skills-grid itsp-reveal-stagger">
+        <div class="itsp-skill-card">
+          <div class="itsp-skill-card-head">
+            <div class="itsp-skill-card-head-left">
+              <span class="itsp-skill-card-icon">🌐</span>
+              <h4>Technical Skills</h4>
+            </div>
+            <span class="itsp-skill-count">7 skills</span>
+          </div>
+          <ul>
+            <li>Cisco IOS CLI Management</li>
+            <li>VLAN &amp; Trunking Configuration</li>
+            <li>OSPF Routing Protocol Implementation</li>
+            <li>IPv4 &amp; IPv6 Addressing &amp; Subnetting</li>
+            <li>Access Control List (ACL) Rules</li>
+            <li>NAT/PAT Network Translation</li>
+            <li>Switch Port Security &amp; Hardening</li>
+          </ul>
+        </div>
+
+        <div class="itsp-skill-card is-professional">
+          <div class="itsp-skill-card-head">
+            <div class="itsp-skill-card-head-left">
+              <span class="itsp-skill-card-icon">🛠️</span>
+              <h4>Professional &amp; Operational Skills</h4>
+            </div>
+            <span class="itsp-skill-count">5 skills</span>
+          </div>
+          <ul>
+            <li>Network Topology Design</li>
+            <li>Structured Packet Analysis</li>
+            <li>Incident Response &amp; Escalation</li>
+            <li>Technical Documentation</li>
+            <li>Enterprise Network Troubleshooting</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TECHNOLOGY STACK -->
+      <div class="itsp-stack-band itsp-reveal">
+        <div class="itsp-stack-copy">
+          <span class="itsp-eyebrow">Technology Stack</span>
+          <h3 style="margin:0;font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--itsp-ink);">Technologies Covered</h3>
+        </div>
+        <div class="itsp-chip-row">
+          <span class="itsp-tech-chip"><span class="dot"></span> Cisco IOS</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> OSPF</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> VLANs &amp; Trunking</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Spanning Tree (STP)</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Cisco Packet Tracer</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Wireshark</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Cisco ACLs</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> GNS3 / EVE-NG</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> NAT / PAT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING ROADMAP -->
+  <section class="itsp-section itsp-section-alt" id="roadmap">
+    <div class="itsp-container">
+      <span class="itsp-eyebrow">Learning Roadmap</span>
+      <h2 class="itsp-h2">Your Path Through the Program</h2>
+
+      <div class="itsp-roadmap itsp-reveal-stagger">
+        <div class="itsp-road-step">
+          <div class="itsp-road-num">1</div>
+          <h4>Networking Foundations</h4>
+          <p>Learn core networking models, OSI layers, IPv4/IPv6 subnetting, and Cisco hardware essentials.</p>
+          <div class="itsp-road-tags">
+            <a class="itsp-road-tag" href="cisco-networking-fundamentals.html">Cisco Networking Fundamentals (CCNA 200-301)</a>
+          </div>
+        </div>
+        <div class="itsp-road-step">
+          <div class="itsp-road-num">2</div>
+          <h4>Switching &amp; Routing Mastery</h4>
+          <p>Configure switches, VLANs, Trunking, Spanning Tree, EtherChannel, and OSPF routing protocols.</p>
+          <div class="itsp-road-tags">
+            <a class="itsp-road-tag" href="cisco-switching-routing.html">Cisco Switching, Routing &amp; Wireless Architecture</a>
+          </div>
+        </div>
+        <div class="itsp-road-step">
+          <div class="itsp-road-num">3</div>
+          <h4>Network Security &amp; Services</h4>
+          <p>Implement ACLs, Port Security, DHCP snooping, NAT/PAT, and WAN connection setups.</p>
+          <div class="itsp-road-tags">
+            <a class="itsp-road-tag" href="cisco-network-security-services.html">Cisco Network Security, ACLs &amp; Enterprise Services</a>
+          </div>
+        </div>
+        <div class="itsp-road-step">
+          <div class="itsp-road-num">4</div>
+          <h4>Troubleshooting &amp; Automation</h4>
+          <p>Master packet inspection, CLI diagnostics, network monitoring, and basic network automation.</p>
+          <div class="itsp-road-tags">
+            <a class="itsp-road-tag" href="cisco-troubleshooting-automation.html">Hands-on Cisco Network Troubleshooting &amp; Automation</a>
+          </div>
+        </div>
+        <div class="itsp-road-step is-complete">
+          <div class="itsp-road-num">✓</div>
+          <h4>Certificate Program Complete</h4>
+          <p>You have completed the full Cisco network engineering track and hands-on lab requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM STRUCTURE / COURSES -->
+  <section class="itsp-section" id="curriculum">
+    <div class="itsp-container">
+      <div class="itsp-courses-head">
+        <div>
+          <span class="itsp-eyebrow">Program Structure</span>
+          <h2 class="itsp-h2">Courses in This Certificate Program</h2>
+        </div>
+        <span class="itsp-courses-count">5 courses in recommended order</span>
+      </div>
+
+      <div class="itsp-course-list itsp-reveal-stagger">
+
+        <article class="itsp-course-card">
+          <div class="itsp-course-num">1</div>
+          <div class="itsp-course-body">
+            <span class="itsp-course-cat">Foundation</span>
+            <h3>Cisco Networking Fundamentals | CCNA (200-301)</h3>
+            <p class="itsp-course-desc">Build foundational enterprise networking knowledge — understand the OSI &amp; TCP/IP models, master IPv4/IPv6 addressing, and get hands-on with Cisco IOS CLI basics.</p>
+            <div class="itsp-course-tags">
+              <span class="itsp-course-tag">95 lessons · 16 hrs 20 min</span>
+              <span class="itsp-course-tag">OSI Model</span>
+              <span class="itsp-course-tag">IPv4 &amp; IPv6 Subnetting</span>
+              <span class="itsp-course-tag">Cisco IOS CLI</span>
+            </div>
+            <p class="itsp-course-skills"><strong>Skills introduced:</strong> Subnetting · IOS Navigation · Device Initial Setup · Cabling &amp; Interfaces</p>
+          </div>
+          <div class="itsp-course-cta"><a href="cisco-networking-fundamentals.html">View Course →</a></div>
+        </article>
+
+        <article class="itsp-course-card">
+          <div class="itsp-course-num">2</div>
+          <div class="itsp-course-body">
+            <span class="itsp-course-cat">Switching &amp; Infrastructure</span>
+            <h3>Cisco Switching, Routing &amp; Wireless Architecture</h3>
+            <p class="itsp-course-desc">Deploy campus layer-2 and layer-3 infrastructures — configuring VLANs, 802.1Q trunks, Spanning Tree Protocol (STP), EtherChannel, and single-area OSPF routing.</p>
+            <div class="itsp-course-tags">
+              <span class="itsp-course-tag">80 lessons · 14 hrs 10 min</span>
+              <span class="itsp-course-tag">VLANs &amp; Trunking</span>
+              <span class="itsp-course-tag">STP &amp; EtherChannel</span>
+              <span class="itsp-course-tag">OSPFv2 Routing</span>
+            </div>
+            <p class="itsp-course-skills"><strong>Skills introduced:</strong> Inter-VLAN Routing · Rapid STP · Link Aggregation · Wireless LAN Controller Setup</p>
+          </div>
+          <div class="itsp-course-cta"><a href="cisco-switching-routing.html">View Course →</a></div>
+        </article>
+
+        <article class="itsp-course-card">
+          <div class="itsp-course-num">3</div>
+          <div class="itsp-course-body">
+            <span class="itsp-course-cat">Security &amp; Services</span>
+            <h3>Cisco Network Security, ACLs &amp; Enterprise Services</h3>
+            <p class="itsp-course-desc">Implement robust security measures across routers and switches using standard/extended ACLs, NAT/PAT translation, Port Security, and Dynamic ARP Inspection.</p>
+            <div class="itsp-course-tags">
+              <span class="itsp-course-tag">75 lessons · 12 hrs 30 min</span>
+              <span class="itsp-course-tag">Access Control Lists</span>
+              <span class="itsp-course-tag">NAT &amp; PAT</span>
+              <span class="itsp-course-tag">Port Security</span>
+            </div>
+            <p class="itsp-course-skills"><strong>Skills introduced:</strong> ACL Syntax &amp; Placement · Network Address Translation · DHCP Snooping · Switch Hardening</p>
+          </div>
+          <div class="itsp-course-cta"><a href="cisco-network-security-services.html">View Course →</a></div>
+        </article>
+
+        <article class="itsp-course-card">
+          <div class="itsp-course-num">4</div>
+          <div class="itsp-course-body">
+            <span class="itsp-course-cat">Advanced Operations</span>
+            <h3>Hands-on Cisco Network Troubleshooting &amp; Automation</h3>
+            <p class="itsp-course-desc">Master diagnostic tools like Wireshark, traceroute, and ping; resolve complex routing/switching loops; and explore REST APIs and Python-based network automation.</p>
+            <div class="itsp-course-tags">
+              <span class="itsp-course-tag">70 lessons · 11 hrs 45 min</span>
+              <span class="itsp-course-tag">Wireshark Analysis</span>
+              <span class="itsp-course-tag">CLI Diagnostics</span>
+              <span class="itsp-course-tag">Network Automation</span>
+            </div>
+            <p class="itsp-course-skills"><strong>Skills introduced:</strong> Packet Capture Analysis · Cisco Discovery Protocol (CDP/LLDP) · SNMP Monitoring · API Basics</p>
+          </div>
+          <div class="itsp-course-cta"><a href="cisco-troubleshooting-automation.html">View Course →</a></div>
+        </article>
+
+        <article class="itsp-course-card">
+          <div class="itsp-course-num">5</div>
+          <div class="itsp-course-body">
+            <span class="itsp-course-cat">Career Preparation</span>
+            <h3>Network Engineer Resume, Lab Portfolios &amp; Interview Preparation</h3>
+            <p class="itsp-course-desc">Prepare for job offers — build a portfolio of Packet Tracer and GNS3 topology diagrams, refine your technical resume, and practice network engineering technical interviews.</p>
+            <div class="itsp-course-tags">
+              <span class="itsp-course-tag">60 lessons · 7 hrs 45 min</span>
+              <span class="itsp-course-tag">Lab Portfolio</span>
+              <span class="itsp-course-tag">Resume Strategy</span>
+              <span class="itsp-course-tag">Interview Prep</span>
+            </div>
+            <p class="itsp-course-skills"><strong>Skills introduced:</strong> Technical Resume Writing · Network Diagramming · Scenario Interviewing · Career Networking</p>
+          </div>
+          <div class="itsp-course-cta"><a href="network-engineer-resume-jobs.html">View Course →</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS & HANDS-ON ACTIVITIES -->
+  <section class="itsp-section itsp-section-alt" id="projects">
+    <div class="itsp-container">
+      <div class="itsp-projects-band itsp-reveal">
+        <span class="itsp-eyebrow">Practice What You Learn</span>
+        <h2 class="itsp-h2">Projects &amp; Hands-on Activities</h2>
+
+        <div class="itsp-skills-practiced-card">
+          <div class="itsp-skills-practiced-head">
+            <span class="icon">+</span>
+            <div>
+              <h4>Skills Practiced</h4>
+              <span>20 curriculum-grounded networking skills</span>
+            </div>
+          </div>
+          <div class="itsp-practiced-chip-row">
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Cisco IOS</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> OSPF Configuration</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> VLAN &amp; Trunking</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Spanning Tree Protocol</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Access Control Lists (ACL)</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> NAT &amp; PAT</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Packet Tracer Labs</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Wireshark Capture</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> Port Security</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> EtherChannel</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> IPv4 Subnetting</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> IPv6 Addressing</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Inter-VLAN Routing</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Dynamic ARP Inspection</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> DHCP Snooping</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> SNMP &amp; Syslog</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> CDP &amp; LLDP</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> Network Diagramming</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Static Routing</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Wireless LAN Controller</span>
+          </div>
+
+          <div class="itsp-cloud-note">
+            <span class="icon">💻</span>
+            <div>
+              <strong>Lab Environment Note</strong>
+              <p>Practice labs utilize Cisco Packet Tracer, GNS3, and EVE-NG virtual lab topologies. Software installation guides and pre-built topology files (.pkt) are provided in the course resources.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAREER DIRECTION -->
+      <div style="margin-top:40px;">
+        <span class="itsp-eyebrow">Career Direction</span>
+        <h2 class="itsp-h2">Jobs You'll Be Ready For</h2>
+        <div class="itsp-direction-chips itsp-reveal-stagger">
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Managing Enterprise Cisco Networks</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Configuring Switches &amp; Routers</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Operating Network Operations Centers (NOC)</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Securing Network Perimeters</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Troubleshooting Network Outages</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="itsp-section" id="reviews">
+    <div class="itsp-container">
+      <div class="itsp-reviews-band itsp-reveal">
+        <div class="itsp-reviews-head">
+          <div>
+            <span class="itsp-eyebrow">Feedback Across the Curriculum</span>
+            <h2 class="itsp-h2">Program Reviews</h2>
+          </div>
+          <div class="itsp-rating-badge"><strong>4.9 ★</strong><span>Program average across all course ratings</span></div>
+        </div>
+
+        <div class="itsp-review-card" id="reviewCard">
+          <div class="itsp-review-stars">★★★★★</div>
+          <p class="itsp-review-title" id="reviewTitle"></p>
+          <p class="itsp-review-body" id="reviewBody"></p>
+          <span class="itsp-review-tag" id="reviewTag"></span>
+          <div class="itsp-review-person">
+            <div class="itsp-review-avatar" id="reviewAvatar"></div>
+            <div>
+              <strong id="reviewName"></strong>
+              <span id="reviewRole"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="itsp-review-nav">
+          <button type="button" class="itsp-review-arrow" id="reviewPrev" aria-label="Previous review">←</button>
+          <span class="itsp-review-count" id="reviewCount">1 / 8</span>
+          <button type="button" class="itsp-review-arrow" id="reviewNext" aria-label="Next review">→</button>
+        </div>
+        <p class="itsp-review-hint">Use the arrow buttons or keyboard arrow keys to browse every review.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.JSS_PROGRAM_REVIEWS = [
+      { name:'Marcus Vance', role:'Junior Network Engineer — Cloudflare', course:'Cisco Networking Fundamentals', title:'Best hands-on introduction', body:'The CLI commands and Packet Tracer topologies made subnetting and initial router setup so easy to master.' },
+      { name:'Elena Rostova', role:'NOC Specialist — AT&T Infrastructure', course:'Cisco Switching, Routing & Wireless Architecture', title:'VLANs and OSPF made easy', body:'Configuring OSPF and trunking in real scenarios gave me total confidence during my technical interview.' },
+      { name:'David Kim', role:'Network Administrator — Enterprise Systems', course:'Cisco Network Security, ACLs & Enterprise Services', title:'Practical ACL training', body:'Understanding standard vs extended ACL syntax saved me during my first month on the job managing access rules.' },
+      { name:'Sarah Jenkins', role:'Infrastructure Specialist — Datacom Solutions', course:'Hands-on Cisco Network Troubleshooting & Automation', title:'Invaluable Wireshark practice', body:'Inspecting actual packet drops and resolving switching loops in Packet Tracer directly mirrors on-job troubleshooting.' },
+      { name:'Ahmad Raza', role:'Cisco Network Engineer — Global Tech', course:'Cisco Switching, Routing & Wireless Architecture', title:'Passed CCNA & got hired', body:'The combination of concept lectures and downloadable Packet Tracer files is gold for anyone preparing for CCNA.' },
+      { name:'Tariq Mahmood', role:'Systems Operations Lead — FinTech Networks', course:'Cisco Network Security, ACLs & Enterprise Services', title:'Essential security concepts', body:'Port security, DHCP snooping, and DAI were explained step-by-step with real device output.' },
+      { name:'Jessica Taylor', role:'Network Analyst — Verizon Communications', course:'Hands-on Cisco Network Troubleshooting & Automation', title:'Automation section was fantastic', body:'The REST API and Python automation introduction gave me the edge I needed to move up into a senior NOC role.' },
+      { name:'Carlos Mendez', role:'Network Support Engineer — Cisco Partner', course:'Network Engineer Resume, Lab Portfolios & Interview Prep', title:'Resume guidance worked', body:'Putting my completed network lab diagrams in my portfolio got me callbacks from three major IT firms.' }
+    ];
+
+    (function () {
+      var reviews = window.JSS_PROGRAM_REVIEWS;
+      var idx = 0;
+      var titleEl = document.getElementById('reviewTitle');
+      var bodyEl = document.getElementById('reviewBody');
+      var tagEl = document.getElementById('reviewTag');
+      var avatarEl = document.getElementById('reviewAvatar');
+      var nameEl = document.getElementById('reviewName');
+      var roleEl = document.getElementById('reviewRole');
+      var countEl = document.getElementById('reviewCount');
+
+      function initials(name) {
+        return name.split(' ').map(function (p) { return p[0]; }).slice(0, 2).join('').toUpperCase();
+      }
+
+      function render() {
+        var r = reviews[idx];
+        titleEl.textContent = r.title;
+        bodyEl.textContent = r.body;
+        tagEl.textContent = r.course;
+        avatarEl.textContent = initials(r.name);
+        nameEl.textContent = r.name;
+        roleEl.textContent = r.role;
+        countEl.textContent = (idx + 1) + ' / ' + reviews.length;
+      }
+
+      document.getElementById('reviewPrev').addEventListener('click', function () {
+        idx = (idx - 1 + reviews.length) % reviews.length;
+        render();
+      });
+      document.getElementById('reviewNext').addEventListener('click', function () {
+        idx = (idx + 1) % reviews.length;
+        render();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { idx = (idx - 1 + reviews.length) % reviews.length; render(); }
+        if (e.key === 'ArrowRight') { idx = (idx + 1) % reviews.length; render(); }
+      });
+
+      render();
+    })();
+  </script>
+
+  <!-- FAQ -->
+  <section class="itsp-section itsp-section-alt" id="faq">
+    <div class="itsp-container">
+      <span class="itsp-eyebrow">Common Questions</span>
+      <h2 class="itsp-h2">Frequently Asked Questions</h2>
+
+      <div class="itsp-faq-list itsp-reveal-stagger" id="faqList">
+        <div class="itsp-faq-item">
+          <button class="itsp-faq-q" type="button">Does this program align with the Cisco CCNA 200-301 exam? <span class="chev">▸</span></button>
+          <div class="itsp-faq-a"><p>Yes, the curriculum is closely aligned with the core topics of the Cisco CCNA (200-301) exam, including network fundamentals, network access, IP connectivity, IP services, security fundamentals, and automation.</p></div>
+        </div>
+        <div class="itsp-faq-item">
+          <button class="itsp-faq-q" type="button">Do I need physical Cisco routers and switches for this program? <span class="chev">▸</span></button>
+          <div class="itsp-faq-a"><p>No, physical hardware is not required. All hands-on labs are designed for virtual lab tools such as Cisco Packet Tracer, GNS3, or EVE-NG.</p></div>
+        </div>
+        <div class="itsp-faq-item">
+          <button class="itsp-faq-q" type="button">What are the prerequisites for starting this certificate program? <span class="chev">▸</span></button>
+          <div class="itsp-faq-a"><p>Basic computer literacy and understanding of general IT concepts are recommended. The course begins with core networking fundamentals before advancing to complex routing and switching tasks.</p></div>
+        </div>
+        <div class="itsp-faq-item">
+          <button class="itsp-faq-q" type="button">How long does the program take to complete? <span class="chev">▸</span></button>
+          <div class="itsp-faq-a"><p>The program spans over 62 hours of content across 380 lessons. Most students complete the entire series and lab exercises in 10 to 14 weeks of self-paced study.</p></div>
+        </div>
+        <div class="itsp-faq-item">
+          <button class="itsp-faq-q" type="button">Will I earn a certificate upon completion? <span class="chev">▸</span></button>
+          <div class="itsp-faq-a"><p>Yes, finishing all five courses and required exercises awards you a shareable Cisco Network Engineer Certificate of Completion on JobSkillShare.</p></div>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('faqList').addEventListener('click', function (e) {
+          var btn = e.target.closest('.itsp-faq-q');
+          if (!btn) return;
+          var item = btn.closest('.itsp-faq-item');
+          item.classList.toggle('is-open');
+        });
+      </script>
+
+      <!-- RELATED CERTIFICATE PROGRAMS -->
+      <div style="margin-top:44px;">
+        <h2 class="itsp-h2" style="font-size:1.6rem;">Related Certificate Programs</h2>
+        <div class="itsp-related-card itsp-reveal">
+          <div>
+            <h4>Cybersecurity Analyst Certificate Program</h4>
+            <span style="color:var(--itsp-muted);font-size:.88rem;">Build practical cybersecurity skills across Security+ 701, Risk Management, and Incident Response.</span>
+          </div>
+          <a class="itsp-explore" href="cybersecurity-analyst-certificate-program.html">Explore Program →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="itsp-section">
+    <div class="itsp-container">
+      <div class="itsp-final-cta itsp-reveal">
+        <span class="itsp-eyebrow">Build Your Complete Skill Set</span>
+        <h2>Empower Your Cisco Networking Career</h2>
+        <p>Gain comprehensive skills in Cisco network engineering, from routing and switching configurations to security protocols and enterprise architecture.</p>
+        <div class="itsp-final-actions">
+          <a href="#" class="itsp-btn itsp-btn-primary" data-auth-trigger="signup">Create Free Account</a>
+          <a href="#" class="itsp-btn itsp-btn-white" data-auth-trigger="login">Already a member? Log In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="it-support-certificate-program.html">IT Support</a></li>
+          <li><a href="cisco-network-engineer-certificate-program.html">Cisco Network Engineer</a></li>
+          <li><a href="cybersecurity-analyst-certificate-program.html">Cybersecurity</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#" class="btn btn-primary btn-block" data-auth-trigger="signup">Start learning</a>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/program-detail.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ---- Jump-nav pinning ------------------------------------------------
+  var header = document.querySelector('.site-header');
+  var nav = document.getElementById('jumpNav');
+  var sentinel = document.getElementById('jumpNavSentinel');
+  var spacer = document.getElementById('jumpNavSpacer');
+
+  function headerHeight() {
+    return header ? header.getBoundingClientRect().height : 0;
+  }
+
+  function updatePin() {
+    if (!nav || !sentinel || !spacer) return;
+    var top = headerHeight();
+    nav.style.top = top + 'px';
+    var shouldPin = sentinel.getBoundingClientRect().top <= top;
+    if (shouldPin && !nav.classList.contains('is-pinned')) {
+      spacer.style.height = nav.getBoundingClientRect().height + 'px';
+      spacer.style.display = 'block';
+      nav.classList.add('is-pinned');
+    } else if (!shouldPin && nav.classList.contains('is-pinned')) {
+      nav.classList.remove('is-pinned');
+      spacer.style.display = 'none';
+    }
+  }
+  window.addEventListener('scroll', updatePin, { passive: true });
+  window.addEventListener('resize', updatePin);
+  updatePin();
+
+  // ---- Jump-nav active-state highlighting -------------------------------
+  var jumpLinks = document.querySelectorAll('.itsp-jumpnav a');
+  var targets = Array.prototype.slice.call(jumpLinks).map(function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  }).filter(Boolean);
+
+  function setActiveJumpLink() {
+    var offset = headerHeight() + nav.getBoundingClientRect().height + 20;
+    var scrollY = window.scrollY + offset;
+    var current = targets[0];
+    targets.forEach(function (sec) { if (sec.offsetTop <= scrollY) current = sec; });
+    jumpLinks.forEach(function (a) {
+      a.classList.toggle('is-active', current && a.getAttribute('href') === '#' + current.id);
+    });
+  }
+  window.addEventListener('scroll', setActiveJumpLink, { passive: true });
+  setActiveJumpLink();
+
+  // ---- Scroll-reveal animations -----------------------------------------
+  var revealEls = document.querySelectorAll('.itsp-reveal, .itsp-reveal-stagger');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+});
+</script>
+</body>
+</html>

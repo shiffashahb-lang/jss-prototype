@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobSkillShare — Real IT skills, real career outcomes</title>
+<meta name="description" content="Job-ready IT training programs with mentorship, projects, and a 95% success rate. Start your career path with JobSkillShare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/buttons-override.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="courses.html">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img class="hero-bg-photo" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=60" alt="" loading="eager">
+      <svg class="hero-roadmap" viewBox="0 0 1200 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="roadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0EA5A0"/>
+            <stop offset="55%" stop-color="#6C63FF"/>
+            <stop offset="100%" stop-color="#E9B44C"/>
+          </linearGradient>
+          <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <path id="roadPath" class="road-path" d="M -50 380 C 150 380, 220 140, 420 150 S 640 380, 840 300 S 1050 90, 1260 120" fill="none" stroke="url(#roadGrad)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 14"/>
+        <path class="road-path-glow" d="M -50 380 C 150 380, 220 140, 420 150 S 640 380, 840 300 S 1050 90, 1260 120" fill="none" stroke="url(#roadGrad)" stroke-width="10" stroke-linecap="round" opacity="0.15"/>
+        <g class="road-node" style="--delay:0s"><circle cx="150" cy="380" r="16" fill="url(#nodeGlow)"/><circle cx="150" cy="380" r="5" fill="#0EA5A0"/></g>
+        <g class="road-node" style="--delay:0.6s"><circle cx="420" cy="150" r="16" fill="url(#nodeGlow)"/><circle cx="420" cy="150" r="5" fill="#8B7CFF"/></g>
+        <g class="road-node" style="--delay:1.2s"><circle cx="840" cy="300" r="16" fill="url(#nodeGlow)"/><circle cx="840" cy="300" r="5" fill="#8B7CFF"/></g>
+        <g class="road-node" style="--delay:1.8s"><circle cx="1080" cy="105" r="18" fill="url(#nodeGlow)"/><circle cx="1080" cy="105" r="6" fill="#E9B44C"/></g>
+        <circle class="road-comet" r="6" fill="#fff">
+          <animateMotion dur="9s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#roadPath"/>
+          </animateMotion>
+        </circle>
+      </svg>
+      <div class="hero-particles">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero-bg-overlay" style="background:linear-gradient(180deg, rgba(8,14,26,.8) 0%, rgba(8,14,26,.92) 100%);"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow eyebrow-dark">Career success</span>
+        <h1>Turn IT skills into a <span class="text-gradient">real career</span></h1>
+        <p class="lead">Structured programs, hands-on projects, and mentorship built for people switching into tech — no prior IT background required.</p>
+        <div class="hero-actions">
+          <a href="programs.html" class="btn btn-primary">Explore programs</a>
+        </div>
+        <div class="hero-trust">
+          <div><strong>50,000+</strong><span>Active learners</span></div>
+          <div><strong>95%</strong><span>Success rate</span></div>
+          <div><strong>10,000+</strong><span>Career placements</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="path-card">
+          <div class="path-card-row">
+            <div class="path-node done"><span>✓</span></div>
+            <div class="path-node-copy"><strong>Learn the fundamentals</strong><span>Guided lessons, no prior IT background needed</span></div>
+          </div>
+          <div class="path-card-row">
+            <div class="path-node done"><span>✓</span></div>
+            <div class="path-node-copy"><strong>Build real projects</strong><span>Hands-on labs with real tools, not quizzes</span></div>
+          </div>
+          <div class="path-card-row">
+            <div class="path-node active"><span>3</span></div>
+            <div class="path-node-copy"><strong>Get matched with a mentor</strong><span>1:1 check-ins through your program</span></div>
+          </div>
+          <div class="path-card-placement">
+            <div class="avatar-stack">
+              <span class="mini-avatar">ZS</span><span class="mini-avatar">HW</span><span class="mini-avatar">YL</span>
+            </div>
+            <div><strong>10,000+</strong><span>learners placed in IT roles</span></div>
+          </div>
+        </div>
+        <div class="hero-visual-caption"><span class="dot"></span> Real learners, real placements</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee-band">
+    <p class="marquee-label">Programs across in-demand tech tracks</p>
+    <div class="marquee-mask">
+      <div class="marquee-track">
+        <span class="marquee-pill">IT Support</span>
+        <span class="marquee-pill">Cybersecurity</span>
+        <span class="marquee-pill">Cloud &amp; Systems</span>
+        <span class="marquee-pill">AI Fundamentals</span>
+        <span class="marquee-pill">Systems Engineer</span>
+        <span class="marquee-pill">Freelancing</span>
+        <span class="marquee-pill">Data Science</span>
+        <span class="marquee-pill">Web Development</span>
+        <span class="marquee-pill" aria-hidden="true">IT Support</span>
+        <span class="marquee-pill" aria-hidden="true">Cybersecurity</span>
+        <span class="marquee-pill" aria-hidden="true">Cloud &amp; Systems</span>
+        <span class="marquee-pill" aria-hidden="true">AI Fundamentals</span>
+        <span class="marquee-pill" aria-hidden="true">Systems Engineer</span>
+        <span class="marquee-pill" aria-hidden="true">Freelancing</span>
+        <span class="marquee-pill" aria-hidden="true">Data Science</span>
+        <span class="marquee-pill" aria-hidden="true">Web Development</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="path-track"></div>
+
+  <!-- PROGRAMS TEASER -->
+  <section class="section" id="programs">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Programs</span>
+        <h2>Pick a path, not just a course</h2>
+        <p>Six active programs today, with Data Science and Web Development opening soon. Each has its own page with curriculum, outcomes, and pricing.</p>
+      </div>
+      <div class="programs-teaser-grid">
+        <div class="teaser-card">
+          <div class="teaser-photo">
+            <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=500&q=60" alt="" loading="lazy">
+            <span class="teaser-chip chip-teal">IT</span>
+          </div>
+          <h3>IT Support</h3>
+          <p>Help-desk to sysadmin, with real ticketing-tool practice.</p>
+          <a href="./it-support-certificate-program.html" class="btn btn-teal-outline btn-sm hover-teal">View program →</a>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-photo">
+            <img src="./assets/images/cybersecurity-data-protection-concept.jpg" alt="" loading="lazy">
+            <span class="teaser-chip chip-coral">CS</span>
+          </div>
+          <h3>Cybersecurity</h3>
+          <p>Security fundamentals through incident response labs.</p>
+          <a href="cybersecurity-analyst-certificate-program.html" class="btn btn-teal-outline btn-sm hover-coral">View program →</a>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-photo">
+            <img src="https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=500&q=60" alt="" loading="lazy">
+            <span class="teaser-chip chip-sky">CL</span>
+          </div>
+          <h3>Cloud &amp; Systems</h3>
+          <p>AWS and systems engineering, project-based.</p>
+          <a href="cloud-azure.html" class="btn btn-teal-outline btn-sm hover-sky">View program →</a>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-photo">
+            <img src="https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=500&q=60" alt="" loading="lazy">
+            <span class="teaser-chip chip-amber">AI</span>
+          </div>
+          <h3>AI Fundamentals</h3>
+          <p>Practical AI tooling for non-engineering roles.</p>
+          <a href="programs.html#ai" class="btn btn-teal-outline btn-sm hover-amber">View program →</a>
+        </div>
+      </div>
+      <div class="teaser-foot">
+        <a href="programs.html" class="btn btn-outline">View All Certificate program →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY TEASER -->
+  <section class="section" id="community">
+    <div class="container">
+      <div class="community-band">
+        <div>
+          <span class="community-stat-pill"><span class="dot"></span> Active learner community</span>
+          <span class="eyebrow eyebrow-dark">Community</span>
+          <h2>Learn alongside people on the same path</h2>
+          <p>Ask questions, share wins, and get a recommended learning path — all in one place built for career switchers.</p>
+          <div class="community-actions">
+            <a href="community.html" class="btn btn-primary">Explore the community</a>
+            <a href="community.html#path-helper" class="btn btn-secondary">Find my learning path</a>
+          </div>
+        </div>
+        <div class="community-avatars">
+          <div class="avatar-stack">
+            <span class="mini-avatar">ZS</span><span class="mini-avatar">HW</span><span class="mini-avatar">MR</span>
+          </div>
+          <strong>Thousands of learners</strong>
+          <span>trading tips, sharing wins, and helping each other get unstuck.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-courses" id="courses">
+  <div class="courses-wrapper-card">
+    
+    <!-- Section Header -->
+    <div class="courses-header">
+      <div class="courses-header-left">
+        <span class="eyebrow-blue">FOCUSED SKILL TRAINING</span>
+        <h2>Explore individual IT Courses</h2>
+      </div>
+      <div class="courses-header-right">
+        <p>Choose a focused Course when you want to strengthen one technology or workplace skill.</p>
+      </div>
+    </div>
+
+    <!-- 6 Courses Grid (3 Columns x 2 Rows) -->
+    <div class="courses-grid">
+      
+      <!-- Card 1 -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="play-icon">▶</div>
+          <div class="badge-group">
+            <span class="course-badge badge-free">✓ FREE COURSE</span>
+            <span class="badge-new">New version available</span>
+          </div>
+        </div>
+        <h3>Modern IT Support Training: Part 1 | A+ (220-1102)</h3>
+        <div class="course-tags">
+          <span class="tag">Setting up workstations</span>
+          <span class="tag">Software installation</span>
+          <span class="tag">Network connectivity</span>
+        </div>
+        <div class="course-card-footer">
+          <span class="course-meta">35 hours 54 min - 210 Lessons</span>
+          <a href="https://www.jobskillshare.org/certificate-program/?ref=shiffa#individual-courses" class="btn btn-watch-free">Watch Free Course <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="play-icon">▶</div>
+          <div class="badge-group">
+            <span class="course-badge badge-free">✓ FREE COURSE</span>
+            <span class="badge-new">New version available</span>
+          </div>
+        </div>
+        <h3>Modern IT Support Training: Part 2 | A+ (220-1101)</h3>
+        <div class="course-tags">
+          <span class="tag">Basic networking</span>
+          <span class="tag">Troubleshooting</span>
+          <span class="tag">Understanding computer components</span>
+        </div>
+        <div class="course-card-footer">
+          <span class="course-meta">12 hours 0 min - 55 Lessons</span>
+          <a href="https://www.jobskillshare.org/certificate-program/?ref=shiffa#individual-courses" class="btn btn-watch-free">Watch Free Course <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="play-icon">▶</div>
+          <div class="badge-group">
+            <span class="course-badge badge-free">✓ FREE COURSE</span>
+          </div>
+        </div>
+        <h3>IT Support: Active Directory and Tech Skills</h3>
+        <div class="course-tags">
+          <span class="tag">Active Directory management</span>
+          <span class="tag">User and group configuration</span>
+          <span class="tag">Group policy implementation</span>
+        </div>
+        <div class="course-card-footer">
+          <span class="course-meta">13 hours 0 min - 119 Lessons</span>
+          <a href="https://www.jobskillshare.org/certificate-program/?ref=shiffa#individual-courses" class="btn btn-watch-free">Watch Free Course <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="play-icon">▶</div>
+          <div class="badge-group">
+            <span class="course-badge badge-free">✓ FREE COURSE</span>
+          </div>
+        </div>
+        <h3>IT Support: People Skills for IT Professionals</h3>
+        <div class="course-tags">
+          <span class="tag">Professional communication</span>
+          <span class="tag">Listening skills</span>
+          <span class="tag">Conflict resolution</span>
+        </div>
+        <div class="course-card-footer">
+          <span class="course-meta">5 hours 0 min - 24 Lessons</span>
+          <a href="https://www.jobskillshare.org/certificate-program/?ref=shiffa#individual-courses" class="btn btn-watch-free">Watch Free Course <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="play-icon">▶</div>
+          <div class="badge-group">
+            <span class="course-badge badge-free">✓ FREE COURSE</span>
+          </div>
+        </div>
+        <h3>IT Support Resume, Applying for Jobs and Communities</h3>
+        <div class="course-tags">
+          <span class="tag">Resume Building</span>
+          <span class="tag">Job Search Strategies</span>
+          <span class="tag">Interview Preparation</span>
+        </div>
+        <div class="course-card-footer">
+          <span class="course-meta">6 hours 0 min - 20 Lessons</span>
+          <a href="https://www.jobskillshare.org/certificate-program/?ref=shiffa#individual-courses" class="btn btn-watch-free">Watch Free Course <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="course-card">
+        <div class="course-card-top">
+          <div class="play-icon">▶</div>
+          <div class="badge-group">
+            <span class="course-badge badge-free">✓ FREE COURSE</span>
+          </div>
+        </div>
+        <h3>Advance IT Support | Modern Desktop Administrator</h3>
+        <div class="course-tags">
+          <span class="tag">Installing Windows 10</span>
+          <span class="tag">Upgrading to Windows 10</span>
+          <span class="tag">Configuring Windows updates</span>
+        </div>
+        <div class="course-card-footer">
+          <span class="course-meta">25 hours 0 min - 490 Lessons</span>
+          <a href="https://www.jobskillshare.org/certificate-program/?ref=shiffa#individual-courses" class="btn btn-watch-free">Watch Free Course <span>→</span></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Action Button -->
+    <div class="teaser-foot">
+      <a href="courses.html" class="btn btn-view-all">View All Individual Courses</a>
+    </div>
+
+  </div>
+</section>
+  <!-- PREVIEW -->
+  <section class="section section-alt" id="preview">
+    <div class="container preview-wrap">
+      <div class="video-frame video-placeholder">
+        <img class="video-placeholder-photo" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=60" alt="" loading="lazy">
+        <div class="video-placeholder-overlay"></div>
+        <span class="video-duration-badge">2:14</span>
+        <button class="video-play-btn" type="button" aria-label="Play program preview">
+          <span class="play-triangle"></span>
+        </button>
+        <span class="video-thumb-title">A day inside a JSS program</span>
+        <span class="video-placeholder-label">Video not connected yet — drop a YouTube embed URL into index.html</span>
+      </div>
+      <div class="preview-copy">
+        <span class="eyebrow">Preview</span>
+        <h2>See a program before you enroll</h2>
+        <p style="color:var(--text-muted);margin-top:12px;">A two-minute walkthrough of what a learning week actually looks like — lessons, projects, and mentor check-ins.</p>
+        <ul>
+          <li>✓ Plays inline, no separate page to load</li>
+          <li>✓ Host on YouTube (or Vimeo) so it works on any device</li>
+          <li>✓ Swap the placeholder button below for a real recorded walkthrough before launch</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS STORIES -->
+  <section class="section" id="outcomes">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Career success</span>
+        <h2>Real <span class="text-gradient">Career Outcomes</span></h2>
+        <p>Members, including those without prior IT education or facing challenges, have landed thriving IT careers. Swipe through a few of their stories.</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat"><div class="stat-icon">◆</div><strong>50,000+</strong><span>Active learners</span></div>
+        <div class="stat"><div class="stat-icon">◆</div><strong>95%</strong><span>Success rate</span></div>
+        <div class="stat"><div class="stat-icon">◆</div><strong>10,000+</strong><span>Career placements</span></div>
+      </div>
+
+      <div class="testimonial-slider" data-testimonial-slider>
+        <div class="slider-stars">★★★★★</div>
+        <p class="slider-quote"></p>
+        <div class="slider-person">
+          <div class="avatar"></div>
+          <div><strong></strong><span></span></div>
+        </div>
+        <div class="slider-nav">
+          <button type="button" class="slider-arrow prev" aria-label="Previous story">←</button>
+          <span class="slider-count">1 / 1</span>
+          <button type="button" class="slider-arrow next" aria-label="Next story">→</button>
+        </div>
+      </div>
+      <p class="slider-rating-note">4.8★ average across all course ratings</p>
+    </div>
+  </section>
+
+  <script>
+    window.JSS_TESTIMONIALS = [
+      { initials:'ZS', name:'Zoeshan B. Nasir', role:'Information Technology Tech — AI Native Group', quote:'I went from zero IT background to a real support role in under a year. The projects felt like actual work, not quizzes.' },
+      { initials:'HW', name:'Hadi Wali', role:'Cyber Security Engineer — TikTok', quote:'The incident-response labs were the closest thing to real SOC work I found anywhere online.' },
+      { initials:'MR', name:'Manjinder Singh Rehal', role:'IT Specialist — Woodland Joint USD', quote:'Mentorship made the difference — having someone check in kept me accountable every week.' },
+      { initials:'BW', name:'Bradley Williams', role:'Systems Administrator — RadNet', quote:'Practical, hands-on training. I was configuring real tools within the first two weeks.' },
+      { initials:'YL', name:'Yen Lyu', role:'IT Support Engineer — Amazon Web Services', quote:'Clear roadmap from lesson one to job offer. I always knew what to work on next.' },
+      { initials:'NJ', name:'Nelson J.', role:'Microsoft 365 Support Engineer — Microsoft', quote:'The ticketing-tool practice alone was worth it — exactly what my interviewers asked about.' }
+    ];
+  </script>
+
+  <!-- PREMIUM FEATURES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Premium member features</span>
+        <h2>More ways to build job-ready skills</h2>
+        <p>Combine structured learning with practice, completion recognition, and targeted support.</p>
+      </div>
+      <div class="premium-grid">
+        <div class="premium-card">
+          <span class="premium-tag">Premium</span>
+          <div class="icon-badge">◆</div>
+          <h4>Course Certificates</h4>
+          <p>Recognize completed training and learning progress.</p>
+        </div>
+        <div class="premium-card">
+          <span class="premium-tag">Premium</span>
+          <div class="icon-badge">🛠</div>
+          <h4>Hands-On Labs</h4>
+          <p>Practice technical skills in guided environments.</p>
+        </div>
+        <div class="premium-card">
+          <span class="premium-tag">Premium</span>
+          <div class="icon-badge">✦</div>
+          <h4>AI Lesson Tutor</h4>
+          <p>Ask lesson-grounded questions in supported units.</p>
+        </div>
+        <div class="premium-card">
+          <span class="premium-tag">Premium</span>
+          <div class="icon-badge">➜</div>
+          <h4>AI Career Tools</h4>
+          <p>Get guided support for career preparation.</p>
+        </div>
+      </div>
+      <div class="teaser-foot" style="display:flex; justify-content:center;">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-outline">View Membership Program</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section practical-progress-section">
+    <div class="container">
+      <div class="section-head text-left">
+        <span class="eyebrow eyebrow-blue">A CLEAR WAY FORWARD</span>
+        <h2>Turn learning into practical progress</h2>
+      </div>
+      <div class="progress-steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Choose your path</h3>
+            <p>Start with a complete Program or one focused Course.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Learn and practice</h3>
+            <p>Build understanding through lessons, examples, and labs.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Complete and apply</h3>
+            <p>Track progress and apply your skills with greater confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section start-career-section">
+    <div class="container">
+      <div class="light-blue-cta-box">
+        <span class="eyebrow eyebrow-blue">START BUILDING YOUR IT CAREER</span>
+        <h2>Choose a learning path and begin today</h2>
+        <p>Learn practical technology skills through a clear, connected training experience.</p>
+        <a href="#" class="btn btn-solid-blue" data-auth-trigger="signup">Create Free Account</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#it-support">IT Support</a></li>
+          <li><a href="programs.html#cybersecurity">Cybersecurity</a></li>
+          <li><a href="programs.html#cloud">Cloud &amp; Systems</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+          <li><a href="https://www.jobskillshare.org/certificate-program/?ref=shiffa">Affiliate Program</a></Li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Week 3 redesign — Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Support: People Skills for IT Professionals — JobSkillShare</title>
+<meta name="description" content="IT Support: People Skills for IT Professionals — part of the JobSkillShare IT Support Certificate Program.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/buttons-override.css">
+
+<style>
+  /* ==========================================================================
+     Course-detail page CSS — embedded in-file per project convention.
+     Replaces css/course-detail.css + css/program-detail-responsive.css.
+     Rebuilds the sticky mobile CTA bar (it was rendering as a cramped,
+     unstyled cluster instead of a clean full-width fixed bar) and turns the
+     "View full program" / "Continue to..." sidebar links into real bordered
+     buttons instead of plain text. Adds scroll-reveal + hover motion so the
+     page doesn't feel static.
+     ========================================================================== */
+  :root{
+    --cd-teal: var(--teal, #0EA5A0);
+    --cd-ink: var(--ink, #12202E);
+    --cd-muted: var(--text-muted, #64748B);
+    --cd-border: var(--border, #E6E9EE);
+    --cd-radius: var(--radius-lg, 16px);
+  }
+
+  .course-detail-layout{
+    display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:48px;
+    padding:40px 24px 80px; align-items:start;
+  }
+  .course-detail-main h1{ font-size:2rem; line-height:1.15; margin:0; }
+  .course-detail-block{ margin-top:40px; padding-top:32px; border-top:1px solid var(--cd-border); }
+  .course-detail-block:first-of-type{ border-top:none; padding-top:0; }
+  .course-detail-block h2{ font-size:1.4rem; margin-bottom:14px; }
+  .learn-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px 24px; }
+  .learn-grid p{ margin:0; color:var(--cd-ink); }
+  .checklist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .checklist li{ color:var(--cd-ink); }
+
+  /* ---------- sidebar ---------- */
+  .course-detail-sidebar{ position:sticky; top:24px; display:flex; flex-direction:column; gap:18px; }
+  .sidebar-card{
+    background:#fff; border:1px solid var(--cd-border); border-radius:var(--cd-radius); padding:22px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .sidebar-card:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(15,44,76,.09); }
+  .sidebar-card h3{ margin:0 0 8px; font-size:1.1rem; }
+  .sidebar-card h4{ margin:0 0 4px; font-size:.95rem; }
+  .sidebar-card p{ color:var(--cd-muted); font-size:.9rem; line-height:1.5; }
+  .sidebar-card > p{ margin-bottom:16px; }
+
+  /* "View full program →" / "Continue to..." — now real bordered buttons */
+  .option-link{
+    display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size:.88rem;
+    color:var(--cd-teal); text-decoration:none; white-space:nowrap;
+    border:2px solid var(--cd-teal); border-radius:9px; padding:9px 16px;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .option-link:hover{
+    background:var(--cd-teal); color:#fff; transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(14,165,160,.28);
+  }
+
+  /* ---------- testimonial slider hover polish ---------- */
+  .testimonial-slider{ transition: box-shadow .2s ease; }
+  .slider-arrow{ transition: transform .15s ease, background-color .15s ease; }
+  .slider-arrow:hover{ transform:scale(1.12); }
+
+  /* ---------- scroll reveal ---------- */
+  .cd-reveal{ opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+  .cd-reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  /* ---------- mobile sticky CTA bar (rebuilt) ---------- */
+  .sticky-cta-row{ display:none; }
+
+  @media (max-width: 900px){
+    .course-detail-layout{ grid-template-columns:1fr; padding:28px 20px 100px; }
+    .course-detail-sidebar{ position:static; }
+    .learn-grid{ grid-template-columns:1fr; }
+
+    .sticky-cta-row{
+      display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+      position:fixed; left:0; right:0; bottom:0; z-index:50;
+      background:#fff; border-top:1px solid var(--cd-border);
+      padding:12px 16px; box-shadow:0 -8px 24px rgba(15,44,76,.12);
+      transition: transform .25s ease, opacity .25s ease;
+    }
+    .sticky-cta-row.is-hidden{ transform:translateY(100%); opacity:0; pointer-events:none; }
+
+    .sticky-cta-label{
+      font-size:.68rem; line-height:1.3; color:var(--cd-muted); white-space:nowrap; flex:1 1 100%;
+    }
+    .sticky-cta-row .btn{
+      flex:1 1 auto; text-align:center; white-space:nowrap; padding:10px 14px; font-size:.85rem;
+    }
+  }
+
+  @media (max-width: 480px){
+    .sticky-cta-label{ flex-basis:100%; }
+    .sticky-cta-row .btn{ flex:1 1 28%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container breadcrumb">
+    <a href="index.html">Home</a><span>/</span><a href="it-support-certificate-program.html">IT Support</a><span>/</span><span class="current">People Skills</span>
+  </div>
+
+  <section class="course-detail-layout container">
+
+    <div class="course-detail-main">
+
+      <span class="course-badge" style="margin-bottom:10px;display:inline-block;">Premium unlocks full course</span>
+      <h1>IT Support: People Skills for IT Professionals</h1>
+      <p class="lead" style="margin-top:10px;color:var(--text-muted);">Course 4 of 5 in the IT Support Certificate Program</p>
+
+      <div class="course-meta-row" style="margin-top:18px;">
+        <span>📘 24 lessons</span>
+        <span>⏱ 5 hrs</span>
+        <span>◆ Beginner</span>
+      </div>
+
+      <section class="course-detail-block">
+        <h2>Course Introduction</h2>
+        <p>This course focuses on developing the people skills every IT support professional needs — communication, active listening, and handling difficult conversations — enhancing troubleshooting and teamwork capabilities.</p>
+      </section>
+
+      <section class="course-detail-block">
+        <h2>Why Choose This Course?</h2>
+        <p>Technical skill only gets you so far on a help desk. This course builds the professional communication habits that turn a frustrated user into a satisfied one, and a solo technician into a strong team member.</p>
+      </section>
+
+      <section class="course-detail-block">
+        <h2>What You'll Learn</h2>
+        <div class="learn-grid">
+          <p>✓ Communicate technical concepts to non-technical users</p>
+          <p>✓ Apply active listening in support conversations</p>
+          <p>✓ De-escalate and handle difficult conversations</p>
+          <p>✓ Manage time and priorities across multiple tickets</p>
+        </div>
+      </section>
+
+      <section class="course-detail-block" id="curriculum">
+        <span class="eyebrow" style="display:block; margin-bottom:6px;">Course curriculum</span>
+        <h2>Start with any free lesson</h2>
+        <p style="color:var(--text-muted); margin-bottom:16px;">24 lessons in this course.</p>
+
+        <div class="course-list">
+          <details class="course-item" open>
+            <summary>
+              <span class="course-num">1</span>
+              <span class="course-info">
+                <span class="course-title">Professional Communication</span>
+                <span class="course-meta">9 lessons</span>
+              </span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="course-body">
+              <ul><li>Tone over phone & chat</li><li>Explaining without jargon</li><li>Written communication in tickets</li></ul>
+            </div>
+          </details>
+          <details class="course-item">
+            <summary>
+              <span class="course-num">2</span>
+              <span class="course-info">
+                <span class="course-title">Listening & De-escalation</span>
+                <span class="course-meta">8 lessons</span>
+              </span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="course-body">
+              <ul><li>Active listening techniques</li><li>Handling frustrated users</li><li>Difficult conversations</li></ul>
+            </div>
+          </details>
+          <details class="course-item">
+            <summary>
+              <span class="course-num">3</span>
+              <span class="course-info">
+                <span class="course-title">Time Management & Teamwork</span>
+                <span class="course-meta">7 lessons</span>
+              </span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="course-body">
+              <ul><li>Prioritizing tickets</li><li>Working within a team</li><li>Handoffs & escalation etiquette</li></ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="course-detail-block" id="who">
+        <h2>Who This Is For</h2>
+        <ul class="checklist">
+          <li>✓ Learners at any stage of the program who want stronger soft skills</li>
+          <li>✓ Current support staff who handle user-facing tickets</li>
+          <li>✓ Anyone preparing for a customer-facing IT role</li>
+        </ul>
+      </section>
+
+      <section class="course-detail-block" id="reviews">
+        <h2>What Learners Say</h2>
+        <div class="testimonial-slider" data-testimonial-slider>
+          <div class="slider-stars">★★★★★</div>
+          <p class="slider-quote"></p>
+          <div class="slider-person">
+            <div class="avatar"></div>
+            <div><strong></strong><span></span></div>
+          </div>
+          <div class="slider-nav">
+            <button type="button" class="slider-arrow prev" aria-label="Previous story">←</button>
+            <span class="slider-count">1 / 1</span>
+            <button type="button" class="slider-arrow next" aria-label="Next story">→</button>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        window.JSS_TESTIMONIALS = [
+          { initials:'NJ', name:'Nelson J.', role:'Microsoft 365 Support Engineer — Microsoft', quote:'Simple but genuinely useful — the de-escalation techniques changed how I handle angry callers.' },
+          { initials:'YL', name:'Yen Lyu', role:'IT Support Engineer — Amazon Web Services', quote:'Short course, but I use something from it in almost every shift.' }
+        ];
+      </script>
+
+    </div>
+
+    <aside class="course-detail-sidebar">
+      <div class="sidebar-card">
+        <h3>Begin Learning Today</h3>
+        <p>Preview a verified free lesson here. Members should log in to take premium lessons inside the learning portal.</p>
+        <a href="#" class="btn btn-primary btn-block" data-auth-trigger="signup">Start Free Lesson</a>
+        <a href="#" class="btn btn-outline btn-block" data-auth-trigger="login" style="margin-top:10px;">Member Log In</a>
+        <a href="#" class="btn btn-outline btn-block" data-auth-trigger="signup" style="margin-top:10px;">Free Registration</a>
+      </div>
+      <div class="sidebar-card">
+        <h4>Part of a program</h4>
+        <p style="font-size:.9rem; color:var(--text-muted); margin-bottom:12px;">This course is course 4 of 5 in the IT Support Certificate Program.</p>
+        <a href="it-support-certificate-program.html" class="option-link">View full program →</a>
+      </div>
+      <div class="sidebar-card">
+        <h4>Next course</h4>
+        <p style="font-size:.9rem; color:var(--text-muted); margin-bottom:12px;">IT Support Resume, Applying for Jobs and Communities</p>
+        <a href="it-support-resume-jobs-communities.html" class="option-link">Continue to Resume &amp; Jobs →</a>
+      </div>
+    </aside>
+
+  </section>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta-row">
+    <span class="sticky-cta-label">READY TO LEARN?<br><strong>Start free or create an account</strong></span>
+    <a href="#" class="btn btn-primary" data-auth-trigger="signup">Start Free Lesson</a>
+    <a href="#" class="btn btn-outline" data-auth-trigger="login">Log In</a>
+    <a href="#" class="btn btn-outline" data-auth-trigger="signup">Create Account</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="it-support-certificate-program.html">IT Support</a></li>
+          <li><a href="cybersecurity-analyst-certificate-program.html">Cybersecurity</a></li>
+          <li><a href="programs.html#cloud">Cloud &amp; Systems</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Week 5 addition — Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ---- Scroll-reveal for course-detail-block sections + sidebar cards ----
+  var revealTargets = document.querySelectorAll('.course-detail-block, .sidebar-card');
+  revealTargets.forEach(function (el) { el.classList.add('cd-reveal'); });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(function (el) { io.observe(el); });
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // ---- Mobile sticky CTA bar: keep it pinned while scrolling, but slide it
+  // out of the way once the footer arrives so it doesn't sit on top of the
+  // footer content at the very end of the page. This is what makes it
+  // properly "follow" all the way down instead of glitching near the bottom. ----
+  var stickyBar = document.querySelector('.sticky-cta-row');
+  var footer = document.querySelector('.site-footer');
+  if (stickyBar && footer && 'IntersectionObserver' in window) {
+    var footerObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        stickyBar.classList.toggle('is-hidden', entry.isIntersecting);
+      });
+    }, { threshold: 0.01 });
+    footerObserver.observe(footer);
+  }
+});
+</script>
+</body>
+</html>

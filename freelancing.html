@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Become a Freelancer | Skills-to-Income Program — JobSkillShare</title>
+<meta name="description" content="This program provides comprehensive training to help you start and grow a successful freelance business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/buttons-override.css">
+
+<style>
+  :root {
+    --itsp-teal: var(--teal, #0EA5A0);
+    --itsp-coral: var(--coral, #FF6B5B);
+    --itsp-ink: var(--ink, #12202E);
+    --itsp-muted: var(--text-muted, #64748B);
+    --itsp-bg-alt: var(--bg-alt, #F5F7FA);
+    --itsp-border: var(--border, #E6E9EE);
+    --itsp-radius: var(--radius-lg, 16px);
+    --itsp-navy: #0F2C4C;
+    --itsp-navy-dark: #0B2035;
+    --itsp-green: #1FA971;
+  }
+
+  /* ---------- SHARED LAYOUT ---------- */
+  .itsp-section { padding: 56px 0; }
+  .itsp-section-alt { background: var(--itsp-bg-alt); }
+  .itsp-container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .itsp-eyebrow {
+    display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--itsp-teal); margin-bottom: 10px;
+  }
+  .itsp-h2 { font-family: 'Sora', sans-serif; font-size: 2rem; line-height: 1.2; color: var(--itsp-ink); margin: 0 0 6px; }
+  .itsp-lead { color: var(--itsp-muted); font-size: 1rem; line-height: 1.6; max-width: 70ch; }
+  .itsp-banner-dev {
+    background: #FFF3CD; border: 1px solid #FFEBAA; color: #856404;
+    padding: 12px 20px; border-radius: 8px; font-weight: 600; margin-bottom: 20px;
+  }
+
+  /* ---------- HERO SECTION ---------- */
+  /* ---------- HERO ---------- */
+   .main-navbar, header {
+  position: relative;
+  z-index: 100;
+}
+.itsp-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(120deg, #0B2035 0%, #123655 55%, #0E2A44 100%);
+  padding: 52px 0 40px;
+  z-index: 1; /* Keep hero below header */
+}
+   itsp-hero{
+    position:relative; overflow:hidden; color:#fff;
+    background: linear-gradient(120deg, #0B2035 0%, #123655 55%, #0E2A44 100%);
+    padding: 52px 0 40px;
+  }
+  .itsp-hero-bg-photo{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.35;
+  }
+  .itsp-hero-overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(120deg, rgba(11,32,53,.78) 0%, rgba(18,54,85,.68) 55%, rgba(14,42,68,.88) 100%);
+  }
+  .itsp-hero-inner { position: relative; z-index: 1; }
+  .itsp-hero-eyebrow {
+    display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #8FD9D4; margin-bottom: 14px;
+  }
+  .itsp-hero h1 {
+    font-family: 'Sora', sans-serif; font-size: 2.6rem; line-height: 1.12; margin: 0 0 8px; color: #fff;
+  }
+  .itsp-hero-tagline { font-size: 1.15rem; font-weight: 600; color: #EAF6F5; margin: 0 0 14px; }
+  .itsp-hero-lead { color: #C6D6E4; max-width: 62ch; line-height: 1.65; margin: 0 0 26px; }
+
+  .itsp-hero-stats { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+  .itsp-stat-chip {
+    display: flex; flex-direction: column; gap: 2px; min-width: 132px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+    border-radius: 12px; padding: 12px 18px;
+  }
+  .itsp-stat-chip strong { font-size: 1.15rem; font-family: 'Sora', sans-serif; color: #fff; }
+  .itsp-stat-chip span { font-size: 0.78rem; color: #AFC3D6; }
+
+  .itsp-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 18px; }
+  .itsp-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 13px 26px; border-radius: 10px; font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; cursor: pointer; border: 2px solid transparent; transition: all .2s ease;
+  }
+  .itsp-btn-primary { background: var(--itsp-teal); color: #fff; }
+  .itsp-btn-primary:hover { background: #0c8b86; transform: translateY(-2px); }
+  .itsp-btn-white { background: #fff; color: var(--itsp-navy); border-color: #fff; }
+  .itsp-btn-white:hover { background: transparent; color: #fff; transform: translateY(-2px); }
+  .itsp-preview-link { color: #fff; font-weight: 700; text-decoration: underline; font-size: 0.92rem; transition: color .15s ease; }
+  .itsp-preview-link:hover { color: #8FD9D4; }
+
+  .itsp-assurance { display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.85rem; color: #B9CCDD; }
+  .itsp-assurance span::before { content: "✓ "; color: #5FE0C7; font-weight: 700; }
+
+  /* ---------- JUMP NAV ---------- */
+  .itsp-jumpnav {
+    position: relative; z-index: 30; background: #fff;
+    border-bottom: 1px solid var(--itsp-border); box-shadow: 0 2px 10px rgba(15,44,76,.05);
+    transition: position .2s ease, top .2s ease;
+  }
+  .itsp-jumpnav.is-pinned {
+    position: fixed; left: 0; right: 0; width: 100%; z-index: 999;
+  }
+  .itsp-jumpnav-inner { display: flex; align-items: center; gap: 26px; overflow-x: auto; padding: 16px 24px; max-width: 1180px; margin: 0 auto; }
+  .itsp-jump-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; color: #9AA7B5; text-transform: uppercase; flex: 0 0 auto; }
+  .itsp-jumpnav a {
+    flex: 0 0 auto; font-size: 0.92rem; font-weight: 700; color: var(--itsp-ink); text-decoration: none;
+    padding-bottom: 4px; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s ease, border-color .15s ease;
+  }
+  .itsp-jumpnav a:hover, .itsp-jumpnav a.is-active { color: var(--itsp-teal); border-bottom-color: var(--itsp-teal); }
+
+  /* ---------- OVERVIEW ---------- */
+  .itsp-overview-card {
+    background: #fff; border: 1px solid var(--itsp-border); border-radius: var(--itsp-radius); padding: 34px 36px;
+  }
+  .itsp-overview-card h2 { font-family: 'Sora', sans-serif; font-size: 1.7rem; margin: 26px 0 12px; color: var(--itsp-ink); }
+  .itsp-overview-card p { color: var(--itsp-ink); line-height: 1.7; }
+  .itsp-overview-card ul { line-height: 1.8; color: var(--itsp-ink); }
+
+  /* ---------- OUTCOMES ---------- */
+  .itsp-outcomes-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: start; margin-top: 18px; }
+  .itsp-outcomes-panel { background: #fff; border: 1px solid var(--itsp-border); border-radius: var(--itsp-radius); padding: 30px; }
+  .itsp-checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .itsp-check-item {
+    display: flex; align-items: center; gap: 10px; border: 1px solid var(--itsp-border); border-radius: 10px;
+    padding: 12px 14px; font-size: 0.92rem; color: var(--itsp-ink); background: #fff;
+    transition: transform .15s ease, border-color .15s ease;
+  }
+  .itsp-check-item:hover { transform: translateY(-2px); border-color: var(--itsp-teal); }
+  .itsp-check-item .tick {
+    width: 20px; height: 20px; border-radius: 50%; background: #DDF6EC; color: #159467;
+    font-size: 0.72rem; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; font-weight: 700;
+  }
+
+  .itsp-career-panel {
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius: var(--itsp-radius); padding: 30px; color: #fff;
+  }
+  .itsp-career-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8FD9D4; }
+  .itsp-career-panel h3 { margin: 2px 0 0; font-family: 'Sora', sans-serif; font-size: 1.3rem; color: #fff; }
+  .itsp-career-list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .itsp-career-list li a {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 10px; padding: 12px 16px; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.92rem; transition: .15s ease;
+  }
+  .itsp-career-list li a:hover { background: rgba(255,255,255,.16); transform: translateX(4px); }
+
+  /* ---------- SKILLS & TECH ---------- */
+  .itsp-skills-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .itsp-skills-badge { background: #fff; border: 1px solid var(--itsp-border); border-radius: 12px; padding: 10px 18px; text-align: center; }
+  .itsp-skills-badge strong { display: block; font-size: 1.3rem; color: var(--itsp-teal); font-family: 'Sora', sans-serif; }
+  .itsp-skills-badge span { font-size: 0.68rem; letter-spacing: 0.05em; color: var(--itsp-muted); text-transform: uppercase; }
+  .itsp-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 22px; }
+  .itsp-skill-card {
+    background: #fff; border-radius: var(--itsp-radius); padding: 26px; border-top: 4px solid var(--itsp-teal);
+    box-shadow: 0 6px 20px rgba(15,44,76,.06); transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .itsp-skill-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(15,44,76,.1); }
+  .itsp-skill-card.is-professional { border-top-color: #8B7CFF; }
+  .itsp-skill-card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .itsp-skill-card-head-left { display: flex; align-items: center; gap: 12px; }
+  .itsp-skill-card-icon {
+    width: 40px; height: 40px; border-radius: 10px; background: #E7F7F5; color: var(--itsp-teal);
+    display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
+  }
+  .itsp-skill-card.is-professional .itsp-skill-card-icon { background: #EFEBFF; color: #8B7CFF; }
+  .itsp-skill-card-head h4 { margin: 0; font-size: 1.1rem; color: var(--itsp-ink); }
+  .itsp-skill-count { font-size: 0.72rem; font-weight: 700; color: var(--itsp-muted); border: 1px solid var(--itsp-border); border-radius: 20px; padding: 3px 10px; }
+  .itsp-skill-card ul { list-style: none; margin: 0; padding: 0; }
+  .itsp-skill-card li { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--itsp-border); font-size: 0.92rem; color: var(--itsp-ink); }
+  .itsp-skill-card li:first-child { border-top: none; }
+  .itsp-skill-card li::before { content: "✓"; color: #159467; font-weight: 700; font-size: 0.8rem; }
+
+  .itsp-stack-band {
+    background: #fff; border: 1px solid var(--itsp-border); border-radius: var(--itsp-radius);
+    padding: 30px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap; margin-top: 26px;
+  }
+  .itsp-chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .itsp-tech-chip {
+    display: inline-flex; align-items: center; gap: 7px; background: var(--itsp-bg-alt);
+    border: 1px solid var(--itsp-border); border-radius: 20px; padding: 8px 16px; font-size: 0.85rem; font-weight: 600; color: var(--itsp-ink);
+    transition: transform .15s ease, background .15s ease;
+  }
+  .itsp-tech-chip:hover { transform: translateY(-2px); background: #EAF7F5; }
+  .itsp-tech-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--itsp-teal); }
+
+  /* ---------- ROADMAP ---------- */
+  .itsp-roadmap { position: relative; margin-top: 26px; padding-left: 8px; }
+  .itsp-road-step { position: relative; padding-left: 52px; padding-bottom: 34px; }
+  .itsp-road-step:last-child { padding-bottom: 0; }
+  .itsp-road-step::before {
+    content: ""; position: absolute; left: 19px; top: 40px; bottom: -2px; width: 2px; background: var(--itsp-border);
+  }
+  .itsp-road-step:last-child::before { display: none; }
+  .itsp-road-num {
+    position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 50%;
+    background: #E7F7F5; color: var(--itsp-teal); font-weight: 800; font-family: 'Sora', sans-serif;
+    display: flex; align-items: center; justify-content: center; font-size: 1rem; border: 2px solid #fff; box-shadow: 0 0 0 2px var(--itsp-border);
+  }
+  .itsp-road-step.is-complete .itsp-road-num { background: #DDF6EC; color: #159467; }
+  .itsp-road-step h4 { margin: 0 0 6px; font-size: 1.2rem; color: var(--itsp-ink); }
+  .itsp-road-step p { margin: 0 0 12px; color: var(--itsp-muted); font-size: 0.94rem; }
+  .itsp-road-tag {
+    display: inline-block; background: var(--itsp-bg-alt); border: 1px solid var(--itsp-border); color: var(--itsp-ink);
+    border-radius: 8px; padding: 7px 12px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background .15s ease, color .15s ease;
+  }
+  .itsp-road-tag:hover { background: var(--itsp-teal); color: #fff; }
+
+  /* ---------- COURSES ---------- */
+  .itsp-courses-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .itsp-courses-count { color: var(--itsp-muted); font-size: 0.9rem; font-weight: 600; }
+  .itsp-course-list { display: flex; flex-direction: column; gap: 18px; margin-top: 22px; }
+  .itsp-course-card {
+    background: #fff; border: 1px solid var(--itsp-border); border-radius: var(--itsp-radius);
+    padding: 26px 28px; display: flex; gap: 20px; align-items: flex-start;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .itsp-course-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(15,44,76,.08); }
+  .itsp-course-num {
+    flex: 0 0 auto; width: 38px; height: 38px; border-radius: 10px; background: #E7F7F5; color: var(--itsp-teal);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-family: 'Sora', sans-serif;
+  }
+  .itsp-course-body { flex: 1; min-width: 0; }
+  .itsp-course-cat { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--itsp-teal); }
+  .itsp-course-body h3 { margin: 4px 0 8px; font-size: 1.25rem; color: var(--itsp-ink); }
+  .itsp-course-body > p.itsp-course-desc { color: var(--itsp-muted); margin: 0 0 14px; line-height: 1.6; }
+  .itsp-course-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .itsp-course-tag {
+    font-size: 0.78rem; font-weight: 600; color: var(--itsp-ink); background: var(--itsp-bg-alt);
+    border: 1px solid var(--itsp-border); border-radius: 8px; padding: 5px 11px;
+  }
+  .itsp-course-skills { font-size: 0.85rem; color: var(--itsp-muted); }
+  .itsp-course-skills strong { color: var(--itsp-ink); }
+  .itsp-course-cta { flex: 0 0 auto; align-self: center; }
+  .itsp-course-cta a {
+    display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--itsp-teal);
+    text-decoration: none; font-size: 0.88rem; white-space: nowrap;
+    border: 2px solid var(--itsp-teal); border-radius: 9px; padding: 10px 18px; transition: .18s ease;
+  }
+  .itsp-course-cta a:hover { background: var(--itsp-teal); color: #fff; }
+
+  /* ---------- PROJECTS & CAREER ---------- */
+  .itsp-projects-band {
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius: var(--itsp-radius); padding: 38px; color: #fff;
+  }
+  .itsp-projects-band .itsp-eyebrow { color: #8FD9D4; }
+  .itsp-projects-band h2 { color: #fff; }
+  .itsp-skills-practiced-card {
+    background: #fff; border-radius: 14px; padding: 26px 28px; margin-top: 24px; color: var(--itsp-ink);
+  }
+  .itsp-skills-practiced-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .itsp-skills-practiced-head .icon {
+    width: 38px; height: 38px; border-radius: 10px; background: #E7F7F5; color: var(--itsp-teal);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem;
+  }
+  .itsp-skills-practiced-head h4 { margin: 0; font-size: 1.05rem; }
+  .itsp-skills-practiced-head span { display: block; font-size: 0.8rem; color: var(--itsp-muted); }
+  .itsp-practiced-chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .itsp-practiced-chip { display: inline-flex; align-items: center; gap: 7px; border-radius: 20px; padding: 7px 15px; font-size: 0.83rem; font-weight: 600; }
+  .itsp-practiced-chip.c-tech { background: #EAF3FF; color: #1B5FA8; }
+  .itsp-practiced-chip.c-tool { background: #F4EEFF; color: #7A4FD6; }
+  .itsp-practiced-chip.c-skill { background: #E7F7F0; color: #159467; }
+  .itsp-practiced-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+  .itsp-cloud-note {
+    display: flex; gap: 14px; background: rgba(255,255,255,.94); color: var(--itsp-ink); border-radius: 12px;
+    padding: 18px 20px; margin-top: 18px; align-items: flex-start;
+  }
+  .itsp-cloud-note strong { display: block; margin-bottom: 4px; }
+  .itsp-cloud-note p { margin: 0; font-size: 0.88rem; color: var(--itsp-muted); line-height: 1.55; }
+
+  .itsp-direction-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+  .itsp-direction-chip {
+    display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--itsp-border);
+    border-radius: 12px; padding: 14px 18px; font-weight: 600; color: var(--itsp-ink); font-size: 0.92rem;
+    transition: transform .15s ease, border-color .15s ease;
+  }
+  .itsp-direction-chip:hover { transform: translateY(-2px); border-color: var(--itsp-teal); }
+  .itsp-direction-chip .arrow { color: var(--itsp-teal); font-weight: 800; }
+
+  /* ---------- REVIEWS & FAQ ---------- */
+  .itsp-reviews-band {
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius: var(--itsp-radius); padding: 36px; color: #fff;
+  }
+  .itsp-reviews-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .itsp-reviews-head .itsp-eyebrow { color: #8FD9D4; }
+  .itsp-reviews-head h2 { color: #fff; margin: 0; }
+  .itsp-rating-badge { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 10px 18px; text-align: right; }
+  .itsp-rating-badge strong { font-size: 1.2rem; }
+  .itsp-rating-badge span { display: block; font-size: 0.72rem; color: #B9CCDD; }
+  .itsp-review-card { background: #fff; color: var(--itsp-ink); border-radius: 14px; padding: 30px; margin-top: 22px; transition: transform .2s ease; }
+  .itsp-review-card:hover { transform: translateY(-3px); }
+  .itsp-review-stars { color: #F5B400; letter-spacing: 2px; margin-bottom: 10px; }
+  .itsp-review-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; }
+  .itsp-review-body { color: var(--itsp-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px; }
+  .itsp-review-tag { display: inline-block; background: var(--itsp-bg-alt); border: 1px solid var(--itsp-border); border-radius: 8px; padding: 5px 12px; font-size: 0.78rem; font-weight: 600; margin-bottom: 16px; }
+  .itsp-review-person { display: flex; align-items: center; gap: 12px; }
+  .itsp-review-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--itsp-teal); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; }
+
+  /* FAQ Styles & Animations */
+  .itsp-faq-list { margin-top: 22px; display: flex; flex-direction: column; gap: 12px; }
+  .itsp-faq-item { background: #fff; border: 1px solid var(--itsp-border); border-radius: 12px; overflow: hidden; transition: border-color .2s ease, box-shadow .2s ease; }
+  .itsp-faq-item:hover { border-color: var(--itsp-teal); }
+  .itsp-faq-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 18px 22px; font-weight: 700; color: var(--itsp-ink); font-size: 0.96rem;
+  }
+  .itsp-faq-q .chev { transition: transform .25s ease; color: var(--itsp-teal); flex: 0 0 auto; display: inline-block; }
+  .itsp-faq-item.is-open .itsp-faq-q .chev { transform: rotate(90deg); }
+  .itsp-faq-a {
+    max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease-in-out;
+  }
+  .itsp-faq-item.is-open .itsp-faq-a {
+    max-height: 300px; opacity: 1;
+    transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  .itsp-faq-a p { margin: 0; padding: 0 22px 20px; color: var(--itsp-muted); font-size: 0.92rem; line-height: 1.6; }
+
+  /* ---------- SCROLL REVEAL ANIMATIONS ---------- */
+  .itsp-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .itsp-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .itsp-final-cta {
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius: var(--itsp-radius); padding: 56px 30px; text-align: center; color: #fff;
+  }
+  .itsp-final-cta .itsp-eyebrow { color: #8FD9D4; }
+  .itsp-final-cta h2 { font-family: 'Sora', sans-serif; font-size: 2.1rem; margin: 6px 0 14px; color: #fff; }
+  .itsp-final-cta p { max-width: 62ch; margin: 0 auto 26px; color: #C6D6E4; line-height: 1.6; }
+  .itsp-final-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    .itsp-hero h1 { font-size: 2rem; }
+    .itsp-outcomes-grid, .itsp-skills-grid, .itsp-checklist-grid { grid-template-columns: 1fr; }
+    .itsp-course-card { flex-direction: column; }
+    .itsp-course-cta { align-self: flex-start; }
+    .itsp-stack-band { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 640px) {
+    .itsp-hero { padding: 40px 0 30px; }
+    .itsp-hero h1 { font-size: 1.6rem; }
+    .itsp-h2 { font-size: 1.5rem; }
+    .itsp-overview-card { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html">Home</a>
+      <a href="programs.html" class="active">Programs</a>
+      <a href="courses.html">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- BREADCRUMB -->
+  <div class="container breadcrumb">
+    <a href="index.html">Home</a><span>/</span><a href="programs.html">Certificate Programs</a><span>/</span><span class="current">Become a Freelancer | Skills-to-Income Program</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="itsp-hero">
+    <img class="itsp-hero-bg-photo" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=60" alt="" loading="eager">
+    <div class="itsp-hero-overlay"></div>
+    <div class="itsp-container itsp-hero-inner">
+      <div class="itsp-banner-dev">
+        <strong>In Development:</strong> Additional Courses in this Program are being released.
+      </div>
+      <span class="itsp-hero-eyebrow">JobSkillShare Certificate Program</span>
+      <h1>Become a Freelancer | Skills-to-Income Program</h1>
+      <p class="itsp-hero-tagline">Transform Your Skills into a Sustainable Freelance Career</p>
+      <p class="itsp-hero-lead">This program provides comprehensive training to help you start and grow a successful freelance business.</p>
+
+      <div class="itsp-hero-stats">
+        <div class="itsp-stat-chip"><strong>2</strong><span>Courses</span></div>
+        <div class="itsp-stat-chip"><strong>63</strong><span>Lessons</span></div>
+        <div class="itsp-stat-chip"><strong>15 hours 0 min</strong><span>Estimated time</span></div>
+        <div class="itsp-stat-chip"><strong>Intermediate to Advanced</strong><span>Difficulty</span></div>
+      </div>
+
+      <div class="itsp-hero-actions">
+        <a href="#" class="itsp-btn itsp-btn-primary" data-auth-trigger="signup">Create Free Account</a>
+        <a href="#" class="itsp-btn itsp-btn-white" data-auth-trigger="login">Log In</a>
+        <a href="#curriculum" class="itsp-preview-link">Preview the full curriculum ↓</a>
+      </div>
+
+      <div class="itsp-assurance">
+        <span>Preview before joining</span>
+        <span>Recommended learning order</span>
+        <span>Progress saved after login</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JUMP NAV SENTINEL AND SPACER FOR PINNING -->
+  <div id="jumpNavSentinel"></div>
+  <div id="jumpNavSpacer" style="display:none;"></div>
+
+  <!-- JUMP NAV -->
+  <nav class="itsp-jumpnav" id="jumpNav" aria-label="Jump to section">
+    <div class="itsp-jumpnav-inner">
+      <span class="itsp-jump-label">Jump to</span>
+      <a href="#overview">Overview</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#curriculum">Courses</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- PROGRAM OVERVIEW -->
+  <section class="itsp-section itsp-reveal" id="overview">
+    <div class="itsp-container">
+      <div class="itsp-overview-card">
+        <span class="itsp-eyebrow">Program Overview</span>
+        <p>The "Become a Freelancer | Skills-to-Income Program" is designed to equip you with the knowledge and skills needed to turn your talents into a profitable freelance career. Through a structured sequence of courses, you will learn to navigate and excel in online freelancing platforms, create high-value service offerings, and build a sustainable business.</p>
+        <h2>What You Will Learn</h2>
+        <ul>
+          <li>Introduction to freelancing and essential strategies for success.</li>
+          <li>Comprehensive guide to platforms like Fiverr, Upwork, and LinkedIn.</li>
+          <li>Advanced techniques in service creation and client retention.</li>
+          <li>Personal branding and marketing outreach principles.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="itsp-section itsp-section-alt itsp-reveal" id="outcomes">
+    <div class="itsp-container">
+      <span class="itsp-eyebrow">Program Outcomes</span>
+      <h2 class="itsp-h2">What You’ll Be Able to Do</h2>
+
+      <div class="itsp-outcomes-grid">
+        <div class="itsp-outcomes-panel">
+          <div class="itsp-checklist-grid">
+            <div class="itsp-check-item"><span class="tick">✓</span> Develop a freelancing business</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Optimize online profiles</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Create and market gigs</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Generate leads and find clients</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Develop a structured freelance system</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Create high-value services</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Price services effectively</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Maintain long-term client relationships</div>
+            <div class="itsp-check-item"><span class="tick">✓</span> Build a personal freelance brand</div>
+          </div>
+        </div>
+
+        <div class="itsp-career-panel">
+          <span class="itsp-career-eyebrow">Your Career Path</span>
+          <h3>Career Opportunities</h3>
+          <ul class="itsp-career-list">
+            <li><a href="#">Freelance Specialist <span>→</span></a></li>
+            <li><a href="#">Professional Consultant <span>→</span></a></li>
+            <li><a href="#">Client Relationship Manager <span>→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS YOU'LL BUILD -->
+  <section class="itsp-section itsp-reveal">
+    <div class="itsp-container">
+      <div class="itsp-skills-head">
+        <div>
+          <span class="itsp-eyebrow">Core Skill Areas</span>
+          <h2 class="itsp-h2">Skills You’ll Build</h2>
+        </div>
+        <div class="itsp-skills-badge"><strong>13</strong><span>Core skills</span></div>
+      </div>
+
+      <div class="itsp-skills-grid">
+        <div class="itsp-skill-card">
+          <div class="itsp-skill-card-head">
+            <div class="itsp-skill-card-head-left">
+              <span class="itsp-skill-card-icon">🛠️</span>
+              <h4>Technical Skills</h4>
+            </div>
+            <span class="itsp-skill-count">6 skills</span>
+          </div>
+          <ul>
+            <li>Setting up online profiles</li>
+            <li>Keyword research</li>
+            <li>Using project management tools</li>
+            <li>Creating SOPs</li>
+            <li>Managing contracts digitally</li>
+            <li>Time tracking and invoicing</li>
+          </ul>
+        </div>
+
+        <div class="itsp-skill-card is-professional">
+          <div class="itsp-skill-card-head">
+            <div class="itsp-skill-card-head-left">
+              <span class="itsp-skill-card-icon">🤝</span>
+              <h4>Professional Skills</h4>
+            </div>
+            <span class="itsp-skill-count">7 skills</span>
+          </div>
+          <ul>
+            <li>Client acquisition</li>
+            <li>Personal branding</li>
+            <li>Marketing outreach</li>
+            <li>Client communication</li>
+            <li>Sales negotiation</li>
+            <li>Objection handling</li>
+            <li>Client onboarding</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TECHNOLOGY STACK -->
+      <div class="itsp-stack-band">
+        <div style="flex:0 0 auto; min-width:180px;">
+          <span class="itsp-eyebrow">Technology Stack</span>
+          <h3 style="margin:0;font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--itsp-ink);">Technologies Covered</h3>
+        </div>
+        <div class="itsp-chip-row">
+          <span class="itsp-tech-chip"><span class="dot"></span> Fiverr</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Upwork</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> LinkedIn</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Dribble</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Behance</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Asana</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Trello</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Slack</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Monday.com</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Google Drive</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Calendly</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Zapier</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Notion</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Google Docs</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Loom</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> DocuSign</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Zoom</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Google Meet</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> PandaDoc</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Harvest</span>
+          <span class="itsp-tech-chip"><span class="dot"></span> Bonsai</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING ROADMAP -->
+  <section class="itsp-section itsp-section-alt itsp-reveal" id="roadmap">
+    <div class="itsp-container">
+      <span class="itsp-eyebrow">Learning Roadmap</span>
+      <h2 class="itsp-h2">Your Path Through the Program</h2>
+
+      <div class="itsp-roadmap">
+        <div class="itsp-road-step">
+          <div class="itsp-road-num">1</div>
+          <h4>Single Course Certification</h4>
+          <p>Begin with a comprehensive guide to freelancing and establishing a successful gig presence.</p>
+          <a class="itsp-road-tag" href="#">Freelancing – Sell Your Skills and Make Money Online</a>
+        </div>
+        <div class="itsp-road-step">
+          <div class="itsp-road-num">2</div>
+          <h4>Professional Development</h4>
+          <p>Advance to structured systems for scaling and sustaining a freelance career.</p>
+          <a class="itsp-road-tag" href="#">The Complete Freelance Playbook (Advanced Edition)</a>
+        </div>
+        <div class="itsp-road-step is-complete">
+          <div class="itsp-road-num">✓</div>
+          <h4>Certificate Program Complete</h4>
+          <p>You have progressed through the complete course sequence and its combined skill set.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM STRUCTURE / COURSES -->
+  <section class="itsp-section itsp-reveal" id="curriculum">
+    <div class="itsp-container">
+      <div class="itsp-courses-head">
+        <div>
+          <span class="itsp-eyebrow">Program Structure</span>
+          <h2 class="itsp-h2">Courses in This Certificate Program</h2>
+        </div>
+        <span class="itsp-courses-count">2 courses in recommended order</span>
+      </div>
+
+      <div class="itsp-course-list">
+
+        <article class="itsp-course-card">
+          <div class="itsp-course-num">1</div>
+          <div class="itsp-course-body">
+            <span class="itsp-course-cat">Single Course Certification</span>
+            <h3>Freelancing – Sell Your Skills and Make Money Online</h3>
+            <p class="itsp-course-desc">Turn your skills into a sustainable income with a comprehensive guide to freelancing. From basics to advanced strategies, learn to navigate platforms like Fiverr, Upwork, and LinkedIn.</p>
+            <div class="itsp-course-tags">
+              <span class="itsp-course-tag">Duration: 4 hrs 0 min</span>
+              <span class="itsp-course-tag">Introduction to Freelancing</span>
+              <span class="itsp-course-tag">Fiverr Mastery</span>
+              <span class="itsp-course-tag">Creating Fiverr Gigs</span>
+              <span class="itsp-course-tag">Growth on Fiverr</span>
+            </div>
+            <p class="itsp-course-skills"><strong>Skills introduced:</strong> Freelancing basics · Platform navigation · Profile optimization · Keyword research · Gig creation · Marketing strategies</p>
+          </div>
+          <div class="itsp-course-cta"><a href="#">View Course →</a></div>
+        </article>
+
+        <article class="itsp-course-card">
+          <div class="itsp-course-num">2</div>
+          <div class="itsp-course-body">
+            <span class="itsp-course-cat">Professional Development</span>
+            <h3>The Complete Freelance Playbook (Advanced Edition)</h3>
+            <p class="itsp-course-desc">Master the art of advanced freelancing with a structured system to build and scale a career. Learn to create high-value services, price confidently, secure clients, and establish a sustainable business.</p>
+            <div class="itsp-course-tags">
+              <span class="itsp-course-tag">Duration: 11 hrs 0 min</span>
+              <span class="itsp-course-tag">Freelance Systems & Tools</span>
+              <span class="itsp-course-tag">High-Value Service Creation</span>
+              <span class="itsp-course-tag">Sales & Client Closing</span>
+              <span class="itsp-course-tag">Client Retention</span>
+            </div>
+            <p class="itsp-course-skills"><strong>Skills introduced:</strong> Creating Freelance Systems · Service Pricing · Client Communication · Proposal Writing · Brand Building</p>
+          </div>
+          <div class="itsp-course-cta"><a href="#">View Course →</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS & HANDS-ON ACTIVITIES -->
+  <section class="itsp-section itsp-section-alt itsp-reveal" id="projects">
+    <div class="itsp-container">
+      <div class="itsp-projects-band">
+        <span class="itsp-eyebrow">Practice What You Learn</span>
+        <h2 class="itsp-h2">Projects &amp; Hands-on Activities</h2>
+
+        <div class="itsp-skills-practiced-card">
+          <div class="itsp-skills-practiced-head">
+            <span class="icon">+</span>
+            <div>
+              <h4>Skills Practiced</h4>
+              <span>24 curriculum-grounded skills</span>
+            </div>
+          </div>
+          <div class="itsp-practiced-chip-row">
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Fiverr</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Upwork</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> LinkedIn</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Dribble</span>
+            <span class="itsp-practiced-chip c-tech"><span class="dot"></span> Behance</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Asana</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Trello</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Slack</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Monday.com</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Google Drive</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Calendly</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Zapier</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Notion</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Google Docs</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Loom</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> DocuSign</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Zoom</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Google Meet</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> PandaDoc</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Harvest</span>
+            <span class="itsp-practiced-chip c-tool"><span class="dot"></span> Bonsai</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> Setting up online profiles</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> Keyword research</span>
+            <span class="itsp-practiced-chip c-skill"><span class="dot"></span> Using project management tools</span>
+          </div>
+
+          <div class="itsp-cloud-note">
+            <span style="font-size: 1.3rem;">☁️</span>
+            <div>
+              <strong>Cloud Services Note</strong>
+              <p>AWS, Azure, and other cloud subscriptions are not included with membership. Members use their own cloud accounts to follow cloud-specific courses. For some beginner-level courses, JobSkillShare provides limited Azure and AWS subscriptions for basic hands-on tasks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAREER DIRECTION -->
+      <div style="margin-top:40px;">
+        <span class="itsp-eyebrow">Career Direction</span>
+        <h2 class="itsp-h2">Jobs You'll Be Ready For</h2>
+        <div class="itsp-direction-chips">
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Finding clients online</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Negotiating gig prices</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Building a personal brand</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Managing client onboarding</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Negotiating contracts</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Developing client relationships</span>
+          <span class="itsp-direction-chip"><span class="arrow">→</span> Creating reusable SOPs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="itsp-section itsp-reveal" id="reviews">
+    <div class="itsp-container">
+      <div class="itsp-reviews-band">
+        <div class="itsp-reviews-head">
+          <div>
+            <span class="itsp-eyebrow">Feedback Across the Curriculum</span>
+            <h2 class="itsp-h2">Program Reviews</h2>
+          </div>
+          <div class="itsp-rating-badge"><strong>5.0 ★</strong><span>Program average across all Course ratings</span></div>
+        </div>
+
+        <div class="itsp-review-card">
+          <div class="itsp-review-stars">★★★★★</div>
+          <p class="itsp-review-title">Very nice.</p>
+          <p class="itsp-review-body">Learner · May 24, 2026</p>
+          <span class="itsp-review-tag">Course: Freelancing – Sell Your Skills and Make Money Online</span>
+          <div class="itsp-review-person">
+            <div class="itsp-review-avatar">L</div>
+            <div>
+              <strong>Learner</strong>
+              <span>Verified Participant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="itsp-section itsp-section-alt itsp-reveal" id="faq">
+    <div class="itsp-container">
+      <span class="itsp-eyebrow">Frequently Asked Questions</span>
+      <h2 class="itsp-h2">FAQ</h2>
+
+      <div class="itsp-faq-list" id="faqList">
+        <div class="itsp-faq-item">
+          <button class="itsp-faq-q" type="button">Who is this program for? <span class="chev">▸</span></button>
+          <div class="itsp-faq-a"><p>This program is designed for individuals looking to turn their skills into a profitable freelance business, optimize online profiles, and establish long-term client relationships.</p></div>
+        </div>
+        <div class="itsp-faq-item">
+          <button class="itsp-faq-q" type="button">What is the focus of the program? <span class="chev">▸</span></button>
+          <div class="itsp-faq-a"><p>The focus is on providing end-to-end guidance from freelancing basics on platforms like Fiverr, Upwork, and LinkedIn to advanced client management, service pricing, and sales systems.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="itsp-section itsp-reveal">
+    <div class="itsp-container">
+      <div class="itsp-final-cta">
+        <span class="itsp-eyebrow">Build Your Complete Skill Set</span>
+        <h2>Transform Your Skills into a Sustainable Freelance Career</h2>
+        <p>This program provides comprehensive training to help you start and grow a successful freelance business.</p>
+        <div class="itsp-final-actions">
+          <a href="#" class="itsp-btn itsp-btn-primary" data-auth-trigger="signup">Create Free Account</a>
+          <a href="#" class="itsp-btn itsp-btn-white" data-auth-trigger="login">Already a member? Log In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="it-support-certificate-program.html">IT Support</a></li>
+          <li><a href="cybersecurity-analyst-certificate-program.html">Cybersecurity</a></li>
+          <li><a href="programs.html#cloud">Cloud &amp; Systems</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Week 5 rebuild — Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#" class="btn btn-primary btn-block" data-auth-trigger="signup">Start learning</a>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/program-detail.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ---- FAQ Accordion Toggle Event Listener -----------------------------
+  var faqQuestions = document.querySelectorAll('.itsp-faq-q');
+  faqQuestions.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var item = button.closest('.itsp-faq-item');
+      var isOpen = item.classList.contains('is-open');
+
+      // Close other open FAQ items (optional)
+      document.querySelectorAll('.itsp-faq-item').forEach(function (el) {
+        el.classList.remove('is-open');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+      }
+    });
+  });
+
+  // ---- Jump-nav pinning ------------------------------------------------
+  var header = document.querySelector('.site-header');
+  var nav = document.getElementById('jumpNav');
+  var sentinel = document.getElementById('jumpNavSentinel');
+  var spacer = document.getElementById('jumpNavSpacer');
+
+  function headerHeight() {
+    return header ? header.getBoundingClientRect().height : 0;
+  }
+
+  function updatePin() {
+    if (!nav || !sentinel || !spacer) return;
+    var top = headerHeight();
+    nav.style.top = top + 'px';
+    var shouldPin = sentinel.getBoundingClientRect().top <= top;
+    if (shouldPin && !nav.classList.contains('is-pinned')) {
+      spacer.style.height = nav.getBoundingClientRect().height + 'px';
+      spacer.style.display = 'block';
+      nav.classList.add('is-pinned');
+    } else if (!shouldPin && nav.classList.contains('is-pinned')) {
+      nav.classList.remove('is-pinned');
+      spacer.style.display = 'none';
+    }
+  }
+  window.addEventListener('scroll', updatePin, { passive: true });
+  window.addEventListener('resize', updatePin);
+  updatePin();
+
+  // ---- Jump-nav active-state highlighting -------------------------------
+  var jumpLinks = document.querySelectorAll('.itsp-jumpnav a');
+  var targets = Array.prototype.slice.call(jumpLinks).map(function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  }).filter(Boolean);
+
+  function setActiveJumpLink() {
+    var navHeight = nav ? nav.getBoundingClientRect().height : 0;
+    var offset = headerHeight() + navHeight + 20;
+    var scrollY = window.scrollY + offset;
+    var current = targets[0];
+    targets.forEach(function (sec) { if (sec.offsetTop <= scrollY) current = sec; });
+    jumpLinks.forEach(function (a) {
+      a.classList.toggle('is-active', current && a.getAttribute('href') === '#' + current.id);
+    });
+  }
+  window.addEventListener('scroll', setActiveJumpLink, { passive: true });
+  setActiveJumpLink();
+
+  // ---- Scroll-reveal animations -----------------------------------------
+  var revealEls = document.querySelectorAll('.itsp-reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+});
+</script>
+</body>
+</html>

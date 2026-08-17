@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CompTIA Security+ Training (SY0-701) — Part 2 — JobSkillShare</title>
+<meta name="description" content="CompTIA Security+ Training (SY0-701) — Part 2 — part of the JobSkillShare Cybersecurity Analyst Certificate Program.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/buttons-override.css">
+
+<style>
+  /* ==========================================================================
+     Course-detail page CSS — embedded in-file per project convention.
+     Same structure as the IT Support course pages, but reads its accent
+     from --coral instead of --teal so it matches the Cybersecurity Analyst
+     Certificate Program's brand color. Variable is still named --cd-teal
+     internally to keep the rest of the block unchanged from the established
+     pattern — only its value points to coral here.
+     ========================================================================== */
+  :root{
+    --cd-teal: var(--coral, #FF6B5B);
+    --cd-ink: var(--ink, #12202E);
+    --cd-muted: var(--text-muted, #64748B);
+    --cd-border: var(--border, #E6E9EE);
+    --cd-radius: var(--radius-lg, 16px);
+  }
+
+  .course-detail-layout{
+    display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:48px;
+    padding:40px 24px 80px; align-items:start;
+  }
+  .course-detail-main h1{ font-size:2rem; line-height:1.15; margin:0; }
+  .course-detail-block{ margin-top:40px; padding-top:32px; border-top:1px solid var(--cd-border); }
+  .course-detail-block:first-of-type{ border-top:none; padding-top:0; }
+  .course-detail-block h2{ font-size:1.4rem; margin-bottom:14px; }
+  .learn-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px 24px; }
+  .learn-grid p{ margin:0; color:var(--cd-ink); }
+  .checklist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .checklist li{ color:var(--cd-ink); }
+
+  /* ---------- sidebar ---------- */
+  .course-detail-sidebar{ position:sticky; top:24px; display:flex; flex-direction:column; gap:18px; }
+  .sidebar-card{
+    background:#fff; border:1px solid var(--cd-border); border-radius:var(--cd-radius); padding:22px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .sidebar-card:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(15,44,76,.09); }
+  .sidebar-card h3{ margin:0 0 8px; font-size:1.1rem; }
+  .sidebar-card h4{ margin:0 0 4px; font-size:.95rem; }
+  .sidebar-card p{ color:var(--cd-muted); font-size:.9rem; line-height:1.5; }
+  .sidebar-card > p{ margin-bottom:16px; }
+
+  .option-link{
+    display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size:.88rem;
+    color:var(--cd-teal); text-decoration:none; white-space:nowrap;
+    border:2px solid var(--cd-teal); border-radius:9px; padding:9px 16px;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .option-link:hover{
+    background:var(--cd-teal); color:#fff; transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(255,107,91,.28);
+  }
+
+  .testimonial-slider{ transition: box-shadow .2s ease; }
+  .slider-arrow{ transition: transform .15s ease, background-color .15s ease; }
+  .slider-arrow:hover{ transform:scale(1.12); }
+
+  .cd-reveal{ opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+  .cd-reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  .sticky-cta-row{ display:none; }
+
+  @media (max-width: 900px){
+    .course-detail-layout{ grid-template-columns:1fr; padding:28px 20px 100px; }
+    .course-detail-sidebar{ position:static; }
+    .learn-grid{ grid-template-columns:1fr; }
+
+    .sticky-cta-row{
+      display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+      position:fixed; left:0; right:0; bottom:0; z-index:50;
+      background:#fff; border-top:1px solid var(--cd-border);
+      padding:12px 16px; box-shadow:0 -8px 24px rgba(15,44,76,.12);
+      transition: transform .25s ease, opacity .25s ease;
+    }
+    .sticky-cta-row.is-hidden{ transform:translateY(100%); opacity:0; pointer-events:none; }
+
+    .sticky-cta-label{
+      font-size:.68rem; line-height:1.3; color:var(--cd-muted); white-space:nowrap; flex:1 1 100%;
+    }
+    .sticky-cta-row .btn{
+      flex:1 1 auto; text-align:center; white-space:nowrap; padding:10px 14px; font-size:.85rem;
+    }
+  }
+
+  @media (max-width: 480px){
+    .sticky-cta-label{ flex-basis:100%; }
+    .sticky-cta-row .btn{ flex:1 1 28%; }
+  }
+
+  /* ---------- HERO BANNER ---------- */
+  .cdhero{
+    position:relative; overflow:hidden; color:#fff;
+    background: linear-gradient(120deg, #0B2035 0%, #123655 55%, #0E2A44 100%);
+    margin: 20px 24px 0; border-radius: 20px;
+  }
+  .cdhero-bg{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.30;
+  }
+  .cdhero-overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(120deg, rgba(11,32,53,.92) 0%, rgba(18,54,85,.85) 55%, rgba(14,42,68,.92) 100%);
+  }
+  .cdhero-inner{ position:relative; z-index:1; padding:44px 40px; max-width:820px; }
+  .cdhero-badge{
+    display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.04em;
+    padding:6px 14px; border-radius:20px; margin-bottom:16px;
+  }
+  .cdhero-badge.badge-free{ background:#DDF6EC; color:#0F7A52; }
+  .cdhero-badge.badge-premium{ background:rgba(255,255,255,.14); color:#EAF6F5; border:1px solid rgba(255,255,255,.3); }
+  .cdhero h1{ font-family:'Sora',sans-serif; font-size:2rem; line-height:1.18; margin:0 0 10px; color:#fff; }
+  .cdhero-lead{ color:#C6D6E4; font-size:1rem; margin:0 0 22px; }
+  .cdhero-stats{ display:flex; flex-wrap:wrap; gap:12px; }
+  .cdhero-stat{
+    display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.16); border-radius:10px; padding:10px 16px; font-size:.88rem; font-weight:600;
+  }
+
+  /* ---------- LEARN GRID (icon cards) ---------- */
+  .learn-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .learn-grid p{
+    display:flex; align-items:flex-start; gap:12px; margin:0; color:var(--cd-ink);
+    background:var(--cd-bg-alt, #F5F7FA); border:1px solid var(--cd-border); border-radius:12px;
+    padding:14px 16px; font-size:.92rem; line-height:1.5;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .learn-grid p:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(15,44,76,.08); border-color:var(--cd-teal); }
+  .learn-grid p::before{
+    content:"✓"; flex:0 0 auto; width:24px; height:24px; border-radius:50%;
+    background:#DDF6EC; color:#159467; font-size:.72rem; font-weight:800;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .learn-grid p{ text-indent:0; }
+
+  /* ---------- CHECKLIST ---------- */
+  .checklist{ gap:12px !important; }
+  .checklist li{
+    display:flex; align-items:flex-start; gap:12px; background:var(--cd-bg-alt,#F5F7FA);
+    border:1px solid var(--cd-border); border-radius:12px; padding:14px 16px; font-size:.92rem;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .checklist li:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(15,44,76,.08); border-color:var(--cd-teal); }
+  .checklist li::before{
+    content:"✓"; flex:0 0 auto; width:22px; height:22px; border-radius:50%;
+    background:#DDF6EC; color:#159467; font-size:.68rem; font-weight:800;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+
+  /* ---------- ZEBRA SECTION BACKGROUNDS ---------- */
+  .course-detail-block{
+    border-top:none !important; border-radius:16px; padding:28px 28px !important;
+    margin-top:24px !important;
+  }
+  .course-detail-block:nth-of-type(odd){ background:var(--cd-bg-alt,#F5F7FA); }
+  .course-detail-block:nth-of-type(even){ background:#fff; border:1px solid var(--cd-border); }
+  .course-detail-block:first-of-type{ padding-top:28px !important; }
+  .course-detail-block h2{ display:flex; align-items:center; gap:10px; }
+
+  /* ---------- CURRICULUM ACCORDION ---------- */
+  .course-list{ display:flex; flex-direction:column; gap:12px; }
+  .course-item{
+    background:#fff; border:1px solid var(--cd-border); border-radius:12px; overflow:hidden;
+    transition: box-shadow .18s ease, border-color .18s ease;
+  }
+  .course-item:hover{ border-color:var(--cd-teal); box-shadow:0 8px 20px rgba(15,44,76,.07); }
+  .course-item summary{
+    list-style:none; cursor:pointer; display:flex; align-items:center; gap:14px;
+    padding:16px 18px; user-select:none;
+  }
+  .course-item summary::-webkit-details-marker{ display:none; }
+  .course-item .course-num{
+    flex:0 0 auto; width:32px; height:32px; border-radius:9px; background:#FFE9E5; color:var(--cd-teal);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.9rem;
+  }
+  .course-item .course-info{ flex:1; display:flex; flex-direction:column; gap:2px; min-width:0; }
+  .course-item .course-title{ font-weight:700; color:var(--cd-ink); font-size:.98rem; }
+  .course-item .course-meta{ font-size:.8rem; color:var(--cd-muted); }
+  .course-item .chevron{ flex:0 0 auto; color:var(--cd-teal); transition: transform .2s ease; font-size:1.1rem; }
+  .course-item[open] .chevron{ transform:rotate(180deg); }
+  .course-item .course-body{ padding:0 18px 18px 64px; color:var(--cd-muted); font-size:.9rem; }
+  .course-item .course-body ul{ margin:0; padding-left:18px; display:flex; flex-direction:column; gap:6px; }
+
+  /* ---------- SIDEBAR ICON HEADERS ---------- */
+  .sidebar-card h3::before, .sidebar-card h4::before{ margin-right:8px; }
+  .sidebar-card:nth-of-type(1) h3::before{ content:"🚀"; }
+  .sidebar-card:nth-of-type(2) h4::before{ content:"📚"; }
+  .sidebar-card:nth-of-type(3) h4::before{ content:"➡️"; }
+  .sidebar-card{ border-top:4px solid var(--cd-teal); }
+
+  /* ---------- TESTIMONIAL SLIDER polish ---------- */
+  #reviews.course-detail-block{ background:linear-gradient(160deg,#0F2C4C 0%,#123655 100%) !important; border:none !important; color:#fff; }
+  #reviews.course-detail-block h2{ color:#fff; }
+  .testimonial-slider{ background:#fff; color:var(--cd-ink); border-radius:14px; padding:26px; margin-top:6px; }
+
+  @media (max-width: 640px){
+    .cdhero{ margin:14px 14px 0; }
+    .cdhero-inner{ padding:30px 22px; }
+    .cdhero h1{ font-size:1.5rem; }
+    .learn-grid{ grid-template-columns:1fr; }
+    .course-detail-block{ padding:22px 18px !important; }
+    .course-item .course-body{ padding-left:18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container breadcrumb">
+    <a href="index.html">Home</a><span>/</span><a href="cybersecurity-analyst-certificate-program.html">Cybersecurity Analyst</a><span>/</span><span class="current">Security+ Part 2</span>
+  </div>
+
+  <section class="cdhero">
+    <img class="cdhero-bg" src="./assets/images/cybersecurity-data-protection-concept.jpg" alt="" loading="eager">
+    <div class="cdhero-overlay"></div>
+    <div class="cdhero-inner">
+      <span class="cdhero-badge badge-premium">Premium unlocks full course</span>
+      <h1>CompTIA Security+ Training (SY0-701) — Part 2</h1>
+      <p class="cdhero-lead">Course 3 of 5 in the Cybersecurity Analyst Certificate Program</p>
+      <div class="cdhero-stats">
+        <span class="cdhero-stat">📘 85 lessons</span>
+        <span class="cdhero-stat">⏱ 14 hrs</span>
+        <span class="cdhero-stat">◆ Intermediate</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="course-detail-layout container">
+
+    <div class="course-detail-main">
+
+      <section class="course-detail-block">
+        <h2>Course Introduction</h2>
+        <p>Part 2 builds directly on Part 1, going deeper into vulnerability analysis, cryptography, and the threat-detection skills you'll use to identify and mitigate security threats effectively.</p>
+      </section>
+
+      <section class="course-detail-block">
+        <h2>Why Choose This Course?</h2>
+        <p>Where Part 1 builds the theory, Part 2 makes it practical — you'll spend most of this course actually finding vulnerabilities and applying cryptographic controls, not just reading about them.</p>
+      </section>
+
+      <section class="course-detail-block">
+        <h2>What You'll Learn</h2>
+        <div class="learn-grid">
+          <p>Conduct network vulnerability analysis</p>
+          <p>Apply cryptographic controls correctly</p>
+          <p>Detect and respond to active threats</p>
+          <p>Interpret common vulnerability scoring</p>
+        </div>
+      </section>
+
+      <section class="course-detail-block" id="curriculum">
+        <span class="eyebrow" style="display:block; margin-bottom:6px;">Course curriculum</span>
+        <h2>Start with any free lesson</h2>
+        <p style="color:var(--text-muted); margin-bottom:16px;">85 lessons in this course.</p>
+
+        <div class="course-list">
+          <details class="course-item" open>
+            <summary>
+              <span class="course-num">1</span>
+              <span class="course-info">
+                <span class="course-title">Network Vulnerability Analysis</span>
+                <span class="course-meta">29 lessons</span>
+              </span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="course-body">
+              <ul><li>Vulnerability scanning</li><li>Common Vulnerability Scoring (CVSS)</li><li>Reporting findings</li></ul>
+            </div>
+          </details>
+          <details class="course-item">
+            <summary>
+              <span class="course-num">2</span>
+              <span class="course-info">
+                <span class="course-title">Cryptographic Implementation</span>
+                <span class="course-meta">28 lessons</span>
+              </span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="course-body">
+              <ul><li>Symmetric &amp; asymmetric encryption</li><li>Public key infrastructure</li><li>Hashing &amp; digital signatures</li></ul>
+            </div>
+          </details>
+          <details class="course-item">
+            <summary>
+              <span class="course-num">3</span>
+              <span class="course-info">
+                <span class="course-title">Threat Detection &amp; Mitigation</span>
+                <span class="course-meta">28 lessons</span>
+              </span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="course-body">
+              <ul><li>Indicators of compromise</li><li>Detection tooling</li><li>Mitigation &amp; remediation</li></ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="course-detail-block" id="who">
+        <h2>Who This Is For</h2>
+        <ul class="checklist">
+          <li>Learners who've completed Security+ Part 1</li>
+          <li>Anyone finishing preparation for the Security+ (SY0-701) exam</li>
+          <li>Analysts who want hands-on vulnerability &amp; cryptography practice</li>
+        </ul>
+      </section>
+
+      <section class="course-detail-block" id="reviews">
+        <h2>What Learners Say</h2>
+        <div class="testimonial-slider" data-testimonial-slider>
+          <div class="slider-stars">★★★★★</div>
+          <p class="slider-quote"></p>
+          <div class="slider-person">
+            <div class="avatar"></div>
+            <div><strong></strong><span></span></div>
+          </div>
+          <div class="slider-nav">
+            <button type="button" class="slider-arrow prev" aria-label="Previous story">←</button>
+            <span class="slider-count">1 / 1</span>
+            <button type="button" class="slider-arrow next" aria-label="Next story">→</button>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        window.JSS_TESTIMONIALS = [
+          { initials:'ZS', name:'Zoeshan B. Nasir', role:'Information Technology Tech — AI Native Group', quote:'The vulnerability analysis and threat detection lessons matched almost exactly what I was asked to do in my first analyst role.' },
+          { initials:'HW', name:'Hadi Wali', role:'Cyber Security Engineer — TikTok', quote:'The cryptography section finally made PKI click for me after years of just memorizing acronyms.' }
+        ];
+      </script>
+
+    </div>
+
+    <aside class="course-detail-sidebar">
+      <div class="sidebar-card">
+        <h3>Begin Learning Today</h3>
+        <p>Preview a verified free lesson here. Members should log in to take premium lessons inside the learning portal.</p>
+        <a href="#" class="btn btn-primary btn-block" data-auth-trigger="signup">Start Free Lesson</a>
+        <a href="#" class="btn btn-outline btn-block" data-auth-trigger="login" style="margin-top:10px;">Member Log In</a>
+        <a href="#" class="btn btn-outline btn-block" data-auth-trigger="signup" style="margin-top:10px;">Free Registration</a>
+      </div>
+      <div class="sidebar-card">
+        <h4>Part of a program</h4>
+        <p style="font-size:.9rem; color:var(--text-muted); margin-bottom:12px;">This course is course 3 of 5 in the Cybersecurity Analyst Certificate Program.</p>
+        <a href="cybersecurity-analyst-certificate-program.html" class="option-link">View full program →</a>
+      </div>
+      <div class="sidebar-card">
+        <h4>Next course</h4>
+        <p style="font-size:.9rem; color:var(--text-muted); margin-bottom:12px;">Cybersecurity Technical Skills by an Expert</p>
+        <a href="cybersecurity-technical-skills-by-an-expert.html" class="option-link">Continue to Technical Skills →</a>
+      </div>
+    </aside>
+
+  </section>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta-row">
+    <span class="sticky-cta-label">READY TO LEARN?<br><strong>Start free or create an account</strong></span>
+    <a href="#" class="btn btn-primary" data-auth-trigger="signup">Start Free Lesson</a>
+    <a href="#" class="btn btn-outline" data-auth-trigger="login">Log In</a>
+    <a href="#" class="btn btn-outline" data-auth-trigger="signup">Create Account</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="it-support-certificate-program.html">IT Support</a></li>
+          <li><a href="cybersecurity-analyst-certificate-program.html">Cybersecurity</a></li>
+          <li><a href="programs.html#cloud">Cloud &amp; Systems</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Week 6 addition — Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  var revealTargets = document.querySelectorAll('.course-detail-block, .sidebar-card');
+  revealTargets.forEach(function (el) { el.classList.add('cd-reveal'); });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(function (el) { io.observe(el); });
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  var stickyBar = document.querySelector('.sticky-cta-row');
+  var footer = document.querySelector('.site-footer');
+  if (stickyBar && footer && 'IntersectionObserver' in window) {
+    var footerObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        stickyBar.classList.toggle('is-hidden', entry.isIntersecting);
+      });
+    }, { threshold: 0.01 });
+    footerObserver.observe(footer);
+  }
+});
+</script>
+</body>
+</html>

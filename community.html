@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — JobSkillShare</title>
+<meta name="description" content="Join the JobSkillShare learner community — ask questions, get a recommended learning path, and see what Premium unlocks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/buttons-override.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="courses.html">Courses</a>
+      <a href="community.html" class="active">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container breadcrumb">
+    <a href="index.html">Home</a><span>/</span><span class="current">Community</span>
+  </div>
+
+  <section class="hero hero-compact">
+    <div class="hero-bg" aria-hidden="true">
+      <img class="hero-bg-photo" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1800&q=60" alt="" loading="eager">
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="container hero-copy">
+      <span class="eyebrow eyebrow-dark">Community</span>
+      <h1 style="margin-top:16px;">Learn alongside people on the same path</h1>
+      <p class="lead" style="margin-top:14px;">Ask questions, share wins, and get a recommended learning path — built for people switching into tech.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px;">
+    <div class="container">
+      <div class="community-band">
+        <div>
+          <span class="community-stat-pill"><span class="dot"></span> Active learner community</span>
+          <h2>Join the conversation on Discord</h2>
+          <p>Trade tips, share your progress, and get unstuck faster with help from other learners and mentors.</p>
+          <div class="community-actions">
+            <!-- PLACEHOLDER: no real Discord server is connected in this prototype yet.
+                 Swap this href for a real invite link before launch. -->
+            <a href="#" class="btn btn-primary">Join Discord Community</a>
+          </div>
+        </div>
+        <div class="community-avatars">
+          <div class="avatar-stack">
+            <span class="mini-avatar">ZS</span><span class="mini-avatar">HW</span><span class="mini-avatar">MR</span>
+          </div>
+          <strong>Thousands of learners</strong>
+          <span>online across time zones — this prototype doesn't pull a live count.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING PATH HELPER — genuinely interactive: matches your interest
+       against the real programs on this site, client-side, no AI call. -->
+  <section class="section section-alt" id="path-helper">
+    <div class="container">
+      <div class="path-helper" data-path-helper>
+        <div>
+          <span class="eyebrow eyebrow-dark">Learning path helper</span>
+          <h2>Not sure where to begin?</h2>
+          <p>Tell us the IT role or skill you want. We'll point you to the program or course that fits — pulled straight from what's actually on this site.</p>
+        </div>
+        <div class="path-helper-panel">
+          <label>What do you want to learn?</label>
+          <div class="path-chip-row">
+            <button type="button" class="path-chip">I am new to IT</button>
+            <button type="button" class="path-chip">IT Support</button>
+            <button type="button" class="path-chip">Systems &amp; networking</button>
+            <button type="button" class="path-chip">Cybersecurity</button>
+            <button type="button" class="path-chip">Cloud</button>
+          </div>
+          <input type="text" class="path-helper-input" placeholder="Or type it here, e.g. &quot;I want to work in cloud infrastructure&quot;">
+          <button type="button" class="btn btn-primary btn-block path-helper-find" style="margin-top:16px;">Find My Learning Path</button>
+          <div class="path-helper-result"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREMIUM FEATURES — static/visual only -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Premium member features</span>
+        <h2>More ways to build job-ready skills</h2>
+        <p>Combine structured learning with practice, completion recognition, and targeted support.</p>
+      </div>
+      <div class="premium-grid">
+        <div class="premium-card">
+          <span class="premium-tag">Premium</span>
+          <div class="icon-badge">◆</div>
+          <h4>Course Certificates</h4>
+          <p>Recognize completed training and learning progress.</p>
+        </div>
+        <div class="premium-card">
+          <span class="premium-tag">Premium</span>
+          <div class="icon-badge">🛠</div>
+          <h4>Hands-On Labs</h4>
+          <p>Practice technical skills in guided environments.</p>
+        </div>
+        <div class="premium-card">
+          <span class="premium-tag">Premium</span>
+          <div class="icon-badge">✦</div>
+          <h4>AI Lesson Tutor</h4>
+          <p>Ask lesson-grounded questions in supported units.</p>
+        </div>
+        <div class="premium-card">
+          <span class="premium-tag">Premium</span>
+          <div class="icon-badge">➜</div>
+          <h4>AI Career Tools</h4>
+          <p>Get guided support for career preparation.</p>
+        </div>
+      </div>
+      <div class="teaser-foot" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="my-memberships.html" class="btn btn-primary">Explore Premium</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> See plans &amp; pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT LEARNERS SAY — same slider component as the homepage -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Learner experiences</span>
+        <h2>What learners say</h2>
+      </div>
+      <div class="testimonial-slider" data-testimonial-slider>
+        <div class="slider-stars">★★★★★</div>
+        <p class="slider-quote"></p>
+        <div class="slider-person">
+          <div class="avatar"></div>
+          <div><strong></strong><span></span></div>
+        </div>
+        <div class="slider-nav">
+          <button type="button" class="slider-arrow prev" aria-label="Previous story">←</button>
+          <span class="slider-count">1 / 1</span>
+          <button type="button" class="slider-arrow next" aria-label="Next story">→</button>
+        </div>
+      </div>
+      <p class="slider-rating-note">4.8★ average across all course ratings</p>
+    </div>
+  </section>
+
+  <script>
+    window.JSS_TESTIMONIALS = [
+      { initials:'ZS', name:'Zoeshan B. Nasir', role:'Information Technology Tech — AI Native Group', quote:'I went from zero IT background to a real support role in under a year.' },
+      { initials:'HW', name:'Hadi Wali', role:'Cyber Security Engineer — TikTok', quote:'The incident-response labs were the closest thing to real SOC work I found anywhere online.' },
+      { initials:'MR', name:'Manjinder Singh Rehal', role:'IT Specialist — Woodland Joint USD', quote:'Mentorship made the difference — having someone check in kept me accountable every week.' },
+      { initials:'BW', name:'Bradley Williams', role:'Systems Administrator — RadNet', quote:'Practical, hands-on training. I was configuring real tools within the first two weeks.' }
+    ];
+  </script>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#it-support">IT Support</a></li>
+          <li><a href="programs.html#cybersecurity">Cybersecurity</a></li>
+          <li><a href="programs.html#cloud">Cloud &amp; Systems</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Week 3 addition — Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<!-- AUTH MODAL — shared placeholder gate; no backend is connected yet. -->
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

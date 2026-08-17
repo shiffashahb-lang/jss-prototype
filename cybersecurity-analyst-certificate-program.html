@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity Analyst Certificate Program — JobSkillShare</title>
+<meta name="description" content="Build practical cybersecurity skills in Security+ 701, Risk Management, and Incident Response through a guided sequence of 5 courses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/program-detail.css">
+<link rel="stylesheet" href="css/program-detail-responsive.css">
+<link rel="stylesheet" href="css/buttons-override.css">
+
+<!-- ==========================================================================
+     Page-specific CSS for the Cybersecurity Analyst Certificate Program page.
+     program-detail.css / program-detail-responsive.css (above) are restored
+     from the original build — they're what style the existing Overview band,
+     skills chip row, outcome cards, curriculum accordion, mentorship band,
+     and testimonial grid. Dropping them in the previous revision was a bug:
+     it left those sections rendering as unstyled stacked text. The <style>
+     block below is ADDITIONAL, for the new csp- sections only — it does not
+     replace program-detail.css.
+     Kept entirely in-file (per project convention, matching
+     it-support-certificate-program.html) rather than the external
+     program-detail.css / program-detail-responsive.css files this page used
+     before. Everything below is scoped with a "csp-" prefix so it can't
+     collide with site-wide classes. Mirrors the itsp- pattern 1:1 (same
+     section set, same pinned jump-nav mechanic) but reads its accent color
+     from --coral instead of --teal, so this page stays visually distinct
+     from the IT Support program page while sharing its structure.
+     Falls back to hardcoded values if a site custom property isn't defined.
+     ========================================================================== -->
+<style>
+  :root{
+    --csp-coral: var(--teal, #0EA5A0); /* accent for hover/underline/headings — switched from coral to teal per feedback; hero itself still uses --coral via the existing hero-coral class, untouched */
+    --csp-coral-dark: #0C8B86;
+    --csp-ink: var(--ink, #12202E);
+    --csp-muted: var(--text-muted, #64748B);
+    --csp-bg-alt: var(--bg-alt, #F5F7FA);
+    --csp-border: var(--border, #E6E9EE);
+    --csp-radius: var(--radius-lg, 16px);
+    --csp-navy: #0F2C4C;
+    --csp-navy-dark: #0B2035;
+    --csp-green: #1FA971;
+  }
+
+  /* ---------- shared section shells ---------- */
+  .csp-section{ padding: 56px 0; }
+  .csp-section-alt{ background: var(--csp-bg-alt); }
+  .csp-container{ max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .csp-eyebrow{
+    display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color: var(--csp-coral); margin-bottom:10px;
+  }
+  .csp-h2{ font-family:'Sora',sans-serif; font-size:2rem; line-height:1.2; color:var(--csp-ink); margin:0 0 6px; }
+  .csp-lead{ color:var(--csp-muted); font-size:1rem; line-height:1.6; max-width:70ch; }
+
+  /* ---------- SECONDARY / JUMP NAV (pinned on scroll) ---------- */
+  .csp-jumpnav{
+    position:relative; z-index:30; background:#fff;
+    border-bottom:1px solid var(--csp-border); box-shadow:0 2px 10px rgba(15,44,76,.05);
+    transition:box-shadow .2s ease;
+  }
+  .csp-jumpnav.is-pinned{
+    position:fixed; left:0; right:0; box-shadow:0 6px 18px rgba(15,44,76,.12);
+  }
+  .csp-jumpnav-spacer{ display:none; }
+  .csp-jumpnav-inner{ display:flex; align-items:center; gap:26px; overflow-x:auto; padding:16px 24px; max-width:1180px; margin:0 auto; }
+  .csp-jump-label{ font-size:.72rem; font-weight:700; letter-spacing:.06em; color:#9AA7B5; text-transform:uppercase; flex:0 0 auto; }
+  .csp-jumpnav a{
+    flex:0 0 auto; font-size:.92rem; font-weight:700; color:var(--csp-ink); text-decoration:none;
+    padding-bottom:4px; border-bottom:2px solid transparent; white-space:nowrap;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .csp-jumpnav a.is-active,
+  .csp-jumpnav a:hover{ color:var(--csp-coral); border-bottom-color:var(--csp-coral); }
+
+  /* ---------- SCROLL-REVEAL + HOVER MOTION ---------- */
+  .csp-reveal{ opacity:0; transform:translateY(22px); transition:opacity .55s ease, transform .55s ease; }
+  .csp-reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .csp-reveal-stagger > *{ opacity:0; transform:translateY(22px); transition:opacity .5s ease, transform .5s ease; }
+  .csp-reveal-stagger.is-visible > *{ opacity:1; transform:translateY(0); }
+  .csp-reveal-stagger.is-visible > *:nth-child(1){ transition-delay:.03s; }
+  .csp-reveal-stagger.is-visible > *:nth-child(2){ transition-delay:.09s; }
+  .csp-reveal-stagger.is-visible > *:nth-child(3){ transition-delay:.15s; }
+  .csp-reveal-stagger.is-visible > *:nth-child(4){ transition-delay:.21s; }
+  .csp-reveal-stagger.is-visible > *:nth-child(5){ transition-delay:.27s; }
+
+  .csp-check-item, .csp-tech-chip, .csp-practiced-chip, .csp-direction-chip{
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  }
+  .csp-check-item:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(15,44,76,.08); border-color:var(--csp-coral); }
+  .csp-tech-chip:hover, .csp-practiced-chip:hover{ transform:translateY(-2px) scale(1.03); }
+  .csp-direction-chip:hover{ transform:translateY(-2px); box-shadow:0 8px 18px rgba(15,44,76,.1); border-color:var(--csp-coral); }
+
+  .csp-skill-card, .csp-outcomes-panel, .csp-career-panel, .csp-related-card, .csp-faq-item{
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .csp-skill-card:hover, .csp-related-card:hover{
+    transform:translateY(-4px); box-shadow:0 14px 30px rgba(15,44,76,.1);
+  }
+  .csp-career-list li a{ transition: transform .15s ease, background-color .15s ease; }
+  .csp-career-list li a:hover{ transform:translateX(4px); }
+  .csp-road-step{ transition: transform .2s ease; }
+  .csp-road-num{ transition: transform .2s ease, box-shadow .2s ease; }
+  .csp-road-step:hover .csp-road-num{ transform:scale(1.12); box-shadow:0 0 0 4px rgba(14,165,160,.18); }
+  .csp-faq-item:hover{ border-color:var(--csp-coral); }
+
+  /* ---------- OUTCOMES (checklist + career panel, added alongside existing salary cards) ---------- */
+  .csp-outcomes-grid{ display:grid; grid-template-columns: 1.5fr 1fr; gap:24px; align-items:start; margin-top:34px; }
+  .csp-outcomes-panel{
+    background:#fff; border:1px solid var(--csp-border); border-radius:var(--csp-radius); padding:30px;
+  }
+  .csp-panel-head{ display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .csp-panel-icon{
+    width:44px; height:44px; border-radius:12px; background:#E7F7F5; color:var(--csp-coral);
+    display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex:0 0 auto;
+  }
+  .csp-panel-head h3{ margin:0; font-family:'Sora',sans-serif; font-size:1.3rem; color:var(--csp-ink); }
+  .csp-checklist-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .csp-check-item{
+    display:flex; align-items:center; gap:10px; border:1px solid var(--csp-border); border-radius:10px;
+    padding:12px 14px; font-size:.92rem; color:var(--csp-ink);
+  }
+  .csp-check-item .tick{
+    width:20px; height:20px; border-radius:50%; background:#DDF6EC; color:#159467;
+    font-size:.72rem; display:flex; align-items:center; justify-content:center; flex:0 0 auto; font-weight:700;
+  }
+
+  .csp-career-panel{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--csp-radius); padding:30px; color:#fff;
+  }
+  .csp-career-panel .csp-panel-head .csp-panel-icon{ background:rgba(255,255,255,.12); color:#8FD9D4; }
+  .csp-career-eyebrow{ font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#8FD9D4; }
+  .csp-career-panel h3{ margin:2px 0 0; font-family:'Sora',sans-serif; font-size:1.3rem;color: #fff; }
+  .csp-career-list{ list-style:none; margin:20px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .csp-career-list li a{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);
+    border-radius:10px; padding:12px 16px; color:#fff; text-decoration:none; font-weight:600; font-size:.92rem;
+    transition:.15s ease;
+  }
+  .csp-career-list li a:hover{ background:rgba(255,255,255,.16); }
+
+  /* ---------- SKILLS YOU'LL BUILD ---------- */
+  .csp-skills-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .csp-skills-badge{
+    background:#fff; border:1px solid var(--csp-border); border-radius:12px; padding:10px 18px; text-align:center;
+  }
+  .csp-skills-badge strong{ display:block; font-size:1.3rem; color:var(--csp-coral); font-family:'Sora',sans-serif; }
+  .csp-skills-badge span{ font-size:.68rem; letter-spacing:.05em; color:var(--csp-muted); text-transform:uppercase; }
+  .csp-skills-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:22px; }
+  .csp-skill-card{
+    background:#fff; border-radius:var(--csp-radius); padding:26px; border-top:4px solid var(--csp-coral);
+    box-shadow:0 6px 20px rgba(15,44,76,.06);
+  }
+  .csp-skill-card.is-alt{ border-top-color:#8B7CFF; }
+  .csp-skill-card.is-alt2{ border-top-color:#1FA971; }
+  .csp-skill-card-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+  .csp-skill-card-head-left{ display:flex; align-items:center; gap:12px; }
+  .csp-skill-card-icon{
+    width:40px; height:40px; border-radius:10px; background:#E7F7F5; color:var(--csp-coral);
+    display:flex; align-items:center; justify-content:center; font-size:1.05rem;
+  }
+  .csp-skill-card.is-alt .csp-skill-card-icon{ background:#EFEBFF; color:#8B7CFF; }
+  .csp-skill-card.is-alt2 .csp-skill-card-icon{ background:#E7F7F0; color:#1FA971; }
+  .csp-skill-card-head h4{ margin:0; font-size:1.1rem; color:var(--csp-ink); }
+  .csp-skill-count{ font-size:.72rem; font-weight:700; color:var(--csp-muted); border:1px solid var(--csp-border); border-radius:20px; padding:3px 10px; }
+  .csp-skill-card ul{ list-style:none; margin:0; padding:0; }
+  .csp-skill-card li{
+    display:flex; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--csp-border); font-size:.92rem; color:var(--csp-ink);
+  }
+  .csp-skill-card li:first-child{ border-top:none; }
+  .csp-skill-card li::before{ content:"✓"; color:#159467; font-weight:700; font-size:.8rem; }
+
+  /* ---------- TECH STACK ---------- */
+  .csp-stack-band{
+    background:#fff; border:1px solid var(--csp-border); border-radius:var(--csp-radius);
+    padding:30px; display:flex; align-items:center; gap:30px; flex-wrap:wrap; margin-top:26px;
+  }
+  .csp-stack-copy{ flex:0 0 auto; min-width:180px; }
+  .csp-chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .csp-tech-chip{
+    display:inline-flex; align-items:center; gap:7px; background:var(--csp-bg-alt);
+    border:1px solid var(--csp-border); border-radius:20px; padding:8px 16px; font-size:.85rem; font-weight:600; color:var(--csp-ink);
+  }
+  .csp-tech-chip .dot{ width:7px; height:7px; border-radius:50%; background:var(--csp-coral); }
+
+  /* ---------- ROADMAP ---------- */
+  .csp-roadmap{ position:relative; margin-top:26px; padding-left:8px; }
+  .csp-road-step{ position:relative; padding-left:52px; padding-bottom:34px; }
+  .csp-road-step:last-child{ padding-bottom:0; }
+  .csp-road-step::before{
+    content:""; position:absolute; left:19px; top:40px; bottom:-2px; width:2px; background:var(--csp-border);
+  }
+  .csp-road-step:last-child::before{ display:none; }
+  .csp-road-num{
+    position:absolute; left:0; top:0; width:40px; height:40px; border-radius:50%;
+    background:#E7F7F5; color:var(--csp-coral); font-weight:800; font-family:'Sora',sans-serif;
+    display:flex; align-items:center; justify-content:center; font-size:1rem; border:2px solid #fff; box-shadow:0 0 0 2px var(--csp-border);
+  }
+  .csp-road-step.is-complete .csp-road-num{ background:#DDF6EC; color:#159467; }
+  .csp-road-step h4{ margin:0 0 6px; font-size:1.2rem; color:var(--csp-ink); }
+  .csp-road-step p{ margin:0 0 12px; color:var(--csp-muted); font-size:.94rem; }
+  .csp-road-tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .csp-road-tag{
+    display:inline-block; background:var(--csp-bg-alt); border:1px solid var(--csp-border); color:var(--csp-ink);
+    border-radius:8px; padding:7px 12px; font-size:.82rem; font-weight:600; text-decoration:none;
+  }
+  .csp-road-tag:hover{ border-color:var(--csp-coral); color:var(--csp-coral); }
+
+  /* ---------- PROJECTS ---------- */
+  .csp-projects-band{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--csp-radius); padding:38px; color:#fff;
+  }
+  .csp-projects-band .csp-eyebrow{ color:#8FD9D4; }
+  .csp-projects-band h2{ color:#fff; }
+  .csp-skills-practiced-card{
+    background:#fff; border-radius:14px; padding:26px 28px; margin-top:24px; color:var(--csp-ink);
+  }
+  .csp-skills-practiced-head{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .csp-skills-practiced-head .icon{
+    width:38px; height:38px; border-radius:10px; background:#E7F7F5; color:var(--csp-coral);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem;
+  }
+  .csp-skills-practiced-head h4{ margin:0; font-size:1.05rem; }
+  .csp-skills-practiced-head span{ display:block; font-size:.8rem; color:var(--csp-muted); }
+  .csp-practiced-chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .csp-practiced-chip{
+    display:inline-flex; align-items:center; gap:7px; border-radius:20px; padding:7px 15px; font-size:.83rem; font-weight:600;
+  }
+  .csp-practiced-chip.c-tech{ background:#E7F7F5; color:#0F7A6C; }
+  .csp-practiced-chip.c-tool{ background:#F4EEFF; color:#7A4FD6; }
+  .csp-practiced-chip.c-skill{ background:#E7F7F0; color:#159467; }
+  .csp-practiced-chip .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+  .csp-cloud-note{
+    display:flex; gap:14px; background:rgba(255,255,255,.94); color:var(--csp-ink); border-radius:12px;
+    padding:18px 20px; margin-top:18px; align-items:flex-start;
+  }
+  .csp-cloud-note .icon{ font-size:1.3rem; flex:0 0 auto; }
+  .csp-cloud-note strong{ display:block; margin-bottom:4px; }
+  .csp-cloud-note p{ margin:0; font-size:.88rem; color:var(--csp-muted); line-height:1.55; }
+
+  /* ---------- CAREER DIRECTION ---------- */
+  .csp-direction-chips{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+  .csp-direction-chip{
+    display:inline-flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--csp-border);
+    border-radius:12px; padding:14px 18px; font-weight:600; color:var(--csp-ink); font-size:.92rem;
+  }
+  .csp-direction-chip .arrow{ color:var(--csp-coral); font-weight:800; }
+
+  /* ---------- REVIEWS (cycling carousel, replaces the old static grid) ---------- */
+  .csp-reviews-band{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--csp-radius); padding:36px; color:#fff;
+  }
+  .csp-reviews-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .csp-reviews-head .csp-eyebrow{ color:#8FD9D4; }
+  .csp-reviews-head h2{ color:#fff; margin:0; }
+  .csp-rating-badge{
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:12px;
+    padding:10px 18px; text-align:right;
+  }
+  .csp-rating-badge strong{ font-size:1.2rem; }
+  .csp-rating-badge span{ display:block; font-size:.72rem; color:#B9CCDD; }
+  .csp-review-card{
+    background:#fff; color:var(--csp-ink); border-radius:14px; padding:30px; margin-top:22px; min-height:150px;
+  }
+  .csp-review-stars{ color:#F5B400; letter-spacing:2px; margin-bottom:10px; }
+  .csp-review-title{ font-weight:700; font-size:1.05rem; margin-bottom:6px; }
+  .csp-review-body{ color:var(--csp-muted); font-size:.92rem; line-height:1.6; margin-bottom:16px; }
+  .csp-review-tag{
+    display:inline-block; background:var(--csp-bg-alt); border:1px solid var(--csp-border); border-radius:8px;
+    padding:5px 12px; font-size:.78rem; font-weight:600; margin-bottom:16px;
+  }
+  .csp-review-person{ display:flex; align-items:center; gap:12px; }
+  .csp-review-avatar{
+    width:38px; height:38px; border-radius:50%; background:var(--csp-coral); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.85rem;
+  }
+  .csp-review-person strong{ display:block; font-size:.9rem; }
+  .csp-review-person span{ display:block; font-size:.78rem; color:var(--csp-muted); }
+  .csp-review-nav{ display:flex; align-items:center; justify-content:center; gap:16px; margin-top:20px; }
+  .csp-review-arrow{
+    width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem;
+  }
+  .csp-review-arrow:hover{ background:rgba(255,255,255,.2); }
+  .csp-review-count{ font-size:.85rem; color:#B9CCDD; min-width:64px; text-align:center; }
+  .csp-review-hint{ text-align:center; font-size:.78rem; color:#8DA3B8; margin-top:8px; }
+
+  /* ---------- FAQ ---------- */
+  .csp-faq-list{ margin-top:22px; display:flex; flex-direction:column; gap:12px; }
+  .csp-faq-item{ background:#fff; border:1px solid var(--csp-border); border-radius:12px; overflow:hidden; }
+  .csp-faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:18px 22px; font-weight:700; color:var(--csp-ink); font-size:.96rem;
+  }
+  .csp-faq-q .chev{ transition:transform .15s ease; color:var(--csp-coral); flex:0 0 auto; }
+  .csp-faq-item.is-open .csp-faq-q .chev{ transform:rotate(90deg); }
+  .csp-faq-a{ max-height:0; overflow:hidden; transition:max-height .2s ease; }
+  .csp-faq-item.is-open .csp-faq-a{ max-height:300px; }
+  .csp-faq-a p{ margin:0; padding:0 22px 20px; color:var(--csp-muted); font-size:.92rem; line-height:1.6; }
+
+  /* ---------- RELATED ---------- */
+  .csp-related-card{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    background:#fff; border:1px solid var(--csp-border); border-radius:var(--csp-radius); padding:24px 28px; margin-top:20px;
+  }
+  .csp-related-card h4{ margin:0 0 6px; font-size:1.05rem; color:var(--csp-ink); }
+  .csp-related-card a.csp-explore{
+    display:inline-flex; align-items:center; gap:6px; font-weight:700; color:var(--csp-coral);
+    text-decoration:none; font-size:.88rem; white-space:nowrap; flex:0 0 auto;
+    border:2px solid var(--csp-coral); border-radius:9px; padding:10px 18px;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .csp-related-card a.csp-explore:hover{
+    background:var(--csp-coral); color:#fff; transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(14,165,160,.28);
+  }
+
+  /* ---------- FINAL CTA (restyled to match program-page pattern) ---------- */
+  .csp-final-cta{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--csp-radius); padding:56px 30px; text-align:center; color:#fff;
+  }
+  .csp-final-cta .csp-eyebrow{ color:#8FD9D4; }
+  .csp-final-cta h2{ font-family:'Sora',sans-serif; font-size:2.1rem; margin:6px 0 14px; color:#fff; }
+  .csp-final-cta p{ max-width:62ch; margin:0 auto 26px; color:#C6D6E4; line-height:1.6; }
+  .csp-final-actions{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .csp-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:13px 26px; border-radius:10px; font-weight:700; font-size:.95rem;
+    text-decoration:none; cursor:pointer; border:2px solid transparent; transition:.15s ease;
+  }
+  .csp-btn-primary{ background:var(--csp-coral); color:#fff; }
+  .csp-btn-primary:hover{ background:var(--csp-coral-dark); }
+  .csp-btn-white{ background:#fff; color:var(--csp-navy); border-color:#fff; }
+  .csp-btn-white:hover{ background:transparent; color:#fff; }
+
+  /* ---------- HERO ADDITIONS (assurance line only — hero itself untouched) ---------- */
+  .csp-preview-link{ color:#fff; font-weight:700; text-decoration:underline; font-size:.92rem; }
+  .csp-preview-link:hover{ color:#FFB4A8; }
+  .csp-assurance{ display:flex; flex-wrap:wrap; gap:22px; font-size:.85rem; color:#F1DAD5; margin-top:18px; }
+  .csp-assurance span::before{ content:"✓ "; color:#FFB4A8; font-weight:700; } /* kept coral-tinted — lives inside the untouched hero */
+
+  /* ---------- VIEW COURSE LINK (inside curriculum accordion) ---------- */
+  .csp-view-course-link{
+    display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-weight:700; font-size:.85rem;
+    color:var(--csp-coral); text-decoration:none; border:2px solid var(--csp-coral); border-radius:8px;
+    padding:8px 14px; transition: background-color .18s ease, color .18s ease, transform .18s ease;
+  }
+  .csp-view-course-link:hover{ background:var(--csp-coral); color:#fff; transform:translateY(-2px); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .csp-outcomes-grid{ grid-template-columns:1fr; }
+    .csp-skills-grid{ grid-template-columns:1fr; }
+    .csp-checklist-grid{ grid-template-columns:1fr; }
+    .csp-stack-band{ flex-direction:column; align-items:flex-start; }
+  }
+  @media (max-width: 640px){
+    .csp-h2{ font-size:1.5rem; }
+    .csp-jumpnav-inner{ gap:18px; padding:14px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html">Home</a>
+      <a href="programs.html" class="active">Programs</a>
+      <a href="courses.html">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- BREADCRUMB -->
+  <div class="container breadcrumb">
+    <a href="index.html">Home</a><span>/</span><a href="programs.html">Programs</a><span>/</span><span class="current">Cybersecurity Analyst</span>
+  </div>
+
+  <!-- HERO — left exactly as it was, per instruction. Only addition is the
+       assurance line (Preview before joining / Recommended learning order /
+       Progress saved after login), which reuses the hero's own coral-tinted
+       overlay rather than introducing new imagery. -->
+  <section class="hero hero-compact hero-program hero-coral">
+    <div class="hero-bg" aria-hidden="true">
+      <img class="hero-bg-photo" src="./assets/images/cybersecurity-data-protection-concept.jpg" alt="" loading="eager">
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="container hero-copy">
+      <span class="eyebrow eyebrow-dark">Intermediate</span>
+      <h1 style="margin-top:16px;">Cybersecurity Analyst Certificate Program</h1>
+      <p class="lead" style="margin-top:14px;">Build practical skills in threat detection, incident response, and network defense — job-ready in a guided sequence of 5 courses.</p>
+
+      <div class="hero-trust">
+        <div><strong>5</strong><span>Courses</span></div>
+        <div><strong>408</strong><span>Lessons</span></div>
+        <div><strong>109 hrs</strong><span>Learning time</span></div>
+        <div><strong>4.8★</strong><span>403 ratings</span></div>
+      </div>
+
+      <div class="hero-actions" style="margin-top:26px;">
+        <a href="#" class="btn btn-primary" data-auth-trigger="signup">Create Free Account</a>
+        <a href="#" class="btn btn-secondary" data-auth-trigger="login">Log In</a>
+        <a href="#curriculum" class="csp-preview-link">Preview the full curriculum ↓</a>
+      </div>
+
+      <div class="csp-assurance">
+        <span>Preview before joining</span>
+        <span>Recommended learning order</span>
+        <span>Progress saved after login</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECONDARY / JUMP NAV — rebuilt to match the same 7-item set as the IT
+       Support program page (Overview / Outcomes / Roadmap / Courses /
+       Projects / Reviews / FAQ), pinned under the header on scroll via JS
+       (plain CSS sticky breaks under ancestor transforms). Coral hover/
+       active state instead of teal keeps this page visually distinct. -->
+  <div id="jumpNavSentinel"></div>
+  <nav class="csp-jumpnav" id="jumpNav" aria-label="Jump to section">
+    <div class="csp-jumpnav-inner">
+      <span class="csp-jump-label">Jump to</span>
+      <a href="#overview">Overview</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#curriculum">Courses</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+  <div class="csp-jumpnav-spacer" id="jumpNavSpacer"></div>
+
+  <!-- PROGRAM OVERVIEW — existing section, untouched -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="overview-band">
+        <div class="overview-band-bg" aria-hidden="true">
+          <img src="./assets/images/cybersecurity-data-protection-concept.jpg" alt="" loading="lazy">
+        </div>
+        <div class="reveal">
+          <span class="eyebrow eyebrow-dark">Program overview</span>
+          <h2 style="margin-top:16px;">Go from networking basics to real security operations</h2>
+          <p>Five guided courses build your skills in order — starting with core networking and finishing with hands-on incident response, threat detection, and SIEM work. Every lesson is scoped to what a working security analyst actually uses on the job.</p>
+        </div>
+        <div class="overview-highlights reveal-stagger">
+          <div class="overview-highlight reveal">
+            <h4>Foundational skills</h4>
+            <p>Networking principles, the OSI/TCP-IP models, and the security fundamentals everything else builds on.</p>
+          </div>
+          <div class="overview-highlight reveal">
+            <h4>Advanced security practice</h4>
+            <p>Threat vectors, secure architecture, and cryptography — building toward CompTIA Security+.</p>
+          </div>
+          <div class="overview-highlight reveal">
+            <h4>Practical, hands-on learning</h4>
+            <p>Configure real security tooling and finish with projects that simulate an analyst's day-to-day work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS CHIP ROW — existing section, untouched. Not in the jump-nav,
+       same as the equivalent chip strip on the IT Support page. -->
+  <section class="section skills-strip" id="skills">
+    <div class="container">
+      <span class="skills-label">Technologies &amp; skills you'll use</span>
+      <div class="chip-row">
+        <span class="tech-chip">Security+ 701</span>
+        <span class="tech-chip">Risk Management</span>
+        <span class="tech-chip">Incident Response</span>
+        <span class="tech-chip">Network Defense</span>
+        <span class="tech-chip">SIEM Basics</span>
+        <span class="tech-chip">Intrusion Detection</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER OUTCOMES — existing salary cards kept exactly as they were,
+       with the checklist + career-panel content added into the same
+       #outcomes section so there's one nav anchor, not two. -->
+  <section class="section section-alt" id="outcomes">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Career outcomes</span>
+        <h2>Jobs you'll be ready for</h2>
+        <p>Real roles this program prepares you for, with typical entry-level salary ranges.</p>
+      </div>
+      <div class="outcome-grid reveal-stagger">
+        <div class="outcome-card reveal">
+          <h3>SOC Analyst</h3>
+          <p class="salary">$62K – $88K</p>
+          <p class="outcome-desc">Monitor security alerts, triage incidents, and escalate real threats in a 24/7 security operations center.</p>
+        </div>
+        <div class="outcome-card reveal">
+          <h3>Cybersecurity Analyst</h3>
+          <p class="salary">$70K – $98K</p>
+          <p class="outcome-desc">Assess vulnerabilities, run risk analyses, and help organizations harden their systems against attacks.</p>
+        </div>
+        <div class="outcome-card reveal">
+          <h3>Incident Responder</h3>
+          <p class="salary">$75K – $105K</p>
+          <p class="outcome-desc">Investigate breaches, contain active threats, and lead recovery efforts after a security incident.</p>
+        </div>
+      </div>
+
+      <!-- NEW: checklist + career panel -->
+      <div class="csp-outcomes-grid csp-reveal">
+        <div class="csp-outcomes-panel">
+          <div class="csp-panel-head">
+            <span class="csp-panel-icon">◆</span>
+            <h3>What You'll Be Able to Do</h3>
+          </div>
+          <div class="csp-checklist-grid csp-reveal-stagger">
+            <div class="csp-check-item"><span class="tick">✓</span> Configure and secure network devices</div>
+            <div class="csp-check-item"><span class="tick">✓</span> Apply the OSI &amp; TCP-IP models to real traffic</div>
+            <div class="csp-check-item"><span class="tick">✓</span> Identify and mitigate common attack vectors</div>
+            <div class="csp-check-item"><span class="tick">✓</span> Design and evaluate secure architectures</div>
+            <div class="csp-check-item"><span class="tick">✓</span> Apply cryptographic controls correctly</div>
+            <div class="csp-check-item"><span class="tick">✓</span> Detect and analyze active threats</div>
+            <div class="csp-check-item"><span class="tick">✓</span> Run red-team and blue-team exercises</div>
+            <div class="csp-check-item"><span class="tick">✓</span> Operate SOC and SIEM tooling</div>
+          </div>
+        </div>
+
+        <div class="csp-career-panel">
+          <span class="csp-career-eyebrow">Your Career Path</span>
+          <h3>Career Opportunities</h3>
+          <ul class="csp-career-list">
+            <li><a href="#">SOC Analyst <span>→</span></a></li>
+            <li><a href="#">Cybersecurity Analyst <span>→</span></a></li>
+            <li><a href="#">Incident Responder <span>→</span></a></li>
+            <li><a href="#">Security Engineer <span>→</span></a></li>
+            <li><a href="#">Entry-Level Security Analyst <span>→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: SKILLS YOU'LL BUILD + TECHNOLOGY STACK -->
+  <section class="csp-section">
+    <div class="csp-container">
+      <div class="csp-skills-head">
+        <div>
+          <span class="csp-eyebrow">Core Skill Areas</span>
+          <h2 class="csp-h2">Skills You'll Build</h2>
+        </div>
+        <div class="csp-skills-badge"><strong>9</strong><span>Core skills</span></div>
+      </div>
+
+      <div class="csp-skills-grid csp-reveal-stagger">
+        <div class="csp-skill-card">
+          <div class="csp-skill-card-head">
+            <div class="csp-skill-card-head-left">
+              <span class="csp-skill-card-icon">🖧</span>
+              <h4>Networking</h4>
+            </div>
+            <span class="csp-skill-count">3 skills</span>
+          </div>
+          <ul>
+            <li>Network Configuration</li>
+            <li>OSI &amp; TCP-IP Models</li>
+            <li>Network Operations</li>
+          </ul>
+        </div>
+
+        <div class="csp-skill-card is-alt">
+          <div class="csp-skill-card-head">
+            <div class="csp-skill-card-head-left">
+              <span class="csp-skill-card-icon">🛡</span>
+              <h4>Security Analysis</h4>
+            </div>
+            <span class="csp-skill-count">3 skills</span>
+          </div>
+          <ul>
+            <li>Threat Analysis &amp; Mitigation</li>
+            <li>Vulnerability Assessment</li>
+            <li>Cryptographic Implementation</li>
+          </ul>
+        </div>
+
+        <div class="csp-skill-card is-alt2">
+          <div class="csp-skill-card-head">
+            <div class="csp-skill-card-head-left">
+              <span class="csp-skill-card-icon">🚨</span>
+              <h4>Security Operations</h4>
+            </div>
+            <span class="csp-skill-count">3 skills</span>
+          </div>
+          <ul>
+            <li>Incident Response</li>
+            <li>SOC / SIEM Management</li>
+            <li>Red &amp; Blue Teaming</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="csp-stack-band csp-reveal">
+        <div class="csp-stack-copy">
+          <span class="csp-eyebrow">Technology Stack</span>
+          <h3 style="margin:0;font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--csp-ink);">Technologies Covered</h3>
+        </div>
+        <div class="csp-chip-row">
+          <span class="csp-tech-chip"><span class="dot"></span> Wireshark</span>
+          <span class="csp-tech-chip"><span class="dot"></span> Nmap</span>
+          <span class="csp-tech-chip"><span class="dot"></span> Kali Linux</span>
+          <span class="csp-tech-chip"><span class="dot"></span> SIEM Platforms</span>
+          <span class="csp-tech-chip"><span class="dot"></span> Windows Defender</span>
+          <span class="csp-tech-chip"><span class="dot"></span> Firewall Management</span>
+          <span class="csp-tech-chip"><span class="dot"></span> Intrusion Detection Systems</span>
+          <span class="csp-tech-chip"><span class="dot"></span> Cryptography Tools</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: LEARNING ROADMAP -->
+  <section class="csp-section csp-section-alt" id="roadmap">
+    <div class="csp-container">
+      <span class="csp-eyebrow">Learning Roadmap</span>
+      <h2 class="csp-h2">Your Path Through the Program</h2>
+
+      <div class="csp-roadmap csp-reveal-stagger">
+        <div class="csp-road-step">
+          <div class="csp-road-num">1</div>
+          <h4>Foundation</h4>
+          <p>Build a foundational understanding of networking principles essential for a cybersecurity career.</p>
+          <div class="csp-road-tags">
+            <a class="csp-road-tag" href="networking-fundamentals-for-cybersecurity.html">Networking Fundamentals for Cybersecurity</a>
+          </div>
+        </div>
+        <div class="csp-road-step">
+          <div class="csp-road-num">2</div>
+          <h4>Certification Preparation</h4>
+          <p>Master the essential concepts of cybersecurity and prepare for the CompTIA Security+ certification.</p>
+          <div class="csp-road-tags">
+            <a class="csp-road-tag" href="comptia-security-plus-training-part-1.html">CompTIA Security+ Training (SY0-701) — Part 1</a>
+            <a class="csp-road-tag" href="comptia-security-plus-training-part-2.html">CompTIA Security+ Training (SY0-701) — Part 2</a>
+          </div>
+        </div>
+        <div class="csp-road-step">
+          <div class="csp-road-num">3</div>
+          <h4>Applied Practice</h4>
+          <p>Build hands-on red-team, blue-team, and SOC/SIEM skills with expert-led training.</p>
+          <div class="csp-road-tags">
+            <a class="csp-road-tag" href="cybersecurity-technical-skills-by-an-expert.html">Cybersecurity Technical Skills by an Expert</a>
+          </div>
+        </div>
+        <div class="csp-road-step">
+          <div class="csp-road-num">4</div>
+          <h4>Career Enablement</h4>
+          <p>Explore AI's role within IT settings and integrate AI insights into cybersecurity tasks.</p>
+          <div class="csp-road-tags">
+            <a class="csp-road-tag" href="ai-for-it-professionals-knowledge-sharing.html">AI for IT Professionals — Knowledge Sharing</a>
+          </div>
+        </div>
+        <div class="csp-road-step is-complete">
+          <div class="csp-road-num">✓</div>
+          <h4>Certificate Program Complete</h4>
+          <p>You have progressed through the complete course sequence and its combined skill set.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM — existing accordion, untouched. Jump-nav label is now
+       "Courses" to match the IT Support page's wording, same #curriculum id. -->
+  <section class="section" id="curriculum">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Program roadmap</span>
+        <h2>Program curriculum</h2>
+        <p>Five courses, taken in sequence — each one builds on the last.</p>
+      </div>
+
+      <div class="course-list reveal-stagger">
+        <details class="course-item reveal" open>
+          <summary>
+            <span class="course-num">1</span>
+            <span class="course-info">
+              <span class="course-title">Networking Fundamentals for Cybersecurity</span>
+              <span class="course-meta">50 lessons · 15 hrs · Free course</span>
+            </span>
+            <span class="chevron">▾</span>
+          </summary>
+          <div class="course-body">
+            <p>Build a solid foundation in networking principles essential for a cybersecurity career, with hands-on practice.</p>
+            <ul><li>Networking fundamentals</li><li>Basic network implementations</li><li>Network operations</li></ul>
+            <a class="csp-view-course-link" href="networking-fundamentals-for-cybersecurity.html">View Course →</a>
+          </div>
+        </details>
+
+        <details class="course-item reveal">
+          <summary>
+            <span class="course-num">2</span>
+            <span class="course-info">
+              <span class="course-title">CompTIA Security+ Training (SY0-701) — Part 1</span>
+              <span class="course-meta">112 lessons · 32 hrs</span>
+            </span>
+            <span class="chevron">▾</span>
+          </summary>
+          <div class="course-body">
+            <p>Master the essential concepts of cybersecurity and prepare for the CompTIA Security+ certification.</p>
+            <ul><li>Security control management</li><li>Threat analysis and mitigation</li><li>Security architecture design</li></ul>
+            <a class="csp-view-course-link" href="comptia-security-plus-training-part-1.html">View Course →</a>
+          </div>
+        </details>
+
+        <details class="course-item reveal">
+          <summary>
+            <span class="course-num">3</span>
+            <span class="course-info">
+              <span class="course-title">CompTIA Security+ Training (SY0-701) — Part 2</span>
+              <span class="course-meta">85 lessons · 14 hrs</span>
+            </span>
+            <span class="chevron">▾</span>
+          </summary>
+          <div class="course-body">
+            <p>Master practical skills for identifying and mitigating security threats effectively.</p>
+            <ul><li>Network vulnerability analysis</li><li>Cryptographic implementation</li><li>Threat detection &amp; mitigation</li></ul>
+            <a class="csp-view-course-link" href="comptia-security-plus-training-part-2.html">View Course →</a>
+          </div>
+        </details>
+
+        <details class="course-item reveal">
+          <summary>
+            <span class="course-num">4</span>
+            <span class="course-info">
+              <span class="course-title">Cybersecurity Technical Skills by an Expert</span>
+              <span class="course-meta">77 lessons · 34 hrs</span>
+            </span>
+            <span class="chevron">▾</span>
+          </summary>
+          <div class="course-body">
+            <p>Discover the skills to secure digital environments with expert-led cybersecurity training.</p>
+            <ul><li>Red teaming</li><li>Blue teaming</li><li>SOC / SIEM management</li></ul>
+            <a class="csp-view-course-link" href="cybersecurity-technical-skills-by-an-expert.html">View Course →</a>
+          </div>
+        </details>
+
+        <details class="course-item reveal">
+          <summary>
+            <span class="course-num">5</span>
+            <span class="course-info">
+              <span class="course-title">AI for IT Professionals — Knowledge Sharing</span>
+              <span class="course-meta">13 lessons · 6 hrs</span>
+            </span>
+            <span class="chevron">▾</span>
+          </summary>
+          <div class="course-body">
+            <p>Explore AI's role within IT settings and integrate AI insights into cybersecurity tasks.</p>
+            <ul><li>AI-enhanced threat detection</li><li>AI integration in IT support</li><li>Automation basics</li></ul>
+            <a class="csp-view-course-link" href="ai-for-it-professionals-knowledge-sharing.html">View Course →</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: PROJECTS & HANDS-ON ACTIVITIES -->
+  <section class="csp-section csp-section-alt" id="projects">
+    <div class="csp-container">
+      <div class="csp-projects-band csp-reveal">
+        <span class="csp-eyebrow">Practice What You Learn</span>
+        <h2 class="csp-h2">Projects &amp; Hands-on Activities</h2>
+
+        <div class="csp-skills-practiced-card">
+          <div class="csp-skills-practiced-head">
+            <span class="icon">+</span>
+            <div>
+              <h4>Skills Practiced</h4>
+              <span>17 curriculum-grounded skills</span>
+            </div>
+          </div>
+          <div class="csp-practiced-chip-row">
+            <span class="csp-practiced-chip c-tech"><span class="dot"></span> Network Topology Identification</span>
+            <span class="csp-practiced-chip c-tool"><span class="dot"></span> Router &amp; Switch Configuration</span>
+            <span class="csp-practiced-chip c-skill"><span class="dot"></span> OSI &amp; TCP-IP Models</span>
+            <span class="csp-practiced-chip c-tech"><span class="dot"></span> Wireless Encryption Standards</span>
+            <span class="csp-practiced-chip c-tool"><span class="dot"></span> Security Policy Implementation</span>
+            <span class="csp-practiced-chip c-skill"><span class="dot"></span> Threat Analysis &amp; Mitigation</span>
+            <span class="csp-practiced-chip c-tech"><span class="dot"></span> Security Architecture Design</span>
+            <span class="csp-practiced-chip c-tool"><span class="dot"></span> Network Vulnerability Analysis</span>
+            <span class="csp-practiced-chip c-skill"><span class="dot"></span> Cryptographic Implementation</span>
+            <span class="csp-practiced-chip c-tech"><span class="dot"></span> Threat Detection &amp; Mitigation</span>
+            <span class="csp-practiced-chip c-tool"><span class="dot"></span> Red Teaming</span>
+            <span class="csp-practiced-chip c-skill"><span class="dot"></span> Blue Teaming</span>
+            <span class="csp-practiced-chip c-tech"><span class="dot"></span> SOC / SIEM Management</span>
+            <span class="csp-practiced-chip c-tool"><span class="dot"></span> Intrusion Detection</span>
+            <span class="csp-practiced-chip c-skill"><span class="dot"></span> Incident Response</span>
+            <span class="csp-practiced-chip c-tech"><span class="dot"></span> AI-Enhanced Threat Detection</span>
+            <span class="csp-practiced-chip c-tool"><span class="dot"></span> Automation Basics</span>
+          </div>
+
+          <div class="csp-cloud-note">
+            <span class="icon">☁️</span>
+            <div>
+              <strong>Cloud Services Note</strong>
+              <p>AWS, Azure, and other cloud subscriptions are not included with membership. Members use their own cloud accounts to follow cloud-specific courses. For some beginner-level courses, JobSkillShare provides limited Azure and AWS subscriptions for basic hands-on tasks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAREER DIRECTION -->
+      <div style="margin-top:40px;">
+        <span class="csp-eyebrow">Career Direction</span>
+        <h2 class="csp-h2">Jobs You'll Be Ready For</h2>
+        <div class="csp-direction-chips csp-reveal-stagger">
+          <span class="csp-direction-chip"><span class="arrow">→</span> Monitoring Security Alerts</span>
+          <span class="csp-direction-chip"><span class="arrow">→</span> Investigating &amp; Containing Incidents</span>
+          <span class="csp-direction-chip"><span class="arrow">→</span> Hardening Systems Against Attacks</span>
+          <span class="csp-direction-chip"><span class="arrow">→</span> Assessing Vulnerabilities &amp; Risk</span>
+          <span class="csp-direction-chip"><span class="arrow">→</span> Operating SOC / SIEM Tools</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINER PARTNERSHIP — existing section, untouched -->
+  <section class="section section-alt" id="mentorship">
+    <div class="container trainer-band reveal">
+      <div>
+        <span class="eyebrow">1:1 mentorship</span>
+        <h2 style="margin-top:14px;">Want personalized guidance?</h2>
+        <p style="color:var(--text-muted);margin-top:12px;max-width:46ch;">Partner with a JSS trainer for direct feedback, career coaching, and accountability as you move through this program.</p>
+      </div>
+      <a href="#" class="btn btn-teal-outline hover-coral" data-auth-trigger="signup">Explore trainer partnership</a>
+    </div>
+  </section>
+
+  <!-- REVIEWS — replaces the old static testimonial grid (which had no
+       quotes) with a cycling carousel, same #reviews anchor. -->
+  <section class="csp-section" id="reviews">
+    <div class="csp-container">
+      <div class="csp-reviews-band csp-reveal">
+        <div class="csp-reviews-head">
+          <div>
+            <span class="csp-eyebrow">Feedback Across the Curriculum</span>
+            <h2 class="csp-h2">Program Reviews</h2>
+          </div>
+          <div class="csp-rating-badge"><strong>4.8 ★</strong><span>Program average across 403 course ratings</span></div>
+        </div>
+
+        <div class="csp-review-card" id="reviewCard">
+          <div class="csp-review-stars">★★★★★</div>
+          <p class="csp-review-title" id="reviewTitle"></p>
+          <p class="csp-review-body" id="reviewBody"></p>
+          <span class="csp-review-tag" id="reviewTag"></span>
+          <div class="csp-review-person">
+            <div class="csp-review-avatar" id="reviewAvatar"></div>
+            <div>
+              <strong id="reviewName"></strong>
+              <span id="reviewRole"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="csp-review-nav">
+          <button type="button" class="csp-review-arrow" id="reviewPrev" aria-label="Previous review">←</button>
+          <span class="csp-review-count" id="reviewCount">1 / 6</span>
+          <button type="button" class="csp-review-arrow" id="reviewNext" aria-label="Next review">→</button>
+        </div>
+        <p class="csp-review-hint">Use the arrow buttons or keyboard arrow keys to browse every review.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.JSS_PROGRAM_REVIEWS = [
+      { name:'Hadi Wali', role:'Cyber Security Engineer — TikTok', course:'Cybersecurity Technical Skills by an Expert', title:'Closest thing to real SOC work', body:'The incident-response labs were the closest thing to real SOC work I found anywhere online. Red team and blue team exercises made the concepts stick.' },
+      { name:'Manjinder Singh Rehal', role:'Information Technology Spec. — Woodland Joint USD', course:'CompTIA Security+ Training (SY0-701) — Part 1', title:'Clear path to Security+', body:'Well structured and easy to follow, with useful real-world examples. I feel much more confident heading into the Security+ exam.' },
+      { name:'Bradley Williams', role:'Systems Administrator — RadNet', course:'Networking Fundamentals for Cybersecurity', title:'Solid foundation', body:'Practical, hands-on training from lesson one. Understanding the OSI and TCP-IP models here made everything after it click.' },
+      { name:'Zoeshan B. Nasir', role:'Information Technology Tech — AI Native Group', course:'CompTIA Security+ Training (SY0-701) — Part 2', title:'Threat detection that transfers to the job', body:'The vulnerability analysis and threat detection lessons matched almost exactly what I was asked to do in my first analyst role.' },
+      { name:'Nelson J.', role:'Microsoft 365 Support Engineer — Microsoft', course:'AI for IT Professionals — Knowledge Sharing', title:'Short course, immediate use', body:'Short course, but I use the AI-assisted triage techniques from it in almost every shift.' },
+      { name:'Yen Lyu', role:'IT Support Engineer — Amazon Web Services', course:'Cybersecurity Technical Skills by an Expert', title:'SOC/SIEM management, demystified', body:'SOC and SIEM management always felt abstract until this course. Now it is a core part of how I work day to day.' }
+    ];
+
+    (function () {
+      var reviews = window.JSS_PROGRAM_REVIEWS;
+      var idx = 0;
+      var titleEl = document.getElementById('reviewTitle');
+      var bodyEl = document.getElementById('reviewBody');
+      var tagEl = document.getElementById('reviewTag');
+      var avatarEl = document.getElementById('reviewAvatar');
+      var nameEl = document.getElementById('reviewName');
+      var roleEl = document.getElementById('reviewRole');
+      var countEl = document.getElementById('reviewCount');
+
+      function initials(name) {
+        return name.split(' ').map(function (p) { return p[0]; }).slice(0, 2).join('').toUpperCase();
+      }
+
+      function render() {
+        var r = reviews[idx];
+        titleEl.textContent = r.title;
+        bodyEl.textContent = r.body;
+        tagEl.textContent = r.course;
+        avatarEl.textContent = initials(r.name);
+        nameEl.textContent = r.name;
+        roleEl.textContent = r.role;
+        countEl.textContent = (idx + 1) + ' / ' + reviews.length;
+      }
+
+      document.getElementById('reviewPrev').addEventListener('click', function () {
+        idx = (idx - 1 + reviews.length) % reviews.length;
+        render();
+      });
+      document.getElementById('reviewNext').addEventListener('click', function () {
+        idx = (idx + 1) % reviews.length;
+        render();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { idx = (idx - 1 + reviews.length) % reviews.length; render(); }
+        if (e.key === 'ArrowRight') { idx = (idx + 1) % reviews.length; render(); }
+      });
+
+      render();
+    })();
+  </script>
+
+  <!-- NEW: FAQ -->
+  <section class="csp-section csp-section-alt" id="faq">
+    <div class="csp-container">
+      <span class="csp-eyebrow">Common Questions</span>
+      <h2 class="csp-h2">Frequently Asked Questions</h2>
+
+      <div class="csp-faq-list csp-reveal-stagger" id="faqList">
+        <div class="csp-faq-item">
+          <button class="csp-faq-q" type="button">What are the prerequisites for this program? <span class="chev">▸</span></button>
+          <div class="csp-faq-a"><p>No prior cybersecurity background is required. The program starts with networking fundamentals and builds up to CompTIA Security+ level topics, so anyone starting a career switch can follow along.</p></div>
+        </div>
+        <div class="csp-faq-item">
+          <button class="csp-faq-q" type="button">What certifications does this program prepare me for? <span class="chev">▸</span></button>
+          <div class="csp-faq-a"><p>Courses 2 and 3 prepare you for the CompTIA Security+ (SY0-701) certification. Course 1 builds the networking foundation those exams assume you already have.</p></div>
+        </div>
+        <div class="csp-faq-item">
+          <button class="csp-faq-q" type="button">What careers can this certificate lead to? <span class="chev">▸</span></button>
+          <div class="csp-faq-a"><p>Graduates typically move into SOC Analyst, Cybersecurity Analyst, Incident Responder, Security Engineer, or entry-level security analyst roles.</p></div>
+        </div>
+        <div class="csp-faq-item">
+          <button class="csp-faq-q" type="button">How long does the program take to complete? <span class="chev">▸</span></button>
+          <div class="csp-faq-a"><p>The full sequence is about 109 hours of content across 408 lessons. Most learners pace themselves over 8–14 weeks, though it's entirely self-paced and progress is saved after login.</p></div>
+        </div>
+        <div class="csp-faq-item">
+          <button class="csp-faq-q" type="button">Will I get a certificate after completing all 5 courses? <span class="chev">▸</span></button>
+          <div class="csp-faq-a"><p>Yes — completing all five courses in the recommended order marks the certificate program as complete, and a shareable completion certificate is added to your account.</p></div>
+        </div>
+        <div class="csp-faq-item">
+          <button class="csp-faq-q" type="button">Can I take the courses out of order? <span class="chev">▸</span></button>
+          <div class="csp-faq-a"><p>You can, but we recommend following the roadmap order — both Security+ courses and the technical-skills course build directly on the networking fundamentals taught in course 1.</p></div>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('faqList').addEventListener('click', function (e) {
+          var btn = e.target.closest('.csp-faq-q');
+          if (!btn) return;
+          var item = btn.closest('.csp-faq-item');
+          item.classList.toggle('is-open');
+        });
+      </script>
+
+      <!-- RELATED CERTIFICATE PROGRAMS -->
+      <div style="margin-top:44px;">
+        <h2 class="csp-h2" style="font-size:1.6rem;">Related Certificate Programs</h2>
+        <div class="csp-related-card csp-reveal">
+          <div>
+            <h4>IT Support Certificate Program</h4>
+            <span style="color:var(--csp-muted);font-size:.88rem;">Gain comprehensive IT support skills, from networking configurations to Active Directory and security protocols.</span>
+          </div>
+          <a class="csp-explore" href="it-support-certificate-program.html">Explore Program →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA — restyled to match the program-page pattern; text kept
+       consistent with what was there before. -->
+  <section class="csp-section">
+    <div class="csp-container">
+      <div class="csp-final-cta csp-reveal">
+        <span class="csp-eyebrow">Build Your Complete Skill Set</span>
+        <h2>Ready to build your cybersecurity career?</h2>
+        <p>Join learners who moved into security roles with structured programs and real mentorship.</p>
+        <div class="csp-final-actions">
+          <a href="#" class="csp-btn csp-btn-primary" data-auth-trigger="signup">Create Free Account</a>
+          <a href="#" class="csp-btn csp-btn-white" data-auth-trigger="login">Already a member? Log In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#it-support">IT Support</a></li>
+          <li><a href="cybersecurity-analyst-certificate-program.html">Cybersecurity</a></li>
+          <li><a href="programs.html#cloud">Cloud &amp; Systems</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Week 6 rebuild — Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#" class="btn btn-primary btn-block" data-auth-trigger="signup">Start learning</a>
+</div>
+
+<!-- AUTH MODAL — shared placeholder gate; no backend is connected yet. -->
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/program-detail.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ---- Jump-nav pinning ------------------------------------------------
+  // Same JS-driven pin mechanic as the IT Support program page: measure the
+  // header's real height and fixed-position the jump-nav under it once its
+  // sentinel scrolls out of view, so it keeps following all the way to the
+  // footer regardless of ancestor styles (plain CSS sticky breaks here).
+  var header = document.querySelector('.site-header');
+  var nav = document.getElementById('jumpNav');
+  var sentinel = document.getElementById('jumpNavSentinel');
+  var spacer = document.getElementById('jumpNavSpacer');
+
+  function headerHeight() {
+    return header ? header.getBoundingClientRect().height : 0;
+  }
+
+  function updatePin() {
+    if (!nav || !sentinel || !spacer) return;
+    var top = headerHeight();
+    nav.style.top = top + 'px';
+    var shouldPin = sentinel.getBoundingClientRect().top <= top;
+    if (shouldPin && !nav.classList.contains('is-pinned')) {
+      spacer.style.height = nav.getBoundingClientRect().height + 'px';
+      spacer.style.display = 'block';
+      nav.classList.add('is-pinned');
+    } else if (!shouldPin && nav.classList.contains('is-pinned')) {
+      nav.classList.remove('is-pinned');
+      spacer.style.display = 'none';
+    }
+  }
+  window.addEventListener('scroll', updatePin, { passive: true });
+  window.addEventListener('resize', updatePin);
+  updatePin();
+
+  // ---- Jump-nav active-state highlighting -------------------------------
+  var jumpLinks = document.querySelectorAll('.csp-jumpnav a');
+  var targets = Array.prototype.slice.call(jumpLinks).map(function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  }).filter(Boolean);
+
+  function setActiveJumpLink() {
+    var offset = headerHeight() + nav.getBoundingClientRect().height + 20;
+    var scrollY = window.scrollY + offset;
+    var current = targets[0];
+    targets.forEach(function (sec) { if (sec.offsetTop <= scrollY) current = sec; });
+    jumpLinks.forEach(function (a) {
+      a.classList.toggle('is-active', current && a.getAttribute('href') === '#' + current.id);
+    });
+  }
+  window.addEventListener('scroll', setActiveJumpLink, { passive: true });
+  setActiveJumpLink();
+
+  // ---- Scroll-reveal for both the existing .reveal system and the new
+  // .csp-reveal / .csp-reveal-stagger system ------------------------------
+  var revealEls = document.querySelectorAll('.reveal, .csp-reveal, .csp-reveal-stagger');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('revealed'); el.classList.add('is-visible'); });
+  }
+});
+</script>
+</body>
+</html>

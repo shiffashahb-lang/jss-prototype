@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Cloud Engineer Certificate Program — JobSkillShare</title>
+<meta name="description" content="Master AWS Cloud engineering and management across 3 courses, 177 lessons, and 36 hours of guided learning. Build expertise in AWS core services, architecture, and optional DevOps automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/buttons-override.css">
+
+<!-- ==========================================================================
+     Page-specific CSS for the AWS Cloud Engineer Certificate Program page.
+     Kept entirely in-file per project convention — scoped with "awsc-" prefix.
+     ========================================================================== -->
+<style>
+  :root{
+    --awsc-teal: var(--teal, #0EA5A0);
+    --awsc-orange: #FF9900;
+    --awsc-coral: var(--coral, #FF6B5B);
+    --awsc-ink: var(--ink, #12202E);
+    --awsc-muted: var(--text-muted, #64748B);
+    --awsc-bg-alt: var(--bg-alt, #F5F7FA);
+    --awsc-border: var(--border, #E6E9EE);
+    --awsc-radius: var(--radius-lg, 16px);
+    --awsc-navy: #0F2C4C;
+    --awsc-navy-dark: #0B2035;
+    --awsc-green: #1FA971;
+  }
+
+  /* ---------- shared section shells ---------- */
+  .awsc-section{ padding: 56px 0; }
+  .awsc-section-alt{ background: var(--awsc-bg-alt); }
+  .awsc-container{ max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .awsc-eyebrow{
+    display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color: var(--awsc-teal); margin-bottom:10px;
+  }
+  .awsc-h2{ font-family:'Sora',sans-serif; font-size:2rem; line-height:1.2; color:var(--awsc-ink); margin:0 0 6px; }
+  .awsc-lead{ color:var(--awsc-muted); font-size:1rem; line-height:1.6; max-width:70ch; }
+
+ 
+  /* ---------- HERO ---------- */
+   .main-navbar, header {
+  position: relative;
+  z-index: 100;
+}
+.awsc-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(120deg, #0B2035 0%, #123655 55%, #0E2A44 100%);
+  padding: 52px 0 40px;
+  z-index: 1; 
+}
+   .awsc-hero{
+    position:relative; overflow:hidden; color:#fff;
+    background: linear-gradient(120deg, #0B2035 0%, #123655 55%, #0E2A44 100%);
+    padding: 52px 0 40px;
+  }
+  .awsc-hero-bg-photo{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.35;
+  }
+  .awsc-hero-overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(120deg, rgba(11,32,53,.78) 0%, rgba(18,54,85,.68) 55%, rgba(14,42,68,.88) 100%);
+  }
+
+  .awsc-hero-inner{ position:relative; z-index:1; }
+  .awsc-hero-eyebrow{
+    display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:.08em;
+    text-transform:uppercase; color:#8FD9D4; margin-bottom:14px;
+  }
+  .awsc-hero h1{
+    font-family:'Sora',sans-serif; font-size:2.6rem; line-height:1.12; margin:0 0 8px; color:#fff;
+  }
+  .awsc-hero-tagline{ font-size:1.15rem; font-weight:600; color:#EAF6F5; margin:0 0 14px; }
+  .awsc-hero-lead{ color:#C6D6E4; max-width:62ch; line-height:1.65; margin:0 0 26px; }
+
+  .awsc-hero-stats{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:26px; }
+  .awsc-stat-chip{
+    display:flex; flex-direction:column; gap:2px; min-width:132px;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+    border-radius:12px; padding:12px 18px;
+  }
+  .awsc-stat-chip strong{ font-size:1.15rem; font-family:'Sora',sans-serif; color:#fff; }
+  .awsc-stat-chip span{ font-size:.78rem; color:#AFC3D6; }
+
+  .awsc-hero-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-bottom:18px; }
+  .awsc-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:13px 26px; border-radius:10px; font-weight:700; font-size:.95rem;
+    text-decoration:none; cursor:pointer; border:2px solid transparent; transition:.15s ease;
+  }
+  .awsc-btn-primary{ background:var(--awsc-teal); color:#fff; }
+  .awsc-btn-primary:hover{ background:#0c8b86; }
+  .awsc-btn-white{ background:#fff; color:var(--awsc-navy); border-color:#fff; }
+  .awsc-btn-white:hover{ background:transparent; color:#fff; }
+  .awsc-preview-link{ color:#fff; font-weight:700; text-decoration:underline; font-size:.92rem; }
+  .awsc-preview-link:hover{ color:#8FD9D4; }
+
+  .awsc-assurance{
+    display:flex; flex-wrap:wrap; gap:22px; font-size:.85rem; color:#B9CCDD;
+  }
+  .awsc-assurance span::before{ content:"✓ "; color:#5FE0C7; font-weight:700; }
+
+  /* ---------- JUMP NAV ---------- */
+  .awsc-jumpnav{
+    position:relative; z-index:30; background:#fff;
+    border-bottom:1px solid var(--awsc-border); box-shadow:0 2px 10px rgba(15,44,76,.05);
+    transition:box-shadow .2s ease;
+  }
+  .awsc-jumpnav.is-pinned{
+    position:fixed; left:0; right:0; box-shadow:0 6px 18px rgba(15,44,76,.12);
+  }
+  .awsc-jumpnav-spacer{ display:none; }
+  .awsc-jumpnav-inner{ display:flex; align-items:center; gap:26px; overflow-x:auto; padding:16px 24px; max-width:1180px; margin:0 auto; }
+  .awsc-jump-label{ font-size:.72rem; font-weight:700; letter-spacing:.06em; color:#9AA7B5; text-transform:uppercase; flex:0 0 auto; }
+  .awsc-jumpnav a{
+    flex:0 0 auto; font-size:.92rem; font-weight:700; color:var(--awsc-ink); text-decoration:none;
+    padding-bottom:4px; border-bottom:2px solid transparent; white-space:nowrap;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .awsc-jumpnav a.is-active,
+  .awsc-jumpnav a:hover{ color:var(--awsc-teal); border-bottom-color:var(--awsc-teal); }
+
+  /* ---------- SCROLL-REVEAL + HOVER MOTION ---------- */
+  .awsc-reveal{ opacity:0; transform:translateY(22px); transition:opacity .55s ease, transform .55s ease; }
+  .awsc-reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .awsc-reveal-stagger > *{ opacity:0; transform:translateY(22px); transition:opacity .5s ease, transform .5s ease; }
+  .awsc-reveal-stagger.is-visible > *{ opacity:1; transform:translateY(0); }
+  .awsc-reveal-stagger.is-visible > *:nth-child(1){ transition-delay:.03s; }
+  .awsc-reveal-stagger.is-visible > *:nth-child(2){ transition-delay:.09s; }
+  .awsc-reveal-stagger.is-visible > *:nth-child(3){ transition-delay:.15s; }
+  .awsc-reveal-stagger.is-visible > *:nth-child(4){ transition-delay:.21s; }
+  .awsc-reveal-stagger.is-visible > *:nth-child(5){ transition-delay:.27s; }
+
+  .awsc-check-item, .awsc-tech-chip, .awsc-practiced-chip, .awsc-direction-chip, .awsc-course-tag{
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  }
+  .awsc-check-item:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(15,44,76,.08); border-color:var(--awsc-teal); }
+  .awsc-tech-chip:hover, .awsc-practiced-chip:hover{ transform:translateY(-2px) scale(1.03); }
+  .awsc-direction-chip:hover{ transform:translateY(-2px); box-shadow:0 8px 18px rgba(15,44,76,.1); border-color:var(--awsc-teal); }
+
+  .awsc-course-card, .awsc-skill-card, .awsc-overview-card, .awsc-outcomes-panel, .awsc-career-panel,
+  .awsc-related-card, .awsc-faq-item{
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .awsc-course-card:hover, .awsc-skill-card:hover, .awsc-related-card:hover{
+    transform:translateY(-4px); box-shadow:0 14px 30px rgba(15,44,76,.1);
+  }
+  .awsc-career-list li a{ transition: transform .15s ease, background-color .15s ease; }
+  .awsc-career-list li a:hover{ transform:translateX(4px); }
+  .awsc-road-step{ transition: transform .2s ease; }
+  .awsc-road-num{ transition: transform .2s ease, box-shadow .2s ease; }
+  .awsc-road-step:hover .awsc-road-num{ transform:scale(1.12); box-shadow:0 0 0 4px rgba(14,165,160,.18); }
+  .awsc-faq-item:hover{ border-color:var(--awsc-teal); }
+
+  /* ---------- OVERVIEW ---------- */
+  .awsc-overview-card{
+    background:#fff; border:1px solid var(--awsc-border); border-radius:var(--awsc-radius);
+    padding:34px 36px;
+  }
+  .awsc-overview-card h2{ font-family:'Sora',sans-serif; font-size:1.7rem; margin:26px 0 12px; color:var(--awsc-ink); }
+  .awsc-overview-card p{ color:var(--awsc-ink); line-height:1.7; }
+  .awsc-overview-card > p:first-of-type{ color:var(--awsc-muted); }
+
+  /* ---------- OUTCOMES ---------- */
+  .awsc-outcomes-grid{ display:grid; grid-template-columns: 1.5fr 1fr; gap:24px; align-items:start; margin-top:18px; }
+  .awsc-outcomes-panel{
+    background:#fff; border:1px solid var(--awsc-border); border-radius:var(--awsc-radius); padding:30px;
+  }
+  .awsc-checklist-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .awsc-check-item{
+    display:flex; align-items:center; gap:10px; border:1px solid var(--awsc-border); border-radius:10px;
+    padding:12px 14px; font-size:.92rem; color:var(--awsc-ink);
+  }
+  .awsc-check-item .tick{
+    width:20px; height:20px; border-radius:50%; background:#DDF6EC; color:#159467;
+    font-size:.72rem; display:flex; align-items:center; justify-content:center; flex:0 0 auto; font-weight:700;
+  }
+
+  .awsc-career-panel{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--awsc-radius); padding:30px; color:#fff;
+  }
+  .awsc-career-eyebrow{ font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#8FD9D4; }
+  .awsc-career-panel h3{ margin:2px 0 0; font-family:'Sora',sans-serif; font-size:1.3rem;color: var(--itsp-career-heading, #F5F7FA); }
+  .awsc-career-list{ list-style:none; margin:20px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .awsc-career-list li a{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);
+    border-radius:10px; padding:12px 16px; color:#fff; text-decoration:none; font-weight:600; font-size:.92rem;
+    transition:.15s ease;
+  }
+  .awsc-career-list li a:hover{ background:rgba(255,255,255,.16); }
+
+  /* ---------- SKILLS ---------- */
+  .awsc-skills-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .awsc-skills-badge{
+    background:#fff; border:1px solid var(--awsc-border); border-radius:12px; padding:10px 18px; text-align:center;
+  }
+  .awsc-skills-badge strong{ display:block; font-size:1.3rem; color:var(--awsc-teal); font-family:'Sora',sans-serif; }
+  .awsc-skills-badge span{ font-size:.68rem; letter-spacing:.05em; color:var(--awsc-muted); text-transform:uppercase; }
+  .awsc-skills-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:22px; }
+  .awsc-skill-card{
+    background:#fff; border-radius:var(--awsc-radius); padding:26px; border-top:4px solid var(--awsc-teal);
+    box-shadow:0 6px 20px rgba(15,44,76,.06);
+  }
+  .awsc-skill-card.is-devops{ border-top-color:#FF9900; }
+  .awsc-skill-card-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+  .awsc-skill-card-head-left{ display:flex; align-items:center; gap:12px; }
+  .awsc-skill-card-icon{
+    width:40px; height:40px; border-radius:10px; background:#E7F7F5; color:var(--awsc-teal);
+    display:flex; align-items:center; justify-content:center; font-size:1.05rem;
+  }
+  .awsc-skill-card.is-devops .awsc-skill-card-icon{ background:#FFF4E5; color:#FF9900; }
+  .awsc-skill-card-head h4{ margin:0; font-size:1.1rem; color:var(--awsc-ink); }
+  .awsc-skill-count{ font-size:.72rem; font-weight:700; color:var(--awsc-muted); border:1px solid var(--awsc-border); border-radius:20px; padding:3px 10px; }
+  .awsc-skill-card ul{ list-style:none; margin:0; padding:0; }
+  .awsc-skill-card li{
+    display:flex; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--awsc-border); font-size:.92rem; color:var(--awsc-ink);
+  }
+  .awsc-skill-card li:first-child{ border-top:none; }
+  .awsc-skill-card li::before{ content:"✓"; color:#159467; font-weight:700; font-size:.8rem; }
+
+  /* ---------- TECH STACK ---------- */
+  .awsc-stack-band{
+    background:#fff; border:1px solid var(--awsc-border); border-radius:var(--awsc-radius);
+    padding:30px; display:flex; align-items:center; gap:30px; flex-wrap:wrap; margin-top:26px;
+  }
+  .awsc-stack-copy{ flex:0 0 auto; min-width:180px; }
+  .awsc-chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .awsc-tech-chip{
+    display:inline-flex; align-items:center; gap:7px; background:var(--awsc-bg-alt);
+    border:1px solid var(--awsc-border); border-radius:20px; padding:8px 16px; font-size:.85rem; font-weight:600; color:var(--awsc-ink);
+  }
+  .awsc-tech-chip .dot{ width:7px; height:7px; border-radius:50%; background:var(--awsc-teal); }
+
+  /* ---------- ROADMAP ---------- */
+  .awsc-roadmap{ position:relative; margin-top:26px; padding-left:8px; }
+  .awsc-road-step{ position:relative; padding-left:52px; padding-bottom:34px; }
+  .awsc-road-step:last-child{ padding-bottom:0; }
+  .awsc-road-step::before{
+    content:""; position:absolute; left:19px; top:40px; bottom:-2px; width:2px; background:var(--awsc-border);
+  }
+  .awsc-road-step:last-child::before{ display:none; }
+  .awsc-road-num{
+    position:absolute; left:0; top:0; width:40px; height:40px; border-radius:50%;
+    background:#E7F7F5; color:var(--awsc-teal); font-weight:800; font-family:'Sora',sans-serif;
+    display:flex; align-items:center; justify-content:center; font-size:1rem; border:2px solid #fff; box-shadow:0 0 0 2px var(--awsc-border);
+  }
+  .awsc-road-step.is-complete .awsc-road-num{ background:#DDF6EC; color:#159467; }
+  .awsc-road-step h4{ margin:0 0 6px; font-size:1.2rem; color:var(--awsc-ink); }
+  .awsc-road-step p{ margin:0 0 12px; color:var(--awsc-muted); font-size:.94rem; }
+  .awsc-road-tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .awsc-road-tag{
+    display:inline-block; background:var(--awsc-bg-alt); border:1px solid var(--awsc-border); color:var(--awsc-ink);
+    border-radius:8px; padding:7px 12px; font-size:.82rem; font-weight:600; text-decoration:none;
+  }
+  .awsc-road-tag:hover{ border-color:var(--awsc-teal); color:var(--awsc-teal); }
+
+  /* ---------- COURSES ---------- */
+  .awsc-courses-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .awsc-courses-count{ color:var(--awsc-muted); font-size:.9rem; font-weight:600; }
+  .awsc-course-list{ display:flex; flex-direction:column; gap:18px; margin-top:22px; }
+  .awsc-course-card{
+    background:#fff; border:1px solid var(--awsc-border); border-radius:var(--awsc-radius);
+    padding:26px 28px; display:flex; gap:20px; align-items:flex-start;
+  }
+  .awsc-course-num{
+    flex:0 0 auto; width:38px; height:38px; border-radius:10px; background:#E7F7F5; color:var(--awsc-teal);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Sora',sans-serif;
+  }
+  .awsc-course-body{ flex:1; min-width:0; }
+  .awsc-course-cat{ font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--awsc-muted); }
+  .awsc-course-body h3{ margin:4px 0 8px; font-size:1.25rem; color:var(--awsc-ink); }
+  .awsc-course-body > p.awsc-course-desc{ color:var(--awsc-muted); margin:0 0 14px; line-height:1.6; }
+  .awsc-course-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+  .awsc-course-tag{
+    font-size:.78rem; font-weight:600; color:var(--awsc-ink); background:var(--awsc-bg-alt);
+    border:1px solid var(--awsc-border); border-radius:8px; padding:5px 11px;
+  }
+  .awsc-course-skills{ font-size:.85rem; color:var(--awsc-muted); }
+  .awsc-course-skills strong{ color:var(--awsc-ink); }
+  .awsc-course-cta{ flex:0 0 auto; align-self:center; }
+  .awsc-course-cta a{
+    display:inline-flex; align-items:center; gap:6px; font-weight:700; color:var(--awsc-teal);
+    text-decoration:none; font-size:.88rem; white-space:nowrap;
+    border:2px solid var(--awsc-teal); border-radius:9px; padding:10px 18px;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .awsc-course-cta a:hover{
+    background:var(--awsc-teal); color:#fff; transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(14,165,160,.28);
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .awsc-projects-band{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--awsc-radius); padding:38px; color:#fff;
+  }
+  .awsc-projects-band .awsc-eyebrow{ color:#8FD9D4; }
+  .awsc-projects-band h2{ color:#fff; }
+  .awsc-skills-practiced-card{
+    background:#fff; border-radius:14px; padding:26px 28px; margin-top:24px; color:var(--awsc-ink);
+  }
+  .awsc-skills-practiced-head{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .awsc-skills-practiced-head .icon{
+    width:38px; height:38px; border-radius:10px; background:#E7F7F5; color:var(--awsc-teal);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem;
+  }
+  .awsc-skills-practiced-head h4{ margin:0; font-size:1.05rem; }
+  .awsc-skills-practiced-head span{ display:block; font-size:.8rem; color:var(--awsc-muted); }
+  .awsc-practiced-chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .awsc-practiced-chip{
+    display:inline-flex; align-items:center; gap:7px; border-radius:20px; padding:7px 15px; font-size:.83rem; font-weight:600;
+  }
+  .awsc-practiced-chip.c-tech{ background:#EAF3FF; color:#1B5FA8; }
+  .awsc-practiced-chip.c-tool{ background:#F4EEFF; color:#7A4FD6; }
+  .awsc-practiced-chip.c-skill{ background:#E7F7F0; color:#159467; }
+  .awsc-practiced-chip .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+  .awsc-cloud-note{
+    display:flex; gap:14px; background:rgba(255,255,255,.94); color:var(--awsc-ink); border-radius:12px;
+    padding:18px 20px; margin-top:18px; align-items:flex-start;
+  }
+  .awsc-cloud-note .icon{ font-size:1.3rem; flex:0 0 auto; }
+  .awsc-cloud-note strong{ display:block; margin-bottom:4px; }
+  .awsc-cloud-note p{ margin:0; font-size:.88rem; color:var(--awsc-muted); line-height:1.55; }
+
+  /* ---------- CAREER DIRECTION ---------- */
+  .awsc-direction-chips{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+  .awsc-direction-chip{
+    display:inline-flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--awsc-border);
+    border-radius:12px; padding:14px 18px; font-weight:600; color:var(--awsc-ink); font-size:.92rem;
+  }
+  .awsc-direction-chip .arrow{ color:var(--awsc-teal); font-weight:800; }
+
+  /* ---------- REVIEWS ---------- */
+  .awsc-reviews-band{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--awsc-radius); padding:36px; color:#fff;
+  }
+  .awsc-reviews-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .awsc-reviews-head .awsc-eyebrow{ color:#8FD9D4; }
+  .awsc-reviews-head h2{ color:#fff; margin:0; }
+  .awsc-rating-badge{
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:12px;
+    padding:10px 18px; text-align:right;
+  }
+  .awsc-rating-badge strong{ font-size:1.2rem; }
+  .awsc-rating-badge span{ display:block; font-size:.72rem; color:#B9CCDD; }
+  .awsc-review-card{
+    background:#fff; color:var(--awsc-ink); border-radius:14px; padding:30px; margin-top:22px; min-height:150px;
+  }
+  .awsc-review-stars{ color:#F5B400; letter-spacing:2px; margin-bottom:10px; }
+  .awsc-review-title{ font-weight:700; font-size:1.05rem; margin-bottom:6px; }
+  .awsc-review-body{ color:var(--awsc-muted); font-size:.92rem; line-height:1.6; margin-bottom:16px; }
+  .awsc-review-tag{
+    display:inline-block; background:var(--awsc-bg-alt); border:1px solid var(--awsc-border); border-radius:8px;
+    padding:5px 12px; font-size:.78rem; font-weight:600; margin-bottom:16px;
+  }
+  .awsc-review-person{ display:flex; align-items:center; gap:12px; }
+  .awsc-review-avatar{
+    width:38px; height:38px; border-radius:50%; background:var(--awsc-teal); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.85rem;
+  }
+  .awsc-review-person strong{ display:block; font-size:.9rem; }
+  .awsc-review-person span{ display:block; font-size:.78rem; color:var(--awsc-muted); }
+  .awsc-review-nav{ display:flex; align-items:center; justify-content:center; gap:16px; margin-top:20px; }
+  .awsc-review-arrow{
+    width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+    color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem;
+  }
+  .awsc-review-arrow:hover{ background:rgba(255,255,255,.2); }
+  .awsc-review-count{ font-size:.85rem; color:#B9CCDD; min-width:64px; text-align:center; }
+  .awsc-review-hint{ text-align:center; font-size:.78rem; color:#8DA3B8; margin-top:8px; }
+
+  /* ---------- FAQ ---------- */
+  .awsc-faq-list{ margin-top:22px; display:flex; flex-direction:column; gap:12px; }
+  .awsc-faq-item{ background:#fff; border:1px solid var(--awsc-border); border-radius:12px; overflow:hidden; }
+  .awsc-faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:18px 22px; font-weight:700; color:var(--awsc-ink); font-size:.96rem;
+  }
+  .awsc-faq-q .chev{ transition:transform .15s ease; color:var(--awsc-teal); flex:0 0 auto; }
+  .awsc-faq-item.is-open .awsc-faq-q .chev{ transform:rotate(90deg); }
+  .awsc-faq-a{ max-height:0; overflow:hidden; transition:max-height .2s ease; }
+  .awsc-faq-item.is-open .awsc-faq-a{ max-height:300px; }
+  .awsc-faq-a p{ margin:0; padding:0 22px 20px; color:var(--awsc-muted); font-size:.92rem; line-height:1.6; }
+
+  /* ---------- RELATED ---------- */
+  .awsc-related-card{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    background:#fff; border:1px solid var(--awsc-border); border-radius:var(--awsc-radius); padding:24px 28px; margin-top:20px;
+  }
+  .awsc-related-card h4{ margin:0 0 6px; font-size:1.05rem; color:var(--awsc-ink); }
+  .awsc-related-card a.awsc-explore{
+    display:inline-flex; align-items:center; gap:6px; font-weight:700; color:var(--awsc-teal);
+    text-decoration:none; font-size:.88rem; white-space:nowrap; flex:0 0 auto;
+    border:2px solid var(--awsc-teal); border-radius:9px; padding:10px 18px;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .awsc-related-card a.awsc-explore:hover{
+    background:var(--awsc-teal); color:#fff; transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(14,165,160,.28);
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .awsc-final-cta{
+    background: linear-gradient(160deg, #0F2C4C 0%, #123655 100%);
+    border-radius:var(--awsc-radius); padding:56px 30px; text-align:center; color:#fff;
+  }
+  .awsc-final-cta .awsc-eyebrow{ color:#8FD9D4; }
+  .awsc-final-cta h2{ font-family:'Sora',sans-serif; font-size:2.1rem; margin:6px 0 14px; color:#fff; }
+  .awsc-final-cta p{ max-width:62ch; margin:0 auto 26px; color:#C6D6E4; line-height:1.6; }
+  .awsc-final-actions{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .awsc-hero h1{ font-size:2rem; }
+    .awsc-outcomes-grid{ grid-template-columns:1fr; }
+    .awsc-skills-grid{ grid-template-columns:1fr; }
+    .awsc-checklist-grid{ grid-template-columns:1fr; }
+    .awsc-course-card{ flex-direction:column; }
+    .awsc-course-cta{ align-self:flex-start; }
+    .awsc-stack-band{ flex-direction:column; align-items:flex-start; }
+  }
+  @media (max-width: 640px){
+    .awsc-hero{ padding:40px 0 30px; }
+    .awsc-hero h1{ font-size:1.6rem; }
+    .awsc-h2{ font-size:1.5rem; }
+    .awsc-overview-card{ padding:24px 20px; }
+    .awsc-jumpnav-inner{ gap:18px; padding:14px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html">Home</a>
+      <a href="programs.html" class="active">Programs</a>
+      <a href="courses.html">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- BREADCRUMB -->
+  <div class="container breadcrumb">
+    <a href="index.html">Home</a><span>/</span><a href="programs.html">Programs</a><span>/</span><span class="current">AWS Cloud Engineer</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="awsc-hero">
+    <img class="awsc-hero-bg-photo" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=60" alt="" loading="eager">
+    <div class="awsc-hero-overlay"></div>
+    <div class="awsc-container awsc-hero-inner">
+      <span class="awsc-hero-eyebrow">JobSkillShare Certificate Program</span>
+      <h1>AWS Cloud Engineer Certificate Program</h1>
+      <p class="awsc-hero-tagline">Become an AWS Certified Cloud Engineer</p>
+      <p class="awsc-hero-lead">Master the skills needed for AWS Cloud engineering and management, gaining expertise in architectural, operational, and DevOps tools.</p>
+
+      <div class="awsc-hero-stats">
+        <div class="awsc-stat-chip"><strong>3</strong><span>Courses</span></div>
+        <div class="awsc-stat-chip"><strong>177</strong><span>Lessons</span></div>
+        <div class="awsc-stat-chip"><strong>36 hours 0 min</strong><span>Estimated time</span></div>
+        <div class="awsc-stat-chip"><strong>Intermediate to Advanced</strong><span>Difficulty</span></div>
+      </div>
+
+      <div class="awsc-hero-actions">
+        <a href="#" class="awsc-btn awsc-btn-primary" data-auth-trigger="signup">Create Free Account</a>
+        <a href="#" class="awsc-btn awsc-btn-white" data-auth-trigger="login">Log In</a>
+        <a href="#curriculum" class="awsc-preview-link">Preview the full curriculum ↓</a>
+      </div>
+
+      <div class="awsc-assurance">
+        <span>AWS subscription provided for core labs</span>
+        <span>Recommended learning order</span>
+        <span>Progress saved after login</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JUMP NAV -->
+  <div id="jumpNavSentinel"></div>
+  <nav class="awsc-jumpnav" id="jumpNav" aria-label="Jump to section">
+    <div class="awsc-jumpnav-inner">
+      <span class="awsc-jump-label">Jump to</span>
+      <a href="#overview">Overview</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#curriculum">Courses</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+  <div class="awsc-jumpnav-spacer" id="jumpNavSpacer"></div>
+
+  <!-- PROGRAM OVERVIEW -->
+  <section class="awsc-section" id="overview">
+    <div class="awsc-container">
+      <div class="awsc-overview-card awsc-reveal">
+        <span class="awsc-eyebrow">Program Overview</span>
+        <p>The AWS Cloud Engineer Certificate Program equips learners with the essential skills required for a successful career in AWS administration, engineering, and cloud architecture. Spanning three guided courses, this program focuses on building core cloud competencies, managing complex AWS infrastructure, and integrating modern DevOps automation practices.</p>
+        <h2>Program Highlights</h2>
+        <p>Begin with fundamental AWS services including EC2, VPC, S3, and RDS using assigned lab subscriptions. Advance into advanced cloud engineering, system architectures, security, and cost optimization, before diving into an optional DevOps track featuring Docker, Terraform, Jenkins, and Kubernetes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="awsc-section awsc-section-alt" id="outcomes">
+    <div class="awsc-container">
+      <span class="awsc-eyebrow">Program Outcomes</span>
+      <h2 class="awsc-h2">What You'll Be Able to Do</h2>
+
+      <div class="awsc-outcomes-grid awsc-reveal">
+        <div class="awsc-outcomes-panel">
+          <div class="awsc-checklist-grid awsc-reveal-stagger">
+            <div class="awsc-check-item"><span class="tick">✓</span> Configure VPCs, Subnets &amp; Gateways</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Provision &amp; manage EC2 instances</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Manage S3 storage &amp; EBS snapshots</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Deploy RDS databases &amp; backups</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Configure Network Load Balancers</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Manage IAM roles &amp; Security Groups</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Optimize AWS infrastructure costs</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Write Infrastructure as Code (Terraform)</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Build CI/CD pipelines with Jenkins</div>
+            <div class="awsc-check-item"><span class="tick">✓</span> Orchestrate containers with Kubernetes</div>
+          </div>
+        </div>
+
+        <div class="awsc-career-panel">
+          <span class="awsc-career-eyebrow">Your Career Path</span>
+          <h3>Career Opportunities</h3>
+          <ul class="awsc-career-list">
+            <li><a href="#">AWS Cloud Engineer <span>→</span></a></li>
+            <li><a href="#">AWS Cloud Administrator <span>→</span></a></li>
+            <li><a href="#">Cloud Support Engineer (AWS) <span>→</span></a></li>
+            <li><a href="#">AWS Solutions Engineer <span>→</span></a></li>
+            <li><a href="#">AWS DevOps Engineer <span>→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS YOU'LL BUILD -->
+  <section class="awsc-section">
+    <div class="awsc-container">
+      <div class="awsc-skills-head">
+        <div>
+          <span class="awsc-eyebrow">Core Skill Areas</span>
+          <h2 class="awsc-h2">Skills You'll Build</h2>
+        </div>
+        <div class="awsc-skills-badge"><strong>12</strong><span>Core skills</span></div>
+      </div>
+
+      <div class="awsc-skills-grid awsc-reveal-stagger">
+        <div class="awsc-skill-card">
+          <div class="awsc-skill-card-head">
+            <div class="awsc-skill-card-head-left">
+              <span class="awsc-skill-card-icon">☁️</span>
+              <h4>AWS Administration &amp; Engineering</h4>
+            </div>
+            <span class="awsc-skill-count">6 skills</span>
+          </div>
+          <ul>
+            <li>VPC &amp; Network Architecture</li>
+            <li>EC2 Compute &amp; Auto Scaling</li>
+            <li>Storage &amp; Backup Operations (S3 / EBS)</li>
+            <li>Relational Database Management (RDS)</li>
+            <li>AWS Security Groups &amp; IAM Policies</li>
+            <li>Cloud Cost Optimization &amp; Monitoring</li>
+          </ul>
+        </div>
+
+        <div class="awsc-skill-card is-devops">
+          <div class="awsc-skill-card-head">
+            <div class="awsc-skill-card-head-left">
+              <span class="awsc-skill-card-icon">🚀</span>
+              <h4>DevOps &amp; Automation Tools</h4>
+            </div>
+            <span class="awsc-skill-count">6 skills</span>
+          </div>
+          <ul>
+            <li>Version Control with Git</li>
+            <li>Containerization with Docker</li>
+            <li>Infrastructure as Code (Terraform)</li>
+            <li>Configuration Management (Ansible)</li>
+            <li>CI/CD Automation (Jenkins)</li>
+            <li>Container Orchestration (Kubernetes)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TECHNOLOGY STACK -->
+      <div class="awsc-stack-band awsc-reveal">
+        <div class="awsc-stack-copy">
+          <span class="awsc-eyebrow">Technology Stack</span>
+          <h3 style="margin:0;font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--awsc-ink);">Technologies Covered</h3>
+        </div>
+        <div class="awsc-chip-row">
+          <span class="awsc-tech-chip"><span class="dot"></span> AWS EC2</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> AWS VPC</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> Amazon S3</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> Amazon RDS</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> Elastic Load Balancing</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> Docker</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> Terraform</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> Ansible</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> Jenkins</span>
+          <span class="awsc-tech-chip"><span class="dot"></span> Kubernetes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING ROADMAP -->
+  <section class="awsc-section awsc-section-alt" id="roadmap">
+    <div class="awsc-container">
+      <span class="awsc-eyebrow">Learning Roadmap</span>
+      <h2 class="awsc-h2">Your Path Through the Program</h2>
+
+      <div class="awsc-roadmap awsc-reveal-stagger">
+        <div class="awsc-road-step">
+          <div class="awsc-road-num">1</div>
+          <h4>AWS Fundamentals</h4>
+          <p>Build core AWS administration competencies using provided lab accounts to manage networking, compute, and storage.</p>
+          <div class="awsc-road-tags">
+            <a class="awsc-road-tag" href="#">AWS Cloud Administrator | Fundamentals</a>
+          </div>
+        </div>
+        <div class="awsc-road-step">
+          <div class="awsc-road-num">2</div>
+          <h4>Advanced AWS Engineering</h4>
+          <p>Deepen expertise in cloud architecture, enterprise security, reliability, and cost-efficiency without a DevOps focus.</p>
+          <div class="awsc-road-tags">
+            <a class="awsc-road-tag" href="#">AWS Cloud Administrator Course | Advanced</a>
+          </div>
+        </div>
+        <div class="awsc-road-step">
+          <div class="awsc-road-num">3</div>
+          <h4>DevOps Specialization (Optional)</h4>
+          <p>Master modern CI/CD pipelines, container orchestration, and Infrastructure as Code for high-level AWS engineering roles.</p>
+          <div class="awsc-road-tags">
+            <a class="awsc-road-tag" href="#">AWS DevOps Engineer Certification</a>
+          </div>
+        </div>
+        <div class="awsc-road-step is-complete">
+          <div class="awsc-road-num">✓</div>
+          <h4>AWS Program Complete</h4>
+          <p>You have mastered the AWS Cloud Engineer pathway and possess practical, job-ready AWS engineering skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM STRUCTURE / COURSES -->
+  <section class="awsc-section" id="curriculum">
+    <div class="awsc-container">
+      <div class="awsc-courses-head">
+        <div>
+          <span class="awsc-eyebrow">Program Structure</span>
+          <h2 class="awsc-h2">Courses in This Certificate Program</h2>
+        </div>
+        <span class="awsc-courses-count">3 courses in recommended order</span>
+      </div>
+
+      <div class="awsc-course-list awsc-reveal-stagger">
+
+        <article class="awsc-course-card">
+          <div class="awsc-course-num">1</div>
+          <div class="awsc-course-body">
+            <span class="awsc-course-cat">Foundation</span>
+            <h3>AWS Cloud Administrator | Fundamentals</h3>
+            <p class="awsc-course-desc">Master the essentials of AWS management through hands-on labs. An AWS cloud subscription is provided for course modules so you can build real skills without extra costs.</p>
+            <div class="awsc-course-tags">
+              <span class="awsc-course-tag">25 lessons · 6 hrs</span>
+              <span class="awsc-course-tag">VPC &amp; Subnets</span>
+              <span class="awsc-course-tag">EC2 &amp; EBS</span>
+              <span class="awsc-course-tag">S3 &amp; RDS</span>
+            </div>
+            <p class="awsc-course-skills"><strong>Skills introduced:</strong> VPC Configuration · EC2 Deployment · Security Groups · S3 Storage · RDS Administration</p>
+          </div>
+          <div class="awsc-course-cta"><a href="#">View Course →</a></div>
+        </article>
+
+        <article class="awsc-course-card">
+          <div class="awsc-course-num">2</div>
+          <div class="awsc-course-body">
+            <span class="awsc-course-cat">Advanced Engineering</span>
+            <h3>AWS Cloud Administrator Course | Advanced</h3>
+            <p class="awsc-course-desc">Deepen your skills in managing and optimizing AWS production environments. Focus on traditional AWS cloud engineering, system architecture, and cost optimization.</p>
+            <div class="awsc-course-tags">
+              <span class="awsc-course-tag">52 lessons · 10 hrs</span>
+              <span class="awsc-course-tag">Cloud Architecture</span>
+              <span class="awsc-course-tag">Cost Optimization</span>
+              <span class="awsc-course-tag">Production Security</span>
+            </div>
+            <p class="awsc-course-skills"><strong>Skills introduced:</strong> AWS Architecture Design · High Availability · Cost Management · Advanced Security</p>
+          </div>
+          <div class="awsc-course-cta"><a href="#">View Course →</a></div>
+        </article>
+
+        <article class="awsc-course-card">
+          <div class="awsc-course-num">3</div>
+          <div class="awsc-course-body">
+            <span class="awsc-course-cat">DevOps Specialization</span>
+            <h3>AWS DevOps Engineer Certification</h3>
+            <p class="awsc-course-desc">Shift focus from pure cloud administration to specialized DevOps practices. Build continuous delivery pipelines, containerize apps, and automate AWS infrastructure.</p>
+            <div class="awsc-course-tags">
+              <span class="awsc-course-tag">100 lessons · 20 hrs</span>
+              <span class="awsc-course-tag">Docker &amp; Kubernetes</span>
+              <span class="awsc-course-tag">Terraform &amp; Ansible</span>
+              <span class="awsc-course-tag">Jenkins CI/CD</span>
+            </div>
+            <p class="awsc-course-skills"><strong>Skills introduced:</strong> Infrastructure as Code · CI/CD Pipelines · Container Orchestration · Monitoring &amp; Alerting</p>
+          </div>
+          <div class="awsc-course-cta"><a href="#">View Course →</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS & HANDS-ON ACTIVITIES -->
+  <section class="awsc-section awsc-section-alt" id="projects">
+    <div class="awsc-container">
+      <div class="awsc-projects-band awsc-reveal">
+        <span class="awsc-eyebrow">Practice What You Learn</span>
+        <h2 class="awsc-h2">Projects &amp; Hands-on Activities</h2>
+
+        <div class="awsc-skills-practiced-card">
+          <div class="awsc-skills-practiced-head">
+            <span class="icon">+</span>
+            <div>
+              <h4>Skills Practiced</h4>
+              <span>20 curriculum-grounded AWS skills</span>
+            </div>
+          </div>
+          <div class="awsc-practiced-chip-row">
+            <span class="awsc-practiced-chip c-tech"><span class="dot"></span> AWS EC2</span>
+            <span class="awsc-practiced-chip c-tool"><span class="dot"></span> AWS VPC</span>
+            <span class="awsc-practiced-chip c-skill"><span class="dot"></span> Amazon S3</span>
+            <span class="awsc-practiced-chip c-tech"><span class="dot"></span> Amazon RDS</span>
+            <span class="awsc-practiced-chip c-tool"><span class="dot"></span> Network Load Balancers</span>
+            <span class="awsc-practiced-chip c-skill"><span class="dot"></span> Security Groups</span>
+            <span class="awsc-practiced-chip c-tech"><span class="dot"></span> IAM Policies</span>
+            <span class="awsc-practiced-chip c-tool"><span class="dot"></span> EBS Snapshots</span>
+            <span class="awsc-practiced-chip c-skill"><span class="dot"></span> Auto Scaling</span>
+            <span class="awsc-practiced-chip c-tech"><span class="dot"></span> Docker Containerization</span>
+            <span class="awsc-practiced-chip c-tool"><span class="dot"></span> Terraform IaC</span>
+            <span class="awsc-practiced-chip c-skill"><span class="dot"></span> Ansible Playbooks</span>
+            <span class="awsc-practiced-chip c-tech"><span class="dot"></span> Jenkins CI/CD</span>
+            <span class="awsc-practiced-chip c-tool"><span class="dot"></span> Kubernetes Clusters</span>
+            <span class="awsc-practiced-chip c-skill"><span class="dot"></span> Nagios Monitoring</span>
+            <span class="awsc-practiced-chip c-tech"><span class="dot"></span> Cost Optimization</span>
+            <span class="awsc-practiced-chip c-tool"><span class="dot"></span> Git Version Control</span>
+            <span class="awsc-practiced-chip c-skill"><span class="dot"></span> High Availability Architecture</span>
+            <span class="awsc-practiced-chip c-tech"><span class="dot"></span> Cloud Security Protocols</span>
+            <span class="awsc-practiced-chip c-tool"><span class="dot"></span> System Automation</span>
+          </div>
+
+          <div class="awsc-cloud-note">
+            <span class="icon">☁️</span>
+            <div>
+              <strong>AWS Subscription Information</strong>
+              <p>An AWS cloud subscription is provided for the core <em>AWS Cloud Administrator | Fundamentals</em> modules so you can complete practical exercises seamlessly. For advanced or extended cloud labs, members may utilize their own cloud accounts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAREER DIRECTION -->
+      <div style="margin-top:40px;">
+        <span class="awsc-eyebrow">Career Direction</span>
+        <h2 class="awsc-h2">Jobs You'll Be Ready For</h2>
+        <div class="awsc-direction-chips awsc-reveal-stagger">
+          <span class="awsc-direction-chip"><span class="arrow">→</span> AWS Cloud Engineer</span>
+          <span class="awsc-direction-chip"><span class="arrow">→</span> AWS Cloud Administrator</span>
+          <span class="awsc-direction-chip"><span class="arrow">→</span> Cloud Support Engineer (AWS)</span>
+          <span class="awsc-direction-chip"><span class="arrow">→</span> AWS Solutions / Infrastructure Engineer</span>
+          <span class="awsc-direction-chip"><span class="arrow">→</span> AWS DevOps Engineer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="awsc-section" id="reviews">
+    <div class="awsc-container">
+      <div class="awsc-reviews-band awsc-reveal">
+        <div class="awsc-reviews-head">
+          <div>
+            <span class="awsc-eyebrow">Feedback Across the Curriculum</span>
+            <h2 class="awsc-h2">Program Reviews</h2>
+          </div>
+          <div class="awsc-rating-badge"><strong>4.9 ★</strong><span>Program average across all course ratings</span></div>
+        </div>
+
+        <div class="awsc-review-card" id="reviewCard">
+          <div class="awsc-review-stars">★★★★★</div>
+          <p class="awsc-review-title" id="reviewTitle"></p>
+          <p class="awsc-review-body" id="reviewBody"></p>
+          <span class="awsc-review-tag" id="reviewTag"></span>
+          <div class="awsc-review-person">
+            <div class="awsc-review-avatar" id="reviewAvatar"></div>
+            <div>
+              <strong id="reviewName"></strong>
+              <span id="reviewRole"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="awsc-review-nav">
+          <button type="button" class="awsc-review-arrow" id="reviewPrev" aria-label="Previous review">←</button>
+          <span class="awsc-review-count" id="reviewCount">1 / 4</span>
+          <button type="button" class="awsc-review-arrow" id="reviewNext" aria-label="Next review">→</button>
+        </div>
+        <p class="awsc-review-hint">Use the arrow buttons or keyboard arrow keys to browse every review.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.JSS_PROGRAM_REVIEWS = [
+      { name:'Yen Lyu', role:'IT Support Engineer — Amazon Web Services', course:'AWS Cloud Administrator | Fundamentals', title:'Invaluable hands-on practice', body:'Having AWS lab access included let me practice VPC and EC2 setups without worrying about surprise bills. Crucial for breaking into AWS.' },
+      { name:'Bradley Williams', role:'Systems Administrator — RadNet', course:'AWS Cloud Administrator Course | Advanced', title:'Deep and practical', body:'The advanced course really helped me grasp real-world AWS architecture, backup strategies, and cost optimization for production.' },
+      { name:'Hadi Wali', role:'Cyber Security Engineer — TikTok', course:'AWS Cloud Administrator Course | Advanced', title:'Great technical depth', body:'Understanding security groups and network isolation in AWS was seamless with these hands-on modules.' },
+      { name:'Nelson J.', role:'Cloud Support Engineer', course:'AWS DevOps Engineer Certification', title:'Bridged systems and DevOps', body:'Learning Terraform and Jenkins alongside AWS was the exact push I needed to transition into a DevOps role.' }
+    ];
+
+    (function () {
+      var reviews = window.JSS_PROGRAM_REVIEWS;
+      var idx = 0;
+      var titleEl = document.getElementById('reviewTitle');
+      var bodyEl = document.getElementById('reviewBody');
+      var tagEl = document.getElementById('reviewTag');
+      var avatarEl = document.getElementById('reviewAvatar');
+      var nameEl = document.getElementById('reviewName');
+      var roleEl = document.getElementById('reviewRole');
+      var countEl = document.getElementById('reviewCount');
+
+      function initials(name) {
+        return name.split(' ').map(function (p) { return p[0]; }).slice(0, 2).join('').toUpperCase();
+      }
+
+      function render() {
+        var r = reviews[idx];
+        titleEl.textContent = r.title;
+        bodyEl.textContent = r.body;
+        tagEl.textContent = r.course;
+        avatarEl.textContent = initials(r.name);
+        nameEl.textContent = r.name;
+        roleEl.textContent = r.role;
+        countEl.textContent = (idx + 1) + ' / ' + reviews.length;
+      }
+
+      document.getElementById('reviewPrev').addEventListener('click', function () {
+        idx = (idx - 1 + reviews.length) % reviews.length;
+        render();
+      });
+      document.getElementById('reviewNext').addEventListener('click', function () {
+        idx = (idx + 1) % reviews.length;
+        render();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { idx = (idx - 1 + reviews.length) % reviews.length; render(); }
+        if (e.key === 'ArrowRight') { idx = (idx + 1) % reviews.length; render(); }
+      });
+
+      render();
+    })();
+  </script>
+
+  <!-- FAQ -->
+  <section class="awsc-section awsc-section-alt" id="faq">
+    <div class="awsc-container">
+      <span class="awsc-eyebrow">Common Questions</span>
+      <h2 class="awsc-h2">Frequently Asked Questions</h2>
+
+      <div class="awsc-faq-list awsc-reveal-stagger" id="faqList">
+        <div class="awsc-faq-item">
+          <button class="awsc-faq-q" type="button">Do I need prior AWS experience before starting? <span class="chev">▸</span></button>
+          <div class="awsc-faq-a"><p>No prior AWS experience is required, though basic IT or networking background is recommended. The program starts with core AWS fundamentals before advancing to complex architecture.</p></div>
+        </div>
+        <div class="awsc-faq-item">
+          <button class="awsc-faq-q" type="button">Is an AWS account provided for hands-on labs? <span class="chev">▸</span></button>
+          <div class="awsc-faq-a"><p>Yes, an AWS cloud subscription is provided for the core <em>AWS Cloud Administrator | Fundamentals</em> modules so you can complete guided exercises directly.</p></div>
+        </div>
+        <div class="awsc-faq-item">
+          <button class="awsc-faq-q" type="button">Is the DevOps course required for completion? <span class="chev">▸</span></button>
+          <div class="awsc-faq-a"><p>The DevOps Engineer course is an optional advanced module for members aiming for specialized AWS DevOps roles, while the Core &amp; Advanced courses prepare you for AWS Cloud Engineer roles.</p></div>
+        </div>
+        <div class="awsc-faq-item">
+          <button class="awsc-faq-q" type="button">How long does this program take? <span class="chev">▸</span></button>
+          <div class="awsc-faq-a"><p>The curriculum includes 36 hours of video across 177 lessons. Most learners complete the pathway in 2 to 3 months with consistent study.</p></div>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('faqList').addEventListener('click', function (e) {
+          var btn = e.target.closest('.awsc-faq-q');
+          if (!btn) return;
+          var item = btn.closest('.awsc-faq-item');
+          item.classList.toggle('is-open');
+        });
+      </script>
+
+      <!-- RELATED CERTIFICATE PROGRAMS -->
+      <div style="margin-top:44px;">
+        <h2 class="awsc-h2" style="font-size:1.6rem;">Related Certificate Programs</h2>
+        <div class="awsc-related-card awsc-reveal">
+          <div>
+            <h4>Systems Engineer Certificate Program</h4>
+            <span style="color:var(--awsc-muted);font-size:.88rem;">Master hybrid IT, Windows Server administration, Linux, and PowerShell scripting.</span>
+          </div>
+          <a class="awsc-explore" href="systems-engineer-certificate-program.html">Explore Program →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="awsc-section">
+    <div class="awsc-container">
+      <div class="awsc-final-cta awsc-reveal">
+        <span class="awsc-eyebrow">Build Your Cloud Career</span>
+        <h2>Master AWS Cloud Engineering Today</h2>
+        <p>Gain job-ready skills in AWS architecture, systems administration, and DevOps automation through hands-on labs and expert-guided training.</p>
+        <div class="awsc-final-actions">
+          <a href="#" class="awsc-btn awsc-btn-primary" data-auth-trigger="signup">Create Free Account</a>
+          <a href="#" class="awsc-btn awsc-btn-white" data-auth-trigger="login">Already a member? Log In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="it-support-certificate-program.html">IT Support</a></li>
+          <li><a href="cybersecurity-analyst-certificate-program.html">Cybersecurity</a></li>
+          <li><a href="programs.html#cloud">Cloud &amp; Systems</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Week 5 rebuild — Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#" class="btn btn-primary btn-block" data-auth-trigger="signup">Start learning</a>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/program-detail.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var header = document.querySelector('.site-header');
+  var nav = document.getElementById('jumpNav');
+  var sentinel = document.getElementById('jumpNavSentinel');
+  var spacer = document.getElementById('jumpNavSpacer');
+
+  function headerHeight() {
+    return header ? header.getBoundingClientRect().height : 0;
+  }
+
+  function updatePin() {
+    if (!nav || !sentinel || !spacer) return;
+    var top = headerHeight();
+    nav.style.top = top + 'px';
+    var shouldPin = sentinel.getBoundingClientRect().top <= top;
+    if (shouldPin && !nav.classList.contains('is-pinned')) {
+      spacer.style.height = nav.getBoundingClientRect().height + 'px';
+      spacer.style.display = 'block';
+      nav.classList.add('is-pinned');
+    } else if (!shouldPin && nav.classList.contains('is-pinned')) {
+      nav.classList.remove('is-pinned');
+      spacer.style.display = 'none';
+    }
+  }
+  window.addEventListener('scroll', updatePin, { passive: true });
+  window.addEventListener('resize', updatePin);
+  updatePin();
+
+  var jumpLinks = document.querySelectorAll('.awsc-jumpnav a');
+  var targets = Array.prototype.slice.call(jumpLinks).map(function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  }).filter(Boolean);
+
+  function setActiveJumpLink() {
+    var offset = headerHeight() + nav.getBoundingClientRect().height + 20;
+    var scrollY = window.scrollY + offset;
+    var current = targets[0];
+    targets.forEach(function (sec) { if (sec.offsetTop <= scrollY) current = sec; });
+    jumpLinks.forEach(function (a) {
+      a.classList.toggle('is-active', current && a.getAttribute('href') === '#' + current.id);
+    });
+  }
+  window.addEventListener('scroll', setActiveJumpLink, { passive: true });
+  setActiveJumpLink();
+
+  var revealEls = document.querySelectorAll('.awsc-reveal, .awsc-reveal-stagger');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — JobSkillShare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/buttons-override.css">
+</head>
+<body style="background:var(--bg-alt);">
+
+  <header class="site-header">
+    <div class="container nav" id="mainNav">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+      </a>
+      <div class="nav-right">
+        <div class="nav-actions">
+          <a href="dashboard.html" class="btn btn-secondary">Dashboard &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-content-narrow">
+
+    <div class="app-card">
+      <h3>Membership information</h3>
+      <p>You've selected the <strong>Premium Monthly</strong> plan. Price: <strong>$50.00 / month</strong>.</p>
+    </div>
+
+    <div class="app-card">
+      <h3>Account information</h3>
+      <p>You're checking out as <strong>Shiffa</strong>.</p>
+    </div>
+
+    <div class="app-card">
+      <h3>Payment information</h3>
+      <form class="checkout-form">
+        <div class="form-group">
+          <label>Card number</label>
+          <input type="text" placeholder="1234 1234 1234 1234">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Expiration date</label>
+            <input type="text" placeholder="MM / YY">
+          </div>
+          <div class="form-group">
+            <label>CVC</label>
+            <input type="text" placeholder="CVC">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Discount code</label>
+          <input type="text" placeholder="Enter code">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit and check out</button>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>

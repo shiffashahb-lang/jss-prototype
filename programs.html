@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs — JobSkillShare</title>
+<meta name="description" content="Browse all JobSkillShare IT training programs — IT Support, Cybersecurity, Cloud, AI, Freelancing, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/buttons-override.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav" id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo-full.png" alt="JobSkillShare logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="mobile-login-link" data-auth-trigger="login">Log in</a>
+      <a href="index.html">Home</a>
+      <a href="programs.html" class="active">Programs</a>
+      <a href="courses.html">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#preview">Preview</a>
+      <a href="index.html#outcomes">Success stories</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-secondary" data-auth-trigger="login">Log in</a>
+        <a href="upgrade.html" class="btn btn-upgrade"><span class="star">★</span> <span class="upgrade-label">Upgrade</span></a>
+        <a href="https://www.jobskillshare.org/?ref=shiffa#/membership" class="btn btn-primary" data-auth-trigger="signup">Create account</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero-compact">
+    <div class="hero-bg" aria-hidden="true">
+      <img class="hero-bg-photo" src="https://images.unsplash.com/photo-1660616246653-e2c57d1077b9?auto=format&fit=crop&w=1800&q=60" alt="" loading="eager">
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="container hero-copy">
+      <span class="eyebrow eyebrow-dark">Programs</span>
+      <h1 style="margin-top:16px;">Find the path that fits where you're headed</h1>
+      <p class="lead" style="margin-top:14px;">Every program has its own curriculum, mentor support, and outcomes. Search or filter to find yours — each card links to full detail below.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px;">
+    <div class="container">
+
+      <div class="catalog-toolbar">
+        <input type="search" placeholder="Search programs, e.g. cloud, security…" aria-label="Search programs">
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="active">Open now</button>
+        <button class="filter-pill" data-filter="soon">Coming soon</button>
+      </div>
+
+      <div class="catalog-grid">
+
+        <article class="program-card" id="it-support" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>IT Support</h3>
+          <p>Help-desk fundamentals through sysadmin skills, with real ticketing-tool practice and a portfolio of resolved tickets.</p>
+          <a href="it-support-certificate-program.html" class="btn btn-primary">View program →</a>
+        </article>
+
+        <article class="program-card" id="systems-engineer" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>Systems Engineer</h3>
+          <p>Server administration, networking, and infrastructure basics for people moving beyond entry-level support.</p>
+          <a href="systems-engineer.html" class="btn btn-primary" data-auth-trigger="signup">Start learning</a>
+        </article>
+
+        <!-- <article class="program-card" id="cloud" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>Cloud &amp; Systems</h3>
+          <p>Hands-on AWS labs and cloud architecture fundamentals, built around real deployment projects.</p>
+          <a href="cloud-azure.html" class="btn btn-primary" data-auth-trigger="signup">Start learning</a>
+        </article> -->
+
+        <article class="program-card" id="cybersecurity" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>Cybersecurity</h3>
+          <p>Security fundamentals through incident-response labs — the same track that placed learners at TikTok and Microsoft.</p>
+          <a href="cybersecurity-analyst-certificate-program.html" class="btn btn-primary">View program →</a>
+        </article>
+
+        <article class="program-card" id="ai" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>AI Fundamentals</h3>
+          <p>Practical AI tooling and workflows for support, ops, and non-engineering roles.</p>
+          <a href="#" class="btn btn-primary" data-auth-trigger="signup">Start learning</a>
+        </article>
+
+        <article class="program-card" id="freelancing" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>Freelancing</h3>
+          <p>Package your IT skills into a freelance practice — pricing, client work, and contracts included.</p>
+          <a href="freelancing.html" class="btn btn-primary">View program →</a>
+        </article>
+
+        <article class="program-card" id="aws-cloud-engineer" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>AWS Cloud Engineer</h3>
+          <p>AWS core services, architecture, and optional DevOps automation across 3 hands-on courses.</p>
+          <a href="aws-cloud-engineer.html" class="btn btn-primary">View program →</a>
+        </article>
+
+        <article class="program-card" id="azure-cloud" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>Azure Cloud Fundamentals</h3>
+          <p>Core Microsoft Azure architecture, identity, security, and cost management.</p>
+          <a href="cloud-azure.html" class="btn btn-primary">View program →</a>
+        </article>
+
+        <article class="program-card" id="cisco-network-engineer" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>Cisco Network Engineer</h3>
+          <p>Enterprise routing, switching, and security aligned with CCNA 200-301.</p>
+          <a href="cisco-network-engineer.html" class="btn btn-primary">View program →</a>
+        </article>
+
+        <article class="program-card" id="ai-engineering" data-status="active">
+          <span class="badge badge-active">Open now</span>
+          <h3>AI Engineering Certificate</h3>
+          <p>Python programming fundamentals applied toward automation and AI engineering.</p>
+          <a href="ai-engineering.html" class="btn btn-primary">View program →</a>
+        </article>
+
+        <article class="program-card is-soon" id="data-science" data-status="soon">
+          <span class="badge badge-soon">Coming soon</span>
+          <h3>Data Science</h3>
+          <p>Data analysis and modeling for IT professionals moving toward analytics roles. Get notified the day it opens.</p>
+          <form class="waitlist-form">
+            <label class="visually-hidden" for="ds-email">Email address</label>
+            <input id="ds-email" type="email" placeholder="you@email.com" required>
+            <button type="submit">Notify me</button>
+          </form>
+          <p class="form-note" role="status"></p>
+        </article>
+
+        <article class="program-card is-soon" id="web-development" data-status="soon">
+          <span class="badge badge-soon">Coming soon</span>
+          <h3>Web Development</h3>
+          <p>Front-end and back-end fundamentals for a career switch into web development. Get notified the day it opens.</p>
+          <form class="waitlist-form">
+            <label class="visually-hidden" for="wd-email">Email address</label>
+            <input id="wd-email" type="email" placeholder="you@email.com" required>
+            <button type="submit">Notify me</button>
+          </form>
+          <p class="form-note" role="status"></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="cta-band">
+      <h2>Not sure which program fits?</h2>
+      <p>See what a learning week actually looks like before you enroll.</p>
+      <a href="index.html#preview" class="btn btn-primary">Watch the preview</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo-badge"><img src="assets/images/logo-full.png" alt="JobSkillShare logo" style="height:34px;"></span>
+        <p>Job-ready IT training with mentorship and real career outcomes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#it-support">IT Support</a></li>
+          <li><a href="programs.html#cybersecurity">Cybersecurity</a></li>
+          <li><a href="programs.html#cloud">Cloud &amp; Systems</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="programs.html">View all</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#outcomes">Success stories</a></li>
+          <li><a href="upgrade.html">Pricing</a></li>
+          <li><a href="mailto:sales@jobskillshare.org">Contact sales</a></li>
+           <li><a href="https://www.jobskillshare.org/certificate-program/?ref=shiffa">Affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="#" data-auth-trigger="login">Log in</a></li>
+          <li><a href="#" data-auth-trigger="signup">Start learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JobSkillShare. All rights reserved.</span>
+      <span>Week 3 redesign — Web Development &amp; UI/UX Internship</span>
+    </div>
+  </div>
+</footer>
+
+<!-- AUTH MODAL — shared placeholder gate; no backend is connected yet. -->
+<div class="auth-modal-overlay" id="authModalOverlay" hidden>
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <button type="button" class="auth-modal-close" aria-label="Close">&times;</button>
+    <div class="auth-modal-tabs" role="tablist">
+      <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup" role="tab">Start learning</button>
+    </div>
+    <h2 id="authModalTitle" class="auth-modal-title">Welcome back</h2>
+    <p class="auth-modal-sub">Log in to continue your program and pick up where you left off.</p>
+    <form class="auth-form" data-auth-form="login">
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="••••••••" autocomplete="current-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+    <form class="auth-form" data-auth-form="signup" hidden>
+      <label>Full name<input type="text" required placeholder="Jane Doe" autocomplete="name"></label>
+      <label>Email<input type="email" required placeholder="you@email.com" autocomplete="email"></label>
+      <label>Password<input type="password" required placeholder="Create a password" autocomplete="new-password"></label>
+      <button type="submit" class="btn btn-primary btn-block">Create free account</button>
+    </form>
+    <p class="auth-modal-note">Prototype only — no account is actually created. Connect a real auth provider before launch.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
