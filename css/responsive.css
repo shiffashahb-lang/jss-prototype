@@ -1,0 +1,74 @@
+/* =========================================================
+   JobSkillShare — responsive overrides
+   ========================================================= */
+
+@media (max-width: 1080px){
+  .programs-teaser-grid, .courses-grid{ grid-template-columns:repeat(2, 1fr); }
+  .catalog-grid, .courses-catalog-grid{ grid-template-columns:repeat(2, 1fr); }
+  .premium-grid{ grid-template-columns:repeat(2, 1fr); }
+  .testimonial-grid{ grid-template-columns:repeat(2, 1fr); }
+  .footer-grid{ grid-template-columns:1.2fr 1fr 1fr; }
+  .footer-grid .footer-col:last-child{ grid-column:span 2; }
+}
+
+@media (max-width: 900px){
+  .hero-inner{ grid-template-columns:1fr; padding-top:100px; text-align:left; }
+  .hero-visual{ order:-1; max-width:420px; }
+  .community-band{ grid-template-columns:1fr; padding:36px; }
+  .path-helper{ grid-template-columns:1fr; }
+  .preview-wrap{ grid-template-columns:1fr; }
+  .stats-row{ gap:32px; flex-wrap:wrap; }
+  .pricing-grid{ grid-template-columns:1fr; max-width:420px; }
+}
+
+@media (max-width: 860px){
+  .nav-links{ display:none; }
+  .nav-actions .btn-secondary{ display:none; }
+  .mobile-login-link{ display:none; }
+  .nav-toggle{ display:block; }
+  .nav-actions{ gap:8px; }
+  .nav-actions .btn{ padding:8px 14px; font-size:.82rem; }
+  .upgrade-label{ display:none; }
+  .btn-upgrade{ padding:10px 12px; }
+
+  .site-header.is-open .nav-links{
+    display:flex; flex-direction:column; align-items:flex-start; gap:0;
+    position:absolute; top:76px; left:0; right:0; background:#fff;
+    border-bottom:1px solid var(--border); padding:8px 24px 20px; box-shadow:var(--shadow-md);
+  }
+  .site-header.is-open .nav-links a{ width:100%; padding:14px 0; border-bottom:1px solid var(--border-soft); }
+  .site-header.is-open .nav-links a::after{ display:none; }
+  .site-header.is-open .mobile-login-link{ display:block; order:-1; font-weight:700; color:var(--teal-dark); }
+
+  .sticky-cta.is-visible{ display:block; }
+  body:has(.sticky-cta){ padding-bottom:74px; }
+}
+
+@media (max-width: 760px){
+  .section{ padding:60px 0; }
+  .hero-compact .hero-copy{ padding:64px 0 44px; }
+  .hero-inner{ padding-top:88px; padding-bottom:64px; }
+  .programs-teaser-grid, .courses-grid,
+  .catalog-grid, .courses-catalog-grid,
+  .premium-grid, .testimonial-grid{ grid-template-columns:1fr; }
+  .footer-grid{ grid-template-columns:1fr; gap:32px; }
+  .footer-grid .footer-col:last-child{ grid-column:auto; }
+  .footer-bottom{ flex-direction:column; }
+  .cta-band{ padding:44px 24px; }
+  .testimonial-slider{ padding:32px 22px; }
+  .slider-quote{ font-size:1.05rem; }
+  .stats-row{ gap:20px; }
+  .stat strong{ font-size:1.3rem; }
+  .catalog-toolbar{ flex-direction:column; align-items:stretch; }
+  .catalog-toolbar input[type="search"]{ order:-1; }
+  .jump-nav{ top:0; }
+  .price-card{ padding:26px; }
+  .hero-trust{ flex-wrap:wrap; gap:20px 32px; }
+}
+
+@media (max-width: 520px){
+  .hero-actions{ flex-direction:column; align-items:stretch; }
+  .community-actions{ flex-direction:column; align-items:stretch; }
+  .bulk-note .btn{ width:100%; }
+  .trust-badges{ flex-direction:column; align-items:center; gap:10px; }
+}

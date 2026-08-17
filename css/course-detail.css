@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Course detail page layout
+   - New stylesheet for the 5 individual IT Support course pages.
+   - Built entirely from custom properties already defined in style.css
+     (--teal, --coral, --ink, --text-muted, --bg-alt, --radius-lg, etc.)
+     so it inherits the site's real palette instead of hardcoding new colors.
+   - Mirrors the two-column layout shown in the course-page reference
+     capture (main content + sticky sidebar with CTA).
+   ========================================================================== */
+
+.course-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 48px;
+  padding: 40px 24px 80px;
+  align-items: start;
+}
+
+.course-detail-main h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.course-detail-block {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border, #e6e9ee);
+}
+
+.course-detail-block:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.course-detail-block h2 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 24px;
+}
+
+.learn-grid p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checklist li {
+  color: var(--ink);
+}
+
+/* Sidebar --------------------------------------------------------------- */
+
+.course-detail-sidebar {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidebar-card {
+  background: #fff;
+  border: 1px solid var(--border, #e6e9ee);
+  border-radius: var(--radius-lg, 16px);
+  padding: 22px;
+}
+
+.sidebar-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.sidebar-card h4 {
+  margin: 0 0 4px;
+  font-size: .95rem;
+}
+
+.sidebar-card p {
+  color: var(--text-muted);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.sidebar-card > p {
+  margin-bottom: 16px;
+}
+
+/* Mobile sticky CTA row (hidden on desktop, shown narrow via responsive file) */
+
+.sticky-cta-row {
+  display: none;
+}
+
+/* Responsive -------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .course-detail-layout {
+    grid-template-columns: 1fr;
+    padding: 28px 20px 100px;
+  }
+
+  .course-detail-sidebar {
+    position: static;
+  }
+
+  .learn-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    background: #fff;
+    border-top: 1px solid var(--border, #e6e9ee);
+    padding: 12px 16px;
+    box-shadow: 0 -6px 20px rgba(0,0,0,.08);
+    overflow-x: auto;
+  }
+
+  .sticky-cta-label {
+    font-size: .68rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .sticky-cta-row .btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: .85rem;
+  }
+}
