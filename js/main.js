@@ -264,6 +264,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ---------------------------------------------------------
+     Program preview video (index.html #preview)
+  --------------------------------------------------------- */
+  var videoFrame = document.getElementById('programVideoFrame');
+  if (videoFrame) {
+    var playBtn = videoFrame.querySelector('.video-play-btn');
+    playBtn.addEventListener('click', function () {
+      var youtubeId = videoFrame.dataset.youtubeId;
+      videoFrame.innerHTML =
+        '<iframe width="100%" height="100%" ' +
+        'src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1" ' +
+        'title="A day inside a JSS program" frameborder="0" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+        'allowfullscreen style="position:absolute;inset:0;"></iframe>';
+    });
+  }
+
+  /* ---------------------------------------------------------
      Billing toggle (upgrade.html)
   --------------------------------------------------------- */
   var billingToggle = document.querySelector('.billing-toggle');
